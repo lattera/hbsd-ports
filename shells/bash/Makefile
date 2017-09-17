@@ -34,9 +34,8 @@ GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
-# Used to be safestack, but parsing for static fails
-# due to bsd.port.options.mk usage underneath...
-USE_HARDENING=		pie:off relro:off
+# STATIC option requires special hardening treatment, see below.
+USE_HARDENING=		safestack
 
 COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
 
@@ -67,6 +66,13 @@ CONFLICTS+=		bash-[0-9]*
 
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
+# For STATIC option undo all hardening.   This is a chicken vs. egg
+# problem in the way the options and their actions are handled, but
+# we end up with the correct port option state for hardening.
+.for _HARDENING in ${USE_HARDENING}
+PORT_OPTIONS:=		${PORT_OPTIONS:N${_HARDENING:tu}}
+USES:=			${USES:N${_HARDENING}}
+.endfor
 .else
 CONFIGURE_ARGS+=	--disable-static-link
 # Bash symbols must be exported in order to link runtime plugins, i.e.,
