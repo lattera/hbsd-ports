@@ -208,8 +208,10 @@ safestack_ARGS?=
 
 .if defined(EXPLICIT_SAFESTACK) # XXX
 USE_HARDENING+=		safestack
-.elif ${_USE_HARDENING:Mstatic}
+.elif ${safestack_ARGS:Mauto}
+.if ${_USE_HARDENING:Mstatic}
 safestack_ARGS+=	off
+.endif
 .endif
 
 SAFESTACK_DESC=		Build with SafeStack
@@ -238,8 +240,10 @@ OPTIONS_GROUP_HARDENING+=SAFESTACK
 
 cfi_ARGS?=
 
+.if ${cfi_ARGS:Mauto}
 .if ${_USE_HARDENING:Mstatic}
 cfi_ARGS+=		off
+.endif
 .endif
 
 CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 or later in base)
