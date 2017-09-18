@@ -1,24 +1,57 @@
 # $FreeBSD$
 #
 # HardenedBSD-related ports options
+#
+# Hardening for binary applications is done via several techniques, e.g.
+# position indepdentent execution (PIE), relocation read-only (RELRO),
+# SafeStack (SAFESTACK) or control flow integrity (CFI).
+#
+# The hardening framework comes with a twist in the port options: the USES
+# variable is extended with the hardening request, but a port option is
+# also added according to the state of the hardening feature and HARDENING_LOCK.
+# Therefore it is possible to revoke / extend hardening with a port update.
+#
+# These variables are used in global makefiles to operate general
+# hardening behaviour.
+#
+# HARDENING_ALL		- List of available hardening features
+# HARDENING_OFF		- List of features this frameworks accepts
+# 			  to disable individual features represented
+# 			  through HARDENING_ALL
+# HARDENING_LOCK	- Define to lock hardening features for batch
+# 			  and package builds, which also removes disabled
+# 			  hardening features from the port options.
+#
+# These variables are used in port makefiles to define the options for a port.
+#
+# USE_HARDENING		- List of to be used hardening features
+#
+# All hardening feature can support multiple arguments, either as a list of
+# aruments separated by comma or by multiple invokes of the feature:
+#
+# USE_HARDENING=	pie:auto pie:configure,java pie safestack
+#
+# The argments supported are based on the needs of individual features, yet
+# follow the following rationale:
+#
+# auto			- Automatic application of a feature based on numerous
+# 			  parsing rules and safeguards, but can be overwritten
+# 			  by explicit mentions of either "feature:off" or
+# 			  "feature" (defaults: pie, relro)
+# (empty)		- Explicit request of a feature, overrides auto and
+# 			  adds the relevant compiler flags to the port
+# off			- Explicit removal of a feature, overwrites (empty)
+# configure		- Pass enable flags during configure stage, required
+# 			  by a number of ports (if applicable)
+# java			- Special handling for java ports (if applicable)
 
 .if !defined(HARDENINGMKINCLUDED)
 HARDENINGMKINCLUDED=	bsd.hardening.mk
 
-# All the currenty available hardening options
-# and defaults to be used with USE_HARDENING or
-# HARDENING_OFF.
-
 HARDENING_ALL=		cfi pie relro safestack
+HARDENING_OFF?=		# all features are on by default
 
-# Can pass exceptions from global make.conf,
-# or the global HARDENING_OFF flag per feature.
-
-HARDENING_OFF?=
-
-# Can pass exceptions from port Makefile, too.
-
-USE_HARDENING?=		# implicit auto-defaults apply
+USE_HARDENING?=		# implicit auto-defaults may apply
 _USE_HARDENING=		# internal flags for auto mode
 
 OPTIONS_GROUP+=		HARDENING
