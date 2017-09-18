@@ -15,14 +15,9 @@ COMMENT=	GNU Compiler Collection 4.6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-=======
 DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
 EXPIRATION_DATE=2017-11-30
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
->>>>>>> freebsd/master
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -44,6 +39,8 @@ USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
+
+USE_HARDENING=	pie:off relro:off
 
 OPTIONS_DEFINE=		BOOTSTRAP
 BOOTSTRAP_DESC=		Build using a full bootstrap
