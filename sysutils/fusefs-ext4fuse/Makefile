@@ -13,9 +13,13 @@ COMMENT=	EXT4 implementation for FUSE
 
 LICENSE=	GPLv2
 
+<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
 USES=		execinfo fuse pkgconfig gmake
+=======
+USES=		fuse pkgconfig gmake
+>>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	gerard
 
