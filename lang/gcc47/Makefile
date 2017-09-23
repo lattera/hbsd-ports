@@ -15,12 +15,9 @@ COMMENT=	GNU Compiler Collection 4.7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-=======
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off relro:off
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
