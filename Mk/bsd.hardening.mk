@@ -187,9 +187,7 @@ OPTIONS_GROUP_HARDENING+=RELRO
 .endif
 
 .if ${USE_HARDENING:Mrelro} && ${relro_ARGS:Moff} == ""
-.if !defined(NORELRO_PORTS) # XXX
 OPTIONS_DEFAULT+=	RELRO
-.endif
 .if ${_USE_HARDENING:Mlock} != ""
 OPTIONS_GROUP_HARDENING+=RELRO
 .endif
