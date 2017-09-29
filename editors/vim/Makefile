@@ -14,6 +14,8 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USE_HARDENING=	safestack
+
 USES=		cpe iconv ncurses pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
 
@@ -57,30 +59,8 @@ CONSOLE_DESC=		Console/terminal mode
 
 LANGBIND_DESC=		Optional language bindings
 
-<<<<<<< HEAD
-ALL_TARGET=	# empty
-MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}"
-MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
-MAKE_ARGS+=	CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=ncurses
-REINPLACE_ARGS=	-i ''
-USES=		cpe iconv ncurses pkgconfig shebangfix
-MAKE_JOBS_UNSAFE=	yes
-
-USE_HARDENING=	safestack
-
-PLIST_SUB=	VIM_VER=${VIM_VER}
-PORTDATA=	${VIM_VER}
-VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
-SLAVEDIRS=	editors/vim-lite
-
-USE_GITHUB=	yes
-SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
-CPE_VERSION=	${PORTVERSION:R}
-PORTSCOUT=	site:https://github.com/vim/vim/releases
-=======
 # BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
 OPTIONS_EXCLUDE_powerpc64=	RUBY
->>>>>>> freebsd/master
 
 .if defined(LITE)
 OPTIONS_DEFAULT=DEFAULT_VIMRC
