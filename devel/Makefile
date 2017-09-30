@@ -1327,7 +1327,6 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
-    SUBDIR += libclaw
     SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconcurrent
@@ -4904,10 +4903,6 @@
     SUBDIR += py-twilio
     SUBDIR += py-twine
     SUBDIR += py-twisted
-    SUBDIR += py-twisted152
-    SUBDIR += py-twistedCore
-    SUBDIR += py-twistedFlow
-    SUBDIR += py-twistedRunner
     SUBDIR += py-txaio
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
