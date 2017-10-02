@@ -1,4 +1,4 @@
-k# $FreeBSD2
+# $FreeBSD2
 
 PORTNAME=	xgamma
 PORTVERSION=	1.0.6
