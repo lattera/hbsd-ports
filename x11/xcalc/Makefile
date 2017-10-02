@@ -1,4 +1,4 @@
-# $FreeBSD2
+# $FreeBSD$
 
 PORTNAME=	xcalc
 PORTVERSION=	1.0.6
