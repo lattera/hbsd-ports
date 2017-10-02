@@ -231,15 +231,14 @@ OPTIONS_GROUP_HARDENING+=SAFESTACK
 ### CFI support ###
 ###################
 
-.if ${LLD_IS_LD} != "yes" || ${LLVM_AR_IS_AR} != "yes" || \
-	${LLVM_RANLIB_IS_RANLIB} != "yes" || \
-	${LLVM_NM_IS_NM} != "yes" || ${LLVM_OBJDUMP_IS_OBJDUMP} != "yes"
-HARDENING_OFF+=	cfi
-.endif
-
 .if ${HARDENING_OFF:Mcfi} == ""
 
-.if ${OSVERSION} >= 1200020 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 1200020 && ${ARCH} == "amd64" && \
+	${LLD_IS_LD} == "yes" && \
+	${LLVM_AR_IS_AR} == "yes" && \
+	${LLVM_RANLIB_IS_RANLIB} == "yes" && \
+	${LLVM_NM_IS_NM} == "yes" && \
+	${LLVM_OBJDUMP_IS_OBJDUMP} == "yes"
 
 cfi_ARGS?=
 
