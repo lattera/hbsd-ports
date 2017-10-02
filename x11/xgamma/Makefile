@@ -1,4 +1,4 @@
-# $FreeBSD$
+k# $FreeBSD2
 
 PORTNAME=	xgamma
 PORTVERSION=	1.0.6
@@ -6,6 +6,8 @@ CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Gamma correction through the X server
+
+USE_HARDENING=	safestack
 
 XORG_CAT=	app
 USE_XORG=	x11 xxf86vm
