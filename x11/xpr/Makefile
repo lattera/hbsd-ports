@@ -1,4 +1,4 @@
-j# $FreeBSD2
+# $FreeBSD2
 
 PORTNAME=	xpr
 PORTVERSION=	1.0.4
