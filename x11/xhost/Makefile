@@ -1,4 +1,4 @@
-# $FreeBSD2
+# $FreeBSD$
 
 PORTNAME=	xhost
 PORTVERSION=	1.0.7
