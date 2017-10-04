@@ -11,7 +11,12 @@ DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with a type system rooted in the Applied Type System
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
+=======
+DEPRECATED=	Unmaintained, outdated, needs lots of refreshment
+EXPIRATION_DATE=	2017-11-04
+>>>>>>> freebsd/master
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake tar:tgz
