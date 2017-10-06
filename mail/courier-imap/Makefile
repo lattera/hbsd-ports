@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.18.1
+PORTVERSION=	4.18.2
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -15,7 +15,11 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
 
+<<<<<<< HEAD
 USE_HARDENING= pie:off relro:off
+=======
+CONFLICTS=	courier-[0-9]* imap-uw-[0-9]* panda-imap-[0-9]*
+>>>>>>> freebsd/master
 
 USES=		gmake localbase:ldflags perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
