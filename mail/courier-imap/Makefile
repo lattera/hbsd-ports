@@ -15,11 +15,9 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
 
-<<<<<<< HEAD
-USE_HARDENING= pie:off relro:off
-=======
 CONFLICTS=	courier-[0-9]* imap-uw-[0-9]* panda-imap-[0-9]*
->>>>>>> freebsd/master
+
+USE_HARDENING= pie:off relro:off
 
 USES=		gmake localbase:ldflags perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
