@@ -1835,9 +1835,11 @@ USE_BINUTILS=	yes
 
 _TEST_AR=/usr/bin/ar
 .if defined(LLVM_AR_UNSAFE) && ${_TEST_AR:tA} == "/usr/bin/llvm-ar"
-AR=	/usr/bin/elftc-ar
-CONFIGURE_ENV+=	AR=${AR}
-MAKE_ENV+=	AR=${AR}
+AR=	elftc-ar
+RANLIB=	elftc-ranlib
+CONFIGURE_ENV+=	AR=${AR} RANLIB=${RANLIB}
+MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB}
+CMAKE_ARGS+=	-DCMAKE_AR:STRING=${AR} -DCMAKE_RANLIB:STRING=${RANLIB}
 .endif
 
 .if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
