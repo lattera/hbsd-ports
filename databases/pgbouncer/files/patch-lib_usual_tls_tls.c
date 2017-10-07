@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 --- lib/usual/tls/tls.c.orig	2016-02-15 07:18:25 UTC
 +++ lib/usual/tls/tls.c
 @@ -40,11 +40,13 @@ tls_init(void)
@@ -32,7 +31,6 @@
  
  		tls_initialised = 0;
  	}
-=======
 --- lib/usual/tls/tls.c.orig	2017-05-01 17:37:49 UTC
 +++ lib/usual/tls/tls.c
 @@ -287,7 +287,7 @@ tls_info_callback(const SSL *ssl, int wh
@@ -44,4 +42,3 @@
  	if (!(ctx->state & TLS_HANDSHAKE_COMPLETE) && ssl->s3) {
  		/* steal info about used DH key */
  		if (ssl->s3->tmp.dh && !ctx->used_dh_bits) {
->>>>>>> freebsd/master
