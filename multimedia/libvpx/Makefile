@@ -18,13 +18,9 @@ BUILD_DEPENDS=	yasm:devel/yasm
 USE_GITHUB=	yes
 GH_ACCOUNT=	webmproject
 
-<<<<<<< HEAD
 LLVM_AR_UNSAFE=	yes
 
-USES=		compiler:c11 cpe gmake perl5 shebangfix
-=======
 USES=		cpe gmake perl5 shebangfix
->>>>>>> upstream/master
 CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
