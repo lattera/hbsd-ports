@@ -75,13 +75,7 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 
 .endif
 
-<<<<<<< HEAD
-.if ${ARCH} == "armv6"
-=======
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == armv6 || ${ARCH} == armv7
->>>>>>> freebsd/master
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 
