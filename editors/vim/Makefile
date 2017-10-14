@@ -14,11 +14,9 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 CONFLICTS_INSTALL?=	vim-lite-[0-9]*
->>>>>>> freebsd/master
+
+USE_HARDENING=	safestack
 
 USES=		cpe iconv ncurses pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
