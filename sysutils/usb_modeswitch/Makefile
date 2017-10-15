@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DATAVERSION=	20170205
 DATANAME=	${PORTNAME:S|_|-|}-data-${DATAVERSION}
 
+USE_HARDENING=	safestack
+
 USES=		gmake tar:bzip2
 
 pre-patch:
