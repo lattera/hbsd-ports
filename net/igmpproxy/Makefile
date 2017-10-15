@@ -13,6 +13,8 @@ COMMENT=	Multicast forwarding IGMP proxy
 
 HOMEPAGE=	http://igmpproxy.sourceforge.net/
 
+USE_HARDENING=	safestack
+
 USE_RC_SUBR=	igmpproxy
 USES=		gmake
 GNU_CONFIGURE=	yes
