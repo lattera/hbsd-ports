@@ -3,7 +3,11 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
+<<<<<<< HEAD
 PORTREVISION=	5
+=======
+PORTREVISION=	7
+>>>>>>> freebsd/master
 CATEGORIES=	net comms ipv6
 PKGNAMESUFFIX=	1
 
