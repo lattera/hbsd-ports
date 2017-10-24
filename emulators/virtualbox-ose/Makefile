@@ -111,15 +111,7 @@ OPTIONS_DEFAULT+=	PYTHON
 CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
-<<<<<<< HEAD
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
-=======
-.if ${ARCH} == "amd64"
-_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
-.endif
-
 .if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT5)
->>>>>>> freebsd/master
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
