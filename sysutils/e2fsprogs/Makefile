@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.43.7
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -17,6 +17,8 @@ LICENSE_FILE?=	${WRKSRC}/NOTICE
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
+
+CONFLICTS_INSTALL=	krb5-[0-9d]*
 
 .if !defined(MASTERDIR)
 BROKEN_aarch64=		fails to link: missing sbrk
@@ -227,7 +229,7 @@ post-install:
 # ditch files installed by other ports already, or shadowing system files:
 	cd ${STAGEDIR}${PREFIX} && \
 		${XARGS} <${FILESDIR}/unwanted ${RM} && \
-		${RMDIR} include/blkid include/et include/ss share/et share/ss
+		${RMDIR} include/blkid include/ss share/ss
 
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
