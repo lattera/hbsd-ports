@@ -4,6 +4,7 @@
 PORTNAME=	fusefs-ext2
 PORTVERSION=	0.0.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -18,11 +19,13 @@ RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs
 USES=		autoreconf libtool fuse pkgconfig localbase:ldflags
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include/e2fsprogs
+LDFLAGS+=	-L${LOCALBASE}/lib/e2fsprogs -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs
 
 GH_PROJECT=	fuse-ext2
 GH_ACCOUNT=	alperakcan
 
 PLIST_FILES=	bin/fuse-ext2 bin/fuse-ext2.probe \
-		libdata/pkgconfig/fuse-ext2.pc man/man1/fuse-ext2.1.gz
+		man/man1/fuse-ext2.1.gz
 
 .include <bsd.port.mk>
