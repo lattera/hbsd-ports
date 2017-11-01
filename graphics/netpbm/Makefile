@@ -29,6 +29,8 @@ GH_ACCOUNT=	t6
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
 
+USE_HARDENING=	pie:off
+
 SHEBANG_FILES=	buildtools/makeman editor/pnmflip editor/pnmquant \
 		editor/ppmfade editor/ppmquant editor/ppmshadow \
 		generator/ppmrainbow converter/pbm/pbmtox10bm \
