@@ -449,12 +449,8 @@ GIT_CT_VERSION=	1.3.2
 GH_ACCOUNT+=	grahamedgecombe:ct
 GH_PROJECT+=	nginx-ct:ct
 GH_TAGNAME+=	v${GIT_CT_VERSION}:ct
-<<<<<<< HEAD
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
-.if !empty(PORT_OPTIONS:MDSO)
-=======
 .if ${PORT_OPTIONS:MDSO}
->>>>>>> upstream/master
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
