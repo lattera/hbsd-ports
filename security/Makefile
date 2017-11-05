@@ -1214,6 +1214,7 @@
     SUBDIR += tcpcrypt
     SUBDIR += testssl.sh
     SUBDIR += tinc
+    SUBDIR += tinc-devel
     SUBDIR += tinyca
     SUBDIR += titus
     SUBDIR += tls-check
