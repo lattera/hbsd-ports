@@ -19,9 +19,8 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
-=======
+
 UNSAFESSL_USES_OFF=	ssl
 UNSAFESSL_BUILD_DEPENDS=	${LOCALBASE}/openssl-unsafe/lib/libssl.so:security/openssl-unsafe
 UNSAFESSL_RUN_DEPENDS=		${UNSAFESSL_BUILD_DEPENDS}
@@ -30,7 +29,6 @@ UNSAFESSL_CFLAGS=	-I${LOCALBASE}/openssl-unsafe/include \
 UNSAFESSL_LDFLAGS=	-L${LOCALBASE}/openssl-unsafe/lib \
 			-Wl,-rpath,${LOCALBASE}/openssl-unsafe/lib
 UNSAFESSL_ALL_TARGET=	sslscan
->>>>>>> upstream/master
 
 .include <bsd.port.pre.mk>
 
