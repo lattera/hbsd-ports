@@ -2,7 +2,7 @@
 
 PORTNAME=	diamond
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.11
+DISTVERSION=	0.9.12
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -14,14 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake:outsource
+<<<<<<< HEAD
 
 USE_HARDENING=	pie:off
 
 CFLAGS+=	-DNDEBUG
 
+=======
+>>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbuchfink
 
+CFLAGS+=	-DNDEBUG
 PLIST_FILES=	bin/diamond
 
 .if ! defined(PACKAGE_BUILDING)

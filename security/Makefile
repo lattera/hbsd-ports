@@ -999,6 +999,8 @@
     SUBDIR += py3-ecdsa
     SUBDIR += py3-libnacl
     SUBDIR += py3-openssl
+    SUBDIR += py3-pbkdf2
+    SUBDIR += py3-pyaes
     SUBDIR += py3-pycrypto
     SUBDIR += qtkeychain-qt4
     SUBDIR += qtkeychain-qt5
