@@ -2,6 +2,7 @@
 
 PORTNAME=	frr
 PORTVERSION=	3.0.2
+DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net ipv6
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -22,8 +23,6 @@ USE_HARDENING=	safestack
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FRRouting
-GH_PROJECT=	frr
-GH_TAGNAME=	frr-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
