@@ -32,14 +32,10 @@ USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
 SLAVEDIRS=	cad/gmsh-occ
 
-<<<<<<< HEAD
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
-MAKE_JOBS_UNSAFE=yes
-=======
 MAKE_JOBS_UNSAFE=	yes
->>>>>>> upstream/master
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 

@@ -15,13 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
-<<<<<<< HEAD
-BROKEN_aarch64=		Segfaults during build
-
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	00995c8
