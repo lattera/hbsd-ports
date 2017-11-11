@@ -114,6 +114,7 @@
     SUBDIR += dream
     SUBDIR += drumgizmo
     SUBDIR += drumpiler
+    SUBDIR += drumstick
     SUBDIR += dsbmixer
     SUBDIR += dssi
     SUBDIR += dtmfdial
@@ -311,6 +312,7 @@
     SUBDIR += guspat
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
+    SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += herrie
     SUBDIR += hexter
@@ -333,6 +335,7 @@
     SUBDIR += idjc
     SUBDIR += ifp-line
     SUBDIR += infamous-plugins-lv2
+    SUBDIR += invada-studio-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack-keyboard
@@ -412,6 +415,7 @@
     SUBDIR += libmpdclient
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz5
+    SUBDIR += libmusicxml
     SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libogg
@@ -633,6 +637,7 @@
     SUBDIR += pm3umpdl
     SUBDIR += pms
     SUBDIR += pocketsphinx
+    SUBDIR += polyphone
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += pragha
