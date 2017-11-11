@@ -10,6 +10,7 @@
     SUBDIR += abcde
     SUBDIR += abcmidi
     SUBDIR += abcselect
+    SUBDIR += abgate-lv2
     SUBDIR += abraca
     SUBDIR += acoustid-fingerprinter
     SUBDIR += adplay
@@ -721,6 +722,7 @@
     SUBDIR += s3mod
     SUBDIR += sayonara
     SUBDIR += sbagen
+    SUBDIR += sc3-plugins
     SUBDIR += schismtracker
     SUBDIR += scrobbler
     SUBDIR += sdl2_mixer
@@ -826,6 +828,7 @@
     SUBDIR += virtual_oss_ctl
     SUBDIR += vitunes
     SUBDIR += vm-lv2
+    SUBDIR += vmpk
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
     SUBDIR += voipong
