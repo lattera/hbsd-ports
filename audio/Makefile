@@ -25,6 +25,7 @@
     SUBDIR += amb-plugins
     SUBDIR += amp
     SUBDIR += ample
+    SUBDIR += amsynth
     SUBDIR += aqualung
     SUBDIR += ardour
     SUBDIR += ardour5
@@ -238,7 +239,6 @@
     SUBDIR += grip
     SUBDIR += gsm
     SUBDIR += gsound
-    SUBDIR += gspeakers
     SUBDIR += gstreamer-plugins-a52dec
     SUBDIR += gstreamer-plugins-amrnb
     SUBDIR += gstreamer-plugins-amrwbdec
@@ -751,7 +751,6 @@
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sonic-visualiser
-    SUBDIR += sooperlooper
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
     SUBDIR += soundgrab
@@ -793,7 +792,6 @@
     SUBDIR += tap-plugins
     SUBDIR += tap-plugins-lv2
     SUBDIR += tcd
-    SUBDIR += tclmidi
     SUBDIR += teamspeak3-server
     SUBDIR += tempest_for_eliza
     SUBDIR += terminatorx
@@ -893,6 +891,7 @@
     SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yell
+    SUBDIR += yoshimi
     SUBDIR += zinf
     SUBDIR += zita-convolver
     SUBDIR += zita-resampler
