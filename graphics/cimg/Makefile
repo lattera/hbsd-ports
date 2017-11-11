@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cimg
-DISTVERSION=	2.0.4
+DISTVERSION=	2.1.5
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -21,12 +21,12 @@ LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 
+USE_HARDENING=	pie:off
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 GH_TAGNAME=	v.${DISTVERSION:S/.//g}
-
-NOPIE_PORTS=	yes
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
@@ -55,7 +55,6 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libpng.so:graphics/png			\
 		libtiff.so:graphics/tiff		\
 		libHalf.so:graphics/ilmbase		\
-		libIlmImf.so:graphics/OpenEXR		\
 		libgimp-2.0.so:graphics/gimp-app	\
 		libfftw3.so:math/fftw3			\
 		libopencv_legacy.so:graphics/opencv	\

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.9.94.g20170825
-PORTREVISION=	1
+PORTVERSION=	2.9.94.g20171023
 CATEGORIES=	emulators
 MASTER_SITES=	GH
 PKGNAMESUFFIX?=	-sbruno
@@ -13,11 +12,13 @@ DIST_SUBDIR=	qemu/${PORTVERSION}
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
+USE_HARDENING?=	pie:off relro:off
+
 LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	2dbc44a
+GH_TAGNAME=	32c666c
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -27,9 +28,6 @@ MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 BROKEN_i386=		aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream
 BROKEN_powerpc64=	fails to build: async.c: internal compiler error: Segmentation fault
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR X86_TARGETS BSD_USER \

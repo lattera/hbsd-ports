@@ -29,7 +29,16 @@
 # All hardening feature can support multiple arguments, either as a list of
 # aruments separated by comma or by multiple invokes of the feature:
 #
-# USE_HARDENING=	pie:auto pie:configure,java pie safestack
+# USE_HARDENING=	pie:auto pie:configure,java
+# USE_HARDENING+=	pie
+# USE_HARDENING+=	safestack
+#
+# A single-line style is recommended for port defaults unless conditional
+# hardening is required, e.g. for STATIC builds which do not support PIE.
+# Placement of the USE_HARDENING directive is below LICENSE, DEPENDS and
+# similar, but before USES or OPTIONS are defined.  Also make sure that
+# the directive is added before inclusion of <bsd.port.pre.mk> to end up
+# being evaluated correctly.
 #
 # The argments supported are based on the needs of individual features, yet
 # follow the following rationale:
@@ -44,6 +53,11 @@
 # configure		- Pass enable flags during configure stage, required
 # 			  by a number of ports (if applicable)
 # java			- Special handling for java ports (if applicable)
+#
+# Individual information about argument support can be found in the
+# respective ${PORTSDIR}/Mk/Uses/"feature".mk files.
+#
+# MAINTAINER:	franco.fichtner@hardenedbsd.org
 
 .if !defined(HARDENINGMKINCLUDED)
 HARDENINGMKINCLUDED=	bsd.hardening.mk
@@ -144,7 +158,7 @@ USE_HARDENING:=		pie ${USE_HARDENING:Npie}
 .endif
 .endif
 
-PIE_DESC=		Build as PIE
+PIE_DESC=		Build as Position Independent Executable
 PIE_USES=		pie
 
 .if ${_USE_HARDENING:Mlock} == ""
@@ -152,9 +166,7 @@ OPTIONS_GROUP_HARDENING+=PIE
 .endif
 
 .if ${USE_HARDENING:Mpie} && ${pie_ARGS:Moff} == ""
-.if !defined(NOPIE_PORTS) # XXX
 OPTIONS_DEFAULT+=	PIE
-.endif
 .if ${_USE_HARDENING:Mlock} != ""
 OPTIONS_GROUP_HARDENING+=PIE
 .endif
@@ -179,7 +191,7 @@ USE_HARDENING:=		relro ${USE_HARDENING:Nrelro}
 .endif
 .endif
 
-RELRO_DESC=		Build with RELRO + BIND_NOW
+RELRO_DESC=		Build with Relocation Read-Only + BIND_NOW
 RELRO_USES=		relro
 
 .if ${_USE_HARDENING:Mlock} == ""
@@ -187,9 +199,7 @@ OPTIONS_GROUP_HARDENING+=RELRO
 .endif
 
 .if ${USE_HARDENING:Mrelro} && ${relro_ARGS:Moff} == ""
-.if !defined(NORELRO_PORTS) # XXX
 OPTIONS_DEFAULT+=	RELRO
-.endif
 .if ${_USE_HARDENING:Mlock} != ""
 OPTIONS_GROUP_HARDENING+=RELRO
 .endif
@@ -234,7 +244,13 @@ OPTIONS_GROUP_HARDENING+=SAFESTACK
 ###################
 
 .if ${HARDENING_OFF:Mcfi} == ""
-.if ${OSVERSION} >= 1200020 && ${LLD_IS_LD} == "yes" && ${ARCH} == "amd64"
+
+.if ${OSVERSION} >= 1200020 && ${ARCH} == "amd64" && \
+	${LLD_IS_LD} == "yes" && \
+	${LLVM_AR_IS_AR} == "yes" && \
+	${LLVM_RANLIB_IS_RANLIB} == "yes" && \
+	${LLVM_NM_IS_NM} == "yes" && \
+	${LLVM_OBJDUMP_IS_OBJDUMP} == "yes"
 
 cfi_ARGS?=
 
@@ -244,17 +260,17 @@ cfi_ARGS+=		off
 .endif
 .endif
 
-CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 or later in base)
-CFIHARDEN_USES=		cfi
+CFI_DESC=		Build with Control Flow Integrity
+CFI_USES=		cfi
 
 .if ${_USE_HARDENING:Mlock} == ""
-OPTIONS_GROUP_HARDENING+=CFIHARDEN
+OPTIONS_GROUP_HARDENING+=CFI
 .endif
 
 .if ${USE_HARDENING:Mcfi} && ${cfi_ARGS:Moff} == ""
-OPTIONS_DEFAULT+=	CFIHARDEN
+OPTIONS_DEFAULT+=	CFI
 .if ${_USE_HARDENING:Mlock} != ""
-OPTIONS_GROUP_HARDENING+=CFIHARDEN
+OPTIONS_GROUP_HARDENING+=CFI
 .endif
 .endif
 

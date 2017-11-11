@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -20,6 +21,8 @@ CONFLICTS_INSTALL?=	emacs-devel-[0-9]* emacs-nox11-[0-9]*
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 
+USE_HARDENING=	pie:off relro:off
+
 EMACS_VER=	25.3
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
@@ -27,9 +30,6 @@ USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 LDFLAGS+=	${ncurses_ARGS:Mport:C/.+/-ltinfo/}
 INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 SUB_FILES=	sources.el
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}

@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	H323 Video Conferencing library
 
-LICENSE=	MPL
+LICENSE=	MPL10 MPL11
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 
@@ -18,15 +19,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFLICTS=	openh323-[0-9]*
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 MAKE_JOBS_UNSAFE=yes
 

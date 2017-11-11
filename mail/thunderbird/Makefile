@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	52.3.0
-PORTREVISION=	2
+DISTVERSION=	52.4.0
+PORTREVISION=	5
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
@@ -31,6 +31,8 @@ BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
+USE_HARDENING=	pie:off relro:off
+
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
 USE_MOZILLA=	-soundtouch
@@ -44,8 +46,6 @@ MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_PKGCONFIG_FILES=
 
 MOZ_OPTIONS+=	--enable-pie
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 PORTNAME_ICON=	${MOZILLA}.png
 PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png

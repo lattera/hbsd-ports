@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.7.2
-PORTREVISION=   2
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -23,8 +23,7 @@ BUILD_DEPENDS=	dev86>0:devel/dev86 \
 		seabios>0:misc/seabios \
 		markdown>0:textproc/markdown
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	pie:off relro:off
 
 OPTIONS_DEFINE=	DOCS
 

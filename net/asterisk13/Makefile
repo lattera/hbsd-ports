@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.17.2
+PORTVERSION=	13.18.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -24,15 +24,14 @@ ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		bison cpe gmake iconv libedit localbase \
 		shebangfix sqlite ssl ncurses
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR} \
@@ -104,7 +103,7 @@ G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
 
 ASTVERSION_DESC?= Install astversion (requires bash)
 BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
-BASE_DESC=	Use base compiler (experimental)
+BASE_DESC=	Use base compiler
 DAHDI_DESC?=	DAHDI support
 EXCHANGE_DESC?=	Exchange calendar support
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)

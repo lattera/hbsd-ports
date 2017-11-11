@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.4.1.s20170920
+PORTVERSION=	6.4.1.s20171101
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection 6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -26,11 +26,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
+CONFLICTS=	gcc6-6.*
+
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	pie:off relro:off
 
 # DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of

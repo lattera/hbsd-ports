@@ -138,7 +138,6 @@
     SUBDIR += derelict-gl3
     SUBDIR += devil
     SUBDIR += dia
-    SUBDIR += diacanvas2
     SUBDIR += diffpdf
     SUBDIR += digikam-kde4
     SUBDIR += digikam-kde4-doc
@@ -280,6 +279,7 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltt
+    SUBDIR += gmic-qt
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
@@ -413,6 +413,7 @@
     SUBDIR += kf5-kimageformats
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-prison
+    SUBDIR += kgraphviewer
     SUBDIR += kiconedit
     SUBDIR += kipi-plugin-acquireimages
     SUBDIR += kipi-plugin-advancedslideshow
@@ -669,6 +670,7 @@
     SUBDIR += p5-Color-Rgb
     SUBDIR += p5-Color-Scheme
     SUBDIR += p5-Convert-Color
+    SUBDIR += p5-Convert-Color-XTerm
     SUBDIR += p5-Data-Google-Visualization-DataSource
     SUBDIR += p5-Data-Google-Visualization-DataTable
     SUBDIR += p5-GD
@@ -797,6 +799,7 @@
     SUBDIR += piglit
     SUBDIR += pikopixel
     SUBDIR += pinpoint
+    SUBDIR += pixd
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
@@ -836,6 +839,7 @@
     SUBDIR += projectm-libvisual
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
+    SUBDIR += ptex
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-PyX
@@ -859,9 +863,7 @@
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-gphoto2
-    SUBDIR += py-graph
     SUBDIR += py-graph-core
-    SUBDIR += py-graph-dot
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen

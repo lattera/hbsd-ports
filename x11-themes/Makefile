@@ -124,6 +124,7 @@
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes
     SUBDIR += kf5-oxygen-icons5
+    SUBDIR += lumina-themes
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
     SUBDIR += mate-backgrounds
@@ -161,6 +162,7 @@
     SUBDIR += qtcurve-utils
     SUBDIR += rezlooks
     SUBDIR += sawfish-themes
+    SUBDIR += sddm-freebsd-black-theme
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += ubuntulooks

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	15.0.0
-PORTREVISION=	3
+PORTVERSION=	17.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/

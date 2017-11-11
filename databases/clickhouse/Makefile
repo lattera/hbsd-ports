@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54289
+PORTVERSION=	1.1.54304
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
 #DISTVERSIONSUFFIX=	-testing
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	ClickHouse is an column-oriented database management system
-
-BROKEN=		fails to build with boost 1.65 (bundled & system), see bug 222439
 
 LICENSE=	APACHE20
 

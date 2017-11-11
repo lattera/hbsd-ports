@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += ayttm
     SUBDIR += bsflite
     SUBDIR += centerim
     SUBDIR += centerim-devel
@@ -28,6 +27,7 @@
     SUBDIR += fugu
     SUBDIR += gajim
     SUBDIR += gale
+    SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += hotot
     SUBDIR += hs-haskell-xmpp
@@ -116,6 +116,7 @@
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please
+    SUBDIR += pidgin-rocketchat
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
     SUBDIR += pidgin-skypeweb
@@ -143,7 +144,6 @@
     SUBDIR += py-sleekxmpp
     SUBDIR += py-telepot
     SUBDIR += py-toxcore-c
-    SUBDIR += py-twistedWords
     SUBDIR += py-unmessage
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc

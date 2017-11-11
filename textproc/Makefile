@@ -208,6 +208,7 @@
     SUBDIR += freexl
     SUBDIR += fy-aspell
     SUBDIR += fzf
+    SUBDIR += fzy
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
@@ -819,6 +820,8 @@
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-ShowDiff
     SUBDIR += p5-String-Strip
+    SUBDIR += p5-String-Tagged
+    SUBDIR += p5-String-Tagged-Terminal
     SUBDIR += p5-String-ToIdentifier-EN
     SUBDIR += p5-String-Tokenizer
     SUBDIR += p5-String-Trim
@@ -1365,7 +1368,6 @@
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
-    SUBDIR += py-twistedLore
     SUBDIR += py-ucl
     SUBDIR += py-whoosh
     SUBDIR += py-wicked
@@ -1399,6 +1401,7 @@
     SUBDIR += py3-pyPEG2
     SUBDIR += py3-pygments
     SUBDIR += py3-pystemmer
+    SUBDIR += py3-qrcode
     SUBDIR += py3-snowballstemmer
     SUBDIR += py3-sphinx
     SUBDIR += py3-sphinx_rtd_theme
@@ -1559,7 +1562,6 @@
     SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-ronn
     SUBDIR += rubygem-rouge
-    SUBDIR += rubygem-rouge1
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-ruby-augeas
     SUBDIR += rubygem-ruby-xslt
@@ -1791,6 +1793,7 @@
     SUBDIR += xslide.el
     SUBDIR += xstream
     SUBDIR += xsv
+    SUBDIR += xsv-rs
     SUBDIR += xwindiff
     SUBDIR += xxdiff
     SUBDIR += xxdiff-scripts

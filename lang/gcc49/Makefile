@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -14,6 +14,7 @@ COMMENT=	GNU Compiler Collection 4.9
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Unsupported by upstream. Use GCC 5 or newer instead.
 ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64 sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -28,15 +29,14 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 
 CPE_VENDOR=	gnu
 
+USE_HARDENING=	pie:off relro:off
+
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 OPTIONS_DEFINE=		BOOTSTRAP
 OPTIONS_DEFAULT=	BOOTSTRAP

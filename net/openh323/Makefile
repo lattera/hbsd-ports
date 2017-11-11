@@ -3,7 +3,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.19.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
@@ -20,6 +20,8 @@ BROKEN_powerpc64=	Does not build: call to H261Encoder::~H261Encoder() lacks nop,
 CONFLICTS=	h323plus-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
+
+USE_HARDENING=	pie:off relro:off
 
 USES=		bison gmake
 USE_GCC=	yes
@@ -44,9 +46,6 @@ FFMPEG_CONFIGURE_ON=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_ON=	--enable-localspeex=no
 SPEEX_CONFIGURE_OFF=	--enable-localspeex=yes
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 .include <bsd.port.pre.mk>
 

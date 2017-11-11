@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.37
-PORTREVISION=	1
+PORTVERSION=	5.6.38
+PORTREVISION=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 SLAVEDIRS=	databases/mysql56-client
 USES=		bison:build cmake:outsource,noninja compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix ssl
+
+LLVM_AR_UNSAFE=	yes
 
 USE_PERL5=	run
 
@@ -147,7 +149,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
 .endif
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
 .endif
 

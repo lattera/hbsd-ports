@@ -63,6 +63,7 @@
     SUBDIR += cantata
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
+    SUBDIR += cava
     SUBDIR += ccaudio2
     SUBDIR += cd-console
     SUBDIR += cd-discid
@@ -113,6 +114,7 @@
     SUBDIR += dream
     SUBDIR += drumgizmo
     SUBDIR += drumpiler
+    SUBDIR += drumstick
     SUBDIR += dsbmixer
     SUBDIR += dssi
     SUBDIR += dtmfdial
@@ -129,6 +131,7 @@
     SUBDIR += espeak
     SUBDIR += esperanza
     SUBDIR += etcd
+    SUBDIR += eteroj-lv2
     SUBDIR += etktab
     SUBDIR += exaile
     SUBDIR += exaile-devel
@@ -141,7 +144,6 @@
     SUBDIR += fdk-aac
     SUBDIR += fdmf
     SUBDIR += festalon
-    SUBDIR += festdoc
     SUBDIR += festival
     SUBDIR += festival-freebsoft-utils
     SUBDIR += festlex-cmu
@@ -176,6 +178,8 @@
     SUBDIR += fluidsynth
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmit
+    SUBDIR += foo-yc20
+    SUBDIR += fomp-lv2
     SUBDIR += forked-daapd
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
@@ -252,7 +256,6 @@
     SUBDIR += gstreamer-plugins-ladspa
     SUBDIR += gstreamer-plugins-lame
     SUBDIR += gstreamer-plugins-mad
-    SUBDIR += gstreamer-plugins-moodbar
     SUBDIR += gstreamer-plugins-mp3
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-nas
@@ -309,6 +312,7 @@
     SUBDIR += guspat
     SUBDIR += gvolwheel
     SUBDIR += gxmms2
+    SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += herrie
     SUBDIR += hexter
@@ -330,6 +334,8 @@
     SUBDIR += id3v2
     SUBDIR += idjc
     SUBDIR += ifp-line
+    SUBDIR += infamous-plugins-lv2
+    SUBDIR += invada-studio-plugins-lv2
     SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack-keyboard
@@ -339,6 +345,7 @@
     SUBDIR += jack_mixer
     SUBDIR += jack_umidi
     SUBDIR += jalv
+    SUBDIR += jalv-select
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
@@ -408,6 +415,7 @@
     SUBDIR += libmpdclient
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz5
+    SUBDIR += libmusicxml
     SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libogg
@@ -472,6 +480,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
+    SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
     SUBDIR += lvtk
@@ -628,6 +637,7 @@
     SUBDIR += pm3umpdl
     SUBDIR += pms
     SUBDIR += pocketsphinx
+    SUBDIR += polyphone
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += pragha
@@ -663,6 +673,7 @@
     SUBDIR += py-pyaudio
     SUBDIR += py-pylast
     SUBDIR += py-pyliblo
+    SUBDIR += py-pysndfile
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
     SUBDIR += py-soundscrape
@@ -697,6 +708,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rtaudio
     SUBDIR += rtmidi
     SUBDIR += rubberband
     SUBDIR += ruby-smf
@@ -799,6 +811,7 @@
     SUBDIR += tkeca
     SUBDIR += toolame
     SUBDIR += tosha
+    SUBDIR += triceratops-lv2
     SUBDIR += trommler
     SUBDIR += tse3
     SUBDIR += tta
@@ -811,7 +824,6 @@
     SUBDIR += umurmur
     SUBDIR += vagalume
     SUBDIR += vamp-plugin-sdk
-    SUBDIR += ventrilo-server
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
     SUBDIR += vitunes

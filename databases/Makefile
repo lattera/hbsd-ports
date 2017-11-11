@@ -660,6 +660,7 @@
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
     SUBDIR += plpgsql_check
+    SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
@@ -738,10 +739,8 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
-    SUBDIR += puppetdb-terminus3
     SUBDIR += puppetdb-terminus4
     SUBDIR += puppetdb-terminus5
-    SUBDIR += puppetdb3
     SUBDIR += puppetdb4
     SUBDIR += puppetdb5
     SUBDIR += pure-sql3
@@ -840,6 +839,7 @@
     SUBDIR += py-varstack
     SUBDIR += py-whisper
     SUBDIR += py-xapian
+    SUBDIR += py-zodbpickle
     SUBDIR += py3-apsw
     SUBDIR += py3-bsddb3
     SUBDIR += py3-mysqlclient
@@ -1047,6 +1047,7 @@
     SUBDIR += zabbix22-libzbxpgsql
     SUBDIR += zabbix3-libzbxpgsql
     SUBDIR += zabbix32-libzbxpgsql
+    SUBDIR += zabbix34-libzbxpgsql
     SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

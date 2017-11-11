@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTVERSION=	5.5.0
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -23,9 +22,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
@@ -33,9 +29,11 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 CONFLICTS=	gcc5-devel-5.*
 CPE_VENDOR=	gnu
 
+USE_HARDENING=	pie:off relro:off
+
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
-USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
+USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes

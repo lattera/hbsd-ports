@@ -11,13 +11,16 @@ DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with a type system rooted in the Applied Type System
 
+DEPRECATED=	Unmaintained, outdated, needs lots of refreshment
+EXPIRATION_DATE=	2017-11-04
+
+USE_HARDENING=	pie:off
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
-
-NOPIE_PORTS=	yes
 
 MAKE_JOBS_UNSAFE=yes
 PORTDOCS=	FAQ.txt

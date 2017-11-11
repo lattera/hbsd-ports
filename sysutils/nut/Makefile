@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.4
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -12,13 +12,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Network UPS Tools
 
+USE_HARDENING=	pie:off relro:off
+
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig libtool
-
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp

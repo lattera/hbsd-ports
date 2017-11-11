@@ -74,11 +74,6 @@
     SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
-    SUBDIR += bacula5-bat
-    SUBDIR += bacula5-client
-    SUBDIR += bacula5-client-static
-    SUBDIR += bacula5-docs
-    SUBDIR += bacula5-server
     SUBDIR += bacula9-bat
     SUBDIR += bacula9-client
     SUBDIR += bacula9-client-static
@@ -355,6 +350,7 @@
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-exfat
+    SUBDIR += fusefs-ext2
     SUBDIR += fusefs-ext4fuse
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak
@@ -366,6 +362,7 @@
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-libs3
     SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs
@@ -480,6 +477,7 @@
     SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
     SUBDIR += intel-qcu
+    SUBDIR += iocage
     SUBDIR += iocell
     SUBDIR += iogen
     SUBDIR += iograph
@@ -575,6 +573,7 @@
     SUBDIR += logwatch
     SUBDIR += lookat
     SUBDIR += lr
+    SUBDIR += lscpu
     SUBDIR += lsof
     SUBDIR += lsop
     SUBDIR += ltrace
@@ -629,6 +628,7 @@
     SUBDIR += minimunin
     SUBDIR += minirsyslogd
     SUBDIR += mixer
+    SUBDIR += mkdesktop
     SUBDIR += mkfile
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
@@ -795,6 +795,7 @@
     SUBDIR += pax-utils
     SUBDIR += pbi-manager
     SUBDIR += pbimaker
+    SUBDIR += pc-networkmanager
     SUBDIR += pcapfix
     SUBDIR += pcbsd-appweb
     SUBDIR += pcbsd-libsh
@@ -867,6 +868,7 @@
     SUBDIR += puppet4
     SUBDIR += puppet5
     SUBDIR += puppetserver
+    SUBDIR += puppetserver5
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
@@ -887,6 +889,7 @@
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
+    SUBDIR += py-filelock
     SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-gmailfs-fuse
@@ -916,13 +919,13 @@
     SUBDIR += py-scriptine
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff
+    SUBDIR += py-superlance
     SUBDIR += py-supervisor
     SUBDIR += py-tmuxp
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += py3-execnet
-    SUBDIR += py3-iocage
     SUBDIR += py3-pkginfo
     SUBDIR += py3-ptyprocess
     SUBDIR += pydf
@@ -932,6 +935,7 @@
     SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
+    SUBDIR += qsudo
     SUBDIR += qsynergy
     SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
@@ -1103,6 +1107,7 @@
     SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += slurm-wlm
+    SUBDIR += smart
     SUBDIR += smartmontools
     SUBDIR += smenu
     SUBDIR += smp_utils
@@ -1143,6 +1148,7 @@
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng310
     SUBDIR += syslog-ng311
+    SUBDIR += syslog-ng312
     SUBDIR += syslog-ng36
     SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39
@@ -1187,6 +1193,7 @@
     SUBDIR += tty-clock
     SUBDIR += ttyd
     SUBDIR += ttyload
+    SUBDIR += trueos-libqt5
     SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
@@ -1354,6 +1361,7 @@
     SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zrep
+    SUBDIR += zrepl
     SUBDIR += zsd
     SUBDIR += zxfer
 

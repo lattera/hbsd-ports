@@ -14,16 +14,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
 
-NOPIE_PORTS=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
 GH_TAGNAME=	7905901
 
-CONFLICTS_INSTALL=	imap-uw-20*
+CONFLICTS_INSTALL=	imap-uw-20* courier-0.65.*
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
+
+USE_HARDENING=	pie:off
 
 MAKE_JOBS_UNSAFE=	yes
 

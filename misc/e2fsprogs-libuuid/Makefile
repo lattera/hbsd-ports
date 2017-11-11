@@ -10,7 +10,7 @@ COMMENT=	UUID library from e2fsprogs package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${INSTALL_WRKSRC}/COPYING
 
-CONFIGURE_ARGS=	--enable-elf-shlibs
+CONFIGURE_ARGS=	--enable-elf-shlibs --enable-libuuid
 
 OPTIONS_EXCLUDE=	NLS
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
@@ -23,8 +23,6 @@ FILESDIR=	${.CURDIR}/files
 USE_RC_SUBR=	uuidd
 
 PKGDIR=		${.CURDIR}
-
-NOPIE_PORTS=	yes
 
 post-patch::
 	${REINPLACE_CMD} -e 's,/var/lib/libuuid,/var/run/libuuid,g' \

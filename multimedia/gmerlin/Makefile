@@ -17,6 +17,8 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgavl.so:multimedia/gavl \
 		libfontconfig.so:x11-fonts/fontconfig
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		gettext libtool makeinfo pathfix pkgconfig sqlite
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
@@ -33,12 +35,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--add-needed
 
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
-
 INFO=		gmerlin
 
-OPTIONS_DEFINE= 	ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
+OPTIONS_DEFINE=		ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
 			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF DOCS
 OPTIONS_DEFAULT=	CDDB JACK JPEG LIBVISUAL \
 			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF

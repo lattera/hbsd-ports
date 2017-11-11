@@ -10,17 +10,20 @@ MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client/server based TV capture/display program
 
+DEPRECATED=		Tcl/Tk 8.4 is no longer maintained, please use 8.5+
+EXPIRATION_DATE=	2017-11-20
+
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
+USE_HARDENING=	pie:off
+
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USES=		uidfix
 USE_XORG=	xau x11 xext xxf86dga
 NOT_FOR_ARCHS=	sparc64
-
-NOPIE_PORTS=	yes
 
 PLIST_FILES=	bin/dtv \
 		etc/dtv-xevent.tk

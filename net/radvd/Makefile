@@ -16,6 +16,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libdaemon.so:devel/libdaemon
 
+USE_HARDENING=	safestack
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
 USES=		gmake pkgconfig

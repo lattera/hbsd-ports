@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndpi
-PORTVERSION=	2.0.2017.05.23
-PORTREVISION=	1
+PORTVERSION=	2.0.2017.09.13
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -20,13 +19,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-ljson-c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	autoreconf compiler:c++11-lang libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
 GH_PROJECT=	nDPI
-GH_TAGNAME=	3cfcc05
+GH_TAGNAME=	6607c33
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:C/([[:digit:]])+\.([[:digit:]])+.*/\1.\2/}.0
 

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.77
-PORTREVISION=	1	# leave this in even if 0 to avoid PORTEPOCH bumps
+DISTVERSION=	2.78
+PORTREVISION=	0	# leave this in even if 0 to avoid PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=dnsmasq-devel-*
 
-USE_HARDENING=	safestack
+USE_HARDENING=	cfi safestack
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 

@@ -1,3 +1,4 @@
+
 # $FreeBSD$
 #
 
@@ -27,7 +28,6 @@
     SUBDIR += aslookup
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
-    SUBDIR += asterisk11
     SUBDIR += asterisk13
     SUBDIR += avahi
     SUBDIR += avahi-app
@@ -83,6 +83,7 @@
     SUBDIR += corkscrew
     SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
+    SUBDIR += cppzmq
     SUBDIR += crtmpserver
     SUBDIR += cryptcat
     SUBDIR += csocks
@@ -97,6 +98,7 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
+    SUBDIR += deviceatlas-enterprise-c
     SUBDIR += dgd
     SUBDIR += dgd-kernel
     SUBDIR += dgd-lpmud
@@ -135,6 +137,7 @@
     SUBDIR += exabgp
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += flower
     SUBDIR += flowgrep
@@ -373,7 +376,6 @@
     SUBDIR += librouteros
     SUBDIR += librsync2
     SUBDIR += libsocket++
-    SUBDIR += libsocketcpp
     SUBDIR += libsrtp
     SUBDIR += libtnl
     SUBDIR += libtrace
@@ -574,6 +576,7 @@
     SUBDIR += p5-IP-Anonymous
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
+    SUBDIR += p5-IPv6-Address
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common
@@ -1037,7 +1040,6 @@
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
-    SUBDIR += py-python-cloudfiles
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-heatclient
@@ -1072,7 +1074,6 @@
     SUBDIR += py-terminado
     SUBDIR += py-tofu
     SUBDIR += py-tweepy
-    SUBDIR += py-twistedPair
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi
@@ -1099,6 +1100,7 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
+    SUBDIR += quagga-esr
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted
@@ -1178,6 +1180,7 @@
     SUBDIR += rubygem-fog-joyent
     SUBDIR += rubygem-fog-local
     SUBDIR += rubygem-fog-openstack
+    SUBDIR += rubygem-fog-ovirt
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-rackspace
@@ -1384,6 +1387,7 @@
     SUBDIR += torsocks
     SUBDIR += traceroute
     SUBDIR += traff
+    SUBDIR += traefik
     SUBDIR += trafshow
     SUBDIR += trafshow3
     SUBDIR += tramp
@@ -1462,7 +1466,6 @@
     SUBDIR += xmlrpc-epi
     SUBDIR += xorp
     SUBDIR += xprobe
-    SUBDIR += xpvm
     SUBDIR += xrdesktop2
     SUBDIR += xrdp
     SUBDIR += xrdp-devel

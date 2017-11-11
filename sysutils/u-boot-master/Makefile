@@ -5,7 +5,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
-DISTVERSIONPREFIX= ports-v
+DISTVERSIONPREFIX=	ports-v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
 
@@ -15,11 +15,12 @@ COMMENT=	Cross-build das u-boot for ${MODEL}
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	gsed:textproc/gsed \
-		swig:devel/swig13 \
+		swig3.0:devel/swig30 \
 		dtc>=1.4.1:sysutils/dtc
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		gmake python:build shebangfix
+BINARY_ALIAS=	swig=swig3.0 sed=gsed
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
@@ -31,11 +32,9 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} DTC=${LOCALBASE}/bin/dtc ${ARCHFLAGS}
+MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} DTC=${LOCALBASE}/bin/dtc PYTHON=${PYTHON_CMD} ${ARCHFLAGS}
 
 NO_ARCH=	yes
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
 
 # Sanity checks
 .if !defined(MODEL)
@@ -66,7 +65,7 @@ UBOOT_MOVE_ZYNQ_7000=${WRKSRC}/spl/boot.bin ${.CURDIR}/files/uEnv.txt
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2017.07.00.1
+UBOOT_VERSION?=	2017.09.00
 
 .if !defined(UBOOT_PLIST) && defined(UBOOT_PLIST_${FAMILY:tu})
 UBOOT_PLIST=${UBOOT_PLIST_${FAMILY:tu}}
@@ -97,9 +96,9 @@ UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 
 # Each u-boot family has different files to include, bring them in.
 .for i in ${UBOOT_PLIST}
-PLIST_FILES+= ${UBOOT_DIR}/${i}
+PLIST_FILES+=	${UBOOT_DIR}/${i}
 .endfor
-PLIST_FILES+= ${UBOOT_DIR}/README
+PLIST_FILES+=	${UBOOT_DIR}/README
 
 do-configure:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} ${BOARD_CONFIG})
