@@ -20,14 +20,12 @@ BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
 BROKEN_powerpc64=	fails to build: error: field 'r' has incomplete type
 BROKEN_sparc64=		fails to build: fails to compile dwarf_begin_elf.c
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
-=======
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 PATCH_DEPENDS=	${NONEXISTENT}:devel/gnulib:extract
 
 PLIST_SUB=	VERSION=${PORTVERSION}
->>>>>>> upstream/master
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
