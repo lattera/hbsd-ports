@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 diff --git configure.ac configure.ac
 index 5c73168a..abbf4135 100644
 --- configure.ac
 +++ configure.ac
 @@ -138,8 +138,15 @@ AC_CHECK_FUNC(dlopen, [],
+=======
+--- configure.ac.orig	2017-09-28 02:25:19 UTC
++++ configure.ac
+@@ -156,11 +156,35 @@ AC_CHECK_FUNC(dlopen, [],
+>>>>>>> upstream/master
  AC_SUBST(DLOPEN_LIBS)
 
  # checking for openssl

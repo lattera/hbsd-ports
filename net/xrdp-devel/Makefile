@@ -2,7 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xrdp
+<<<<<<< HEAD
 PORTVERSION=	0.9.1
+=======
+PORTVERSION=	0.9.4
+>>>>>>> upstream/master
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 PORTEPOCH=	1
@@ -28,7 +32,11 @@ USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
+<<<<<<< HEAD
 GH_TAGNAME=	v0.1.0:librfxcodec v0.1.0:libpainter
+=======
+GH_TAGNAME=	v0.1.3:librfxcodec v0.1.1:libpainter
+>>>>>>> upstream/master
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -40,15 +48,24 @@ INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
 
-OPTIONS_DEFINE=	DEBUG FUSE IPV6 MP3LAME OPUS
-OPTIONS_DEFAULT=	OPUS MP3LAME
+OPTIONS_DEFINE=	DEBUG FUSE IPV6
+OPTIONS_DEFAULT=	FDKAAC MP3LAME OPUS
+OPTIONS_GROUP=	AUDIO_CODEC
+OPTIONS_GROUP_AUDIO_CODEC=	FDKAAC MP3LAME OPUS
+FDKAAC_DESC=	Enable Fraunhofer FDK AAC for audio redirection
 FUSE_DESC=	Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=	Enable MP3 Lame for audio redirection
 OPUS_DESC=	Enable Opus for audio redirection
 
-IPV6_CONFIGURE_ENABLE=	ipv6
 DEBUG_CONFIGURE_ENABLE=	xrdpdebug
+FDKAAC_CONFIGURE_ENABLE=	fdkaac
+FDKAAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
 FUSE_CONFIGURE_ENABLE=	fuse
+<<<<<<< HEAD
+=======
+FUSE_USES=		fuse
+IPV6_CONFIGURE_ENABLE=	ipv6
+>>>>>>> upstream/master
 MP3LAME_CONFIGURE_ENABLE=	mp3lame
 MP3LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 OPUS_CONFIGURE_ENABLE=	opus
