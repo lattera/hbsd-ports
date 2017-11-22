@@ -377,10 +377,8 @@
     SUBDIR += links1
     SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-c7-qtwebkit
-    SUBDIR += linux-firefox
     SUBDIR += linux-flashplayer
     SUBDIR += linux-opera
-    SUBDIR += linux-seamonkey
     SUBDIR += lionwiki
     SUBDIR += litmus
     SUBDIR += ljdeps
@@ -1543,6 +1541,7 @@
     SUBDIR += py-boto3
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
+    SUBDIR += py-buku
     SUBDIR += py-cachecontrol
     SUBDIR += py-caldav
     SUBDIR += py-cherrypy

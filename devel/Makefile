@@ -319,6 +319,7 @@
     SUBDIR += clojure-cider
     SUBDIR += cloudabi
     SUBDIR += cloudabi-toolchain
+    SUBDIR += clthreads
     SUBDIR += cltune
     SUBDIR += cmake
     SUBDIR += cmake-doc
@@ -3095,6 +3096,7 @@
     SUBDIR += p5-POSIX-strftime-Compiler
     SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
+    SUBDIR += p5-Pthread-GetThreadId
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
     SUBDIR += p5-Package-DeprecationManager
