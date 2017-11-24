@@ -5,6 +5,7 @@
 
     SUBDIR += 0d1n
     SUBDIR += 1password-client
+    SUBDIR += 2fa
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
@@ -969,6 +970,7 @@
     SUBDIR += py-slowaes
     SUBDIR += py-spake2
     SUBDIR += py-ssh
+    SUBDIR += py-ssh-audit
     SUBDIR += py-sslstrip
     SUBDIR += py-stem
     SUBDIR += py-stix
