@@ -16,14 +16,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:math/py-numarray@${FLAVOR
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		gmake python tar:bzip2
-=======
 USES=		gmake python:2.7 tar:bzip2
 USE_PYTHON=	flavors
->>>>>>> upstream/master
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		BIN_PREFIX="${PREFIX}/bin" \
 		LIB_PREFIX="${PREFIX}/lib" \
