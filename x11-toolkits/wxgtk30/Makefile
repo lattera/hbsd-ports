@@ -11,15 +11,19 @@ DISTNAME=	wxWidgets-${PORTVERSION}
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/docs/gpl.txt
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lib gmake iconv jpeg pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake iconv jpeg localbase pkgconfig tar:bzip2
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
@@ -35,12 +39,15 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 CONFIGURE_ENV=	X11BASE="${LOCALBASE}" \
 		ac_cv_header_sys_inotify_h=no
 
+<<<<<<< HEAD
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-std=c++11
 LIBS+=		-L${LOCALBASE}/lib
 
 USE_HARDENING=	pie:off relro:off
 
+=======
+>>>>>>> upstream/master
 OPTIONS_DEFINE=	GSTREAMER MSPACK NLS WEBKIT
 OPTIONS_DEFAULT=GSTREAMER MSPACK WEBKIT
 MSPACK_DESC=	Microsoft archives support
