@@ -14,13 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ebook2cw:comms/ebook2cw
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USE_WX=	2.8
-=======
 USE_WX=		2.8
->>>>>>> freebsd/master
 
 PORTDOCS=	*
 
