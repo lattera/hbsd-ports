@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.14.6
+PORTVERSION=		1.16
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-114
+PKGNAMESUFFIX=		-116
 .endif
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -17,10 +17,7 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 
-DEPRECATED=		EOL twelve months after release of krb5-1.16
-EXPIRATION_DATE=	2017-12-31
-
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[35]-[0-9]* \
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[34]-[0-9]* \
 			krb5-1.[0-9]* krb5-devel-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
@@ -102,6 +99,9 @@ CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
 
+
+.include <bsd.port.pre.mk>
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
 # html documentation
@@ -146,4 +146,4 @@ post-install-LDAP-on:
 	${INSTALL_DATA} ${WRKSRC}/plugins/kdb/ldap/libkdb_ldap/kerberos.ldif \
 		${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
