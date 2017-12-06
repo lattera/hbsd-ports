@@ -1,24 +1,21 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 # $FreeBSD$
 
-PORTNAME=	mail
-PORTVERSION=	0.7.5
+PORTNAME=	tasks
+PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
-CATEGORIES=	mail
+CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	brnrd@freebsd.org
-COMMENT=	Mail app for Nextcloud
+COMMENT=	Tasks app for Nextcloud
 
 LICENSE=	AGPLv3
 
 RUN_DEPENDS=	nextcloud>=12:www/nextcloud
-
-USES=		gettext
-USE_PHP=	imap
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -33,6 +30,6 @@ WWWDIR=		${PREFIX}/www/nextcloud/apps/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
