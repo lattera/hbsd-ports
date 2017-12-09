@@ -22,13 +22,9 @@ GH_ACCOUNT=	${PORTNAME}hq
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to it yet
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		cmake:outsource
-=======
 USES=		cmake:outsource compiler:env
->>>>>>> freebsd/master
 USE_QT4=	moc_build qmake_build rcc_build uic_build opengl
 
 LDFLAGS+=	-lboost_atomic
