@@ -17,12 +17,9 @@ LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libao.so:audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:audio/libaiff
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-=======
 USES=		localbase:ldflags
->>>>>>> freebsd/master
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
