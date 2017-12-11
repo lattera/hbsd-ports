@@ -23,19 +23,11 @@ PLIST_FILES=	include/hijack.h \
 		lib/libhijack.so.1 \
 		sbin/hijack
 
-<<<<<<< HEAD
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1100000
-BROKEN=	only for 11.0 and above
-.endif
-=======
 BROKEN_FreeBSD_10=	Designed for 11.0 and newer
->>>>>>> freebsd/master
 
 do-install: # the original install fails: https://github.com/SoldierX/libhijack/issues/6
 	${INSTALL_DATA} ${WRKSRC}/include/hijack.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_LIB} ${WRKSRC}/libhijack/obj/libhijack.so* ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/hijack/obj/hijack ${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
