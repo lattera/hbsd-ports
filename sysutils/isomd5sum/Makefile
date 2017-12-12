@@ -13,9 +13,13 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		gmake python
+=======
+USES=		gmake python:2.7
+>>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 
