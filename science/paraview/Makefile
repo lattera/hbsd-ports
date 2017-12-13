@@ -33,12 +33,9 @@ RUN_DEPENDS=	bash:shells/bash	\
 
 CONFLICTS_BUILD=	protobuf*
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-=======
 USES=		alias desktop-file-utils cmake:outsource jpeg python:2.7 shebangfix
->>>>>>> upstream/master
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguisttools_build assistant_run qt3support \
 		corelib dbus designer gui help-tools network script \
