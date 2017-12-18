@@ -40,4 +40,12 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/tutorial/,} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_CPU:Msse2}
+PLIST_SUB+=	SSE2=""
+.else
+PLIST_SUB+=	SSE2="@comment "
+.endif
+
+.include <bsd.port.post.mk>
