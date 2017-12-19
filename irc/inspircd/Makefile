@@ -12,19 +12,14 @@ COMMENT=	Modular C++ IRC daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-<<<<<<< HEAD
-CONFLICTS=	inspircd-1.*
-
-USE_HARDENING=	safestack
-
-=======
 # Configure script is written in perl
 USES=		cpe perl5
 USE_PERL5=	build
 CPE_VENDOR=	inspire_ircd
 CPE_PRODUCT=	inspircd
->>>>>>> upstream/master
 USE_GITHUB=	yes
+
+USE_HARDENING=	safestack
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cc=${CXX} \
