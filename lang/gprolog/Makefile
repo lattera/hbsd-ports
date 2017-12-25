@@ -14,13 +14,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-<<<<<<< HEAD
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
 USE_HARDENING=	pie:off
 
-=======
->>>>>>> upstream/master
 USES=		gmake
 USE_GCC=	any
 CFLAGS+=	-O3 # gcc5/gcc6 + -O2 = pl2wam hangs
