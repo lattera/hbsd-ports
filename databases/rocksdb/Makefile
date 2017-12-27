@@ -18,13 +18,11 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_armv6?=		does not build: db/c.cc:2281:44: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int')
 BROKEN_armv7?=		does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc) #'`
->>>>>>> freebsd/master
+
+USE_HARDENING=	pie:off
 
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
 OPTIONS_DEFAULT=LZ4
