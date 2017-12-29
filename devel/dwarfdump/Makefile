@@ -16,12 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:devel/libdwarf
 
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-=======
 USES=		localbase:ldflags
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dwarfdump man/man1/dwarfdump.1.gz
