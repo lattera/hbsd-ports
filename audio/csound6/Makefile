@@ -22,13 +22,9 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		alias bison cmake:outsource,noninja localbase python:2
-=======
 USES=		alias bison cmake:outsource,noninja eigen:3 localbase python:2
->>>>>>> freebsd/master
 # math/gmm++ requires c++11
 USE_CXXSTD=	c++11
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
