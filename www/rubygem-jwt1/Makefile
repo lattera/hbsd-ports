@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	jwt
-DISTVERSION=	2.1.0
+PORTVERSION=	1.5.6
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	1
 
-MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby implementation of RFC 7519 OAuth JSON Web Token standard
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	JSON Web Token implementation in Ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
-USE_RUBY=	yes
+PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes
+USE_RUBY=	yes
+USES=		gem
 
 .include <bsd.port.mk>
