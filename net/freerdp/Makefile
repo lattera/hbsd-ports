@@ -15,14 +15,12 @@ USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pk
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 CFI_OVERRIDE=	-fno-sanitize=cfi-icall
-=======
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
->>>>>>> upstream/master
 
 CMAKE_ARGS+=	-DWITH_LIBSYSTEMD=OFF -DWITH_GSTREAMER_0_10=OFF ${CMAKE_ARGS_${ARCH}}
 
