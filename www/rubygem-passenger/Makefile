@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake
 
+USE_HARDENING=	pie:off relro:off
+
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
 
@@ -43,13 +45,6 @@ SHEBANG_FILES=	\
 	dev/ci/run-tests-natively \
 	dev/ci/setup-host
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-NOPORTDOCS=	yes
-
-=======
->>>>>>> freebsd/master
 APACHE22_USE=	APACHE=22+
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
