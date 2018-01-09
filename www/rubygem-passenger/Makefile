@@ -43,10 +43,13 @@ SHEBANG_FILES=	\
 	dev/ci/run-tests-natively \
 	dev/ci/setup-host
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 NOPORTDOCS=	yes
 
+=======
+>>>>>>> freebsd/master
 APACHE22_USE=	APACHE=22+
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
