@@ -11,13 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13 \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Traffic visualizer, similar to nettop
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-MAN8=		jnettop.8
-
-=======
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake
 USE_GNOME=	glib20
