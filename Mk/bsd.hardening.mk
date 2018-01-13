@@ -281,7 +281,7 @@ OPTIONS_GROUP_HARDENING+=CFI
 ### Retpoline support ###
 #########################
 
-.if ${HARDENING_OFF:Mcfi} == ""
+.if ${HARDENING_OFF:Mretpoline} == ""
 
 .if ${OSVERSION} >= 1200055 && ${ARCH} == "amd64"
 
