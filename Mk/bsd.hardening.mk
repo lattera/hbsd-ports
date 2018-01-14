@@ -286,14 +286,13 @@ OPTIONS_GROUP_HARDENING+=CFI
 
 .if ${HARDENING_OFF:Mretpoline} == ""
 
-.if ${OSVERSION} >= 1200055 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 1200055 && ${HBSDVERSION} >= 1200057 \
+	&& ${ARCH} == "amd64" && ${LLD_IS_LD} == "yes"
 
-retpoline_ARGS?=
+retpoline_ARGS?=	auto
 
 .if ${retpoline_ARGS:Mauto}
-.if ${_USE_HARDENING:Mstatic}
-retpoline_ARGS+=		off
-.endif
+USE_HARDENING:=		retpoline ${USE_HARDENING:Nretpoline}
 .endif
 
 RETPOLINE_DESC=		Build with Retpoline
