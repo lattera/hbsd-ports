@@ -12,13 +12,9 @@ COMMENT=	GTK based Gnutella client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		iconv localbase:ldflags pkgconfig tar:bzip2
-=======
 USES=		iconv localbase:ldflags pkgconfig tar:xz
->>>>>>> freebsd/master
 USE_GNOME=	glib20 libxml2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
