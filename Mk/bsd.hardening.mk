@@ -65,7 +65,7 @@ HARDENINGMKINCLUDED=	bsd.hardening.mk
 HBSDVERSION!=		${AWK} '/^\#define[[:blank:]]__HardenedBSD_version/ {print $$3}' /usr/include/sys/pax.h \
 	| ${SED} -e 's/UL$$//g'
 
-HARDENING_ALL=		cfi pie relro safestack
+HARDENING_ALL=		cfi pie relro retpoline safestack
 HARDENING_OFF?=		# all features are on by default
 
 USE_HARDENING?=		# implicit auto-defaults may apply
