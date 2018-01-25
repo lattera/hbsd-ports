@@ -53,6 +53,8 @@ CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
+USE_HARDENING=		pie:off relro:off
+
 # Rust's target arch string is different from *BSD arch strings
 RUST_ARCH_aarch64=	aarch64
 RUST_ARCH_amd64=	x86_64
@@ -61,13 +63,7 @@ RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
-<<<<<<< HEAD
-USE_HARDENING=		pie:off relro:off
-
-USES=		compiler gmake libedit pkgconfig python:2.7,build ssl
-=======
 USES=		compiler gmake libedit pkgconfig python:2.7,build ssl tar:xz
->>>>>>> freebsd/master
 
 OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN SOURCES
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
