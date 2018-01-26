@@ -15,15 +15,10 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
-OPTIONS_DEFAULT=PYGDB
-=======
 OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS SYMLINK
 OPTIONS_DEFAULT=PYGDB SYMLINK
->>>>>>> freebsd/master
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
