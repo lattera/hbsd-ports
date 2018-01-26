@@ -20,14 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 CONFLICTS=	libbfd-[0-9]*
 .endif
 
-<<<<<<< HEAD
-OPTIONS_DEFINE=	NLS STATIC
-=======
 #TEST_DEPENDS+=	runtest:misc/dejagnu
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	NLS RELRO STATIC
->>>>>>> freebsd/master
+OPTIONS_DEFINE=	NLS STATIC
 STATIC_PREVENTS=	NLS
 
 RELRO_DESC=	enable -z relro in ELF linker by default
