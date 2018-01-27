@@ -477,6 +477,7 @@
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
     SUBDIR += easygit
+    SUBDIR += easyloggingpp
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
@@ -1635,6 +1636,7 @@
     SUBDIR += llvm39
     SUBDIR += llvm40
     SUBDIR += llvm50
+    SUBDIR += llvm60
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -4198,6 +4200,7 @@
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyLD
     SUBDIR += py-PyODE
+    SUBDIR += py-QtPy
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
@@ -6061,6 +6064,7 @@
     SUBDIR += xtoolchain-llvm-devel
     SUBDIR += xtoolchain-llvm40
     SUBDIR += xtoolchain-llvm50
+    SUBDIR += xtoolchain-llvm60
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
