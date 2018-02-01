@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=	Fails to link: missing sbrk
 CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
 
+USE_HARDENING=	pie:off relro:off
+
 FLAVORS=		full canna nox
 full_CONFLICTS_INSTALL=	emacs-canna emacs-nox
 canna_CONFLICTS_INSTALL=	emacs emacs-nox
@@ -26,14 +28,9 @@ canna_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 nox_CONFLICTS_INSTALL=	emacs emacs-canna
 nox_PKGNAMESUFFIX=	-nox
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-=======
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 
 CPE_VENDOR=	gnu
->>>>>>> freebsd/master
 EMACS_VER=	25.3
 GNU_CONFIGURE=	yes
 INFO_PATH=	${DATADIR_REL}/info
