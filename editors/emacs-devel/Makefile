@@ -15,10 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-=======
 FLAVORS=		full nox
 full_CONFLICTS_INSTALL=	emacs-devel_nox
 full_PKGNAMESUFFIX=	-devel
@@ -26,7 +24,6 @@ nox_CONFLICTS_INSTALL=	emacs-devel
 nox_PKGNAMESUFFIX=	-devel_nox
 
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
->>>>>>> freebsd/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	b3fb0d4
