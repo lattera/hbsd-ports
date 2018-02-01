@@ -1412,10 +1412,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
 
-.if defined(USE_EMACS)
-.include "${PORTSDIR}/Mk/bsd.emacs.mk"
-.endif
-
 .if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp*} ))
 DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
 USES+=	php
