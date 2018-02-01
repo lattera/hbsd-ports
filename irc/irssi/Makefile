@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
@@ -17,10 +17,19 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 OPTIONS_DEFINE=	PERL PROXY SOCKS BOT DOCS TRUECOLOR
 OPTIONS_DEFAULT=	PERL
+=======
+OPTIONS_DEFINE=	PERL PROXY SOCKS BOT DOCS TRUECOLOR CAPSICUM
+OPTIONS_DEFAULT=	PERL CAPSICUM
+
+# If we're on FreeBSD 10 don't offer the Capsicum option.
+OPTIONS_EXCLUDE_FreeBSD_10=	CAPSICUM
+
+>>>>>>> freebsd/master
 OPTIONS_SUB=	yes
 SOCKS_DESC=	Socks proxy support
 SOCKS_CONFIGURE_WITH=	socks
@@ -32,6 +41,8 @@ PERL_CONFIGURE_OFF=	--with-perl=no
 PROXY_CONFIGURE_WITH=	proxy
 TRUECOLOR_DESC=	Truecolor (24bit) support
 TRUECOLOR_CONFIGURE_ENABLE=	true-color
+CAPSICUM_DESC=	Capsicum support
+CAPSICUM_CONFIGURE_WITH=	capsicum
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
