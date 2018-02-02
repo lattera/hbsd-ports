@@ -24,21 +24,11 @@ LIB_DEPENDS=	libargdata.so:devel/argdata \
 		libarpc.so:devel/arpc \
 		libyaml-cpp.so:devel/yaml-cpp
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		cmake localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100511
-IGNORE=		requires various C++17 features
-.endif
-
-.include <bsd.port.post.mk>
-=======
 .include <bsd.port.mk>
->>>>>>> freebsd/master
