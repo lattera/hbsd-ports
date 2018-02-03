@@ -9,14 +9,9 @@ COMMENT=	CPU clock speed/frequency daemon
 
 LICENSE=	ISCL
 
-<<<<<<< HEAD
-USES=		compiler:c++11-lib
-
 USE_HARDENING=	safestack
 
-=======
 USES=		compiler:c++14-lang
->>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	lonkamikaze
 GH_TUPLE=	lonkamikaze:powerdxx:6845b0e:powerdxx/gh-pages
