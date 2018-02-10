@@ -34,12 +34,9 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libassimp.so:multimedia/assimp
 
 USES=		autoreconf compiler:c++11-lib gmake pkgconfig
-<<<<<<< HEAD
 
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
 GH_TAGNAME=	20180203
