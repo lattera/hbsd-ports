@@ -15,11 +15,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	yasm:devel/yasm
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		cmake pathfix tar:bz2
-=======
 USES=		cmake compiler:c++14-lang pathfix
 
 OPTIONS_DEFINE=		DEBUG OPTIMIZED_FLAGS
@@ -38,7 +35,6 @@ HI10P_DESC=	Enable HI10P Support (64-bit only)
 HI12P_DESC=	Enable HI12P Support (64-bit only)
 OPTIMIZED_FLAGS_DESC=	Enable O3 optimization
 
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DPLATFORM_LIBS=md -DENABLE_TESTS=on
 CFLAGS_mips=	-DNO_ATOMICS # cannot use lang/gcc
