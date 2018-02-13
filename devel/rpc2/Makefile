@@ -16,13 +16,9 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	liblwp.so:devel/lwp
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		gmake libtool pathfix perl5 pkgconfig
-=======
 USES=		gmake libtool pathfix pkgconfig
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
