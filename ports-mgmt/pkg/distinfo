@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 TIMESTAMP = 1515349574
 SHA256 (pkg-1.10.4.tar.xz) = 1c09806c39eaa4a9b053724631d2e78cac010dbb3b77b945560485e6b6ac9117
 SIZE (pkg-1.10.4.tar.xz) = 2188072
+=======
+TIMESTAMP = 1518650836
+SHA256 (pkg-1.10.5.tar.xz) = c2e5ff8505a7f859fd579dc3974822575de8178868fd2497cec0ec18f06da041
+SIZE (pkg-1.10.5.tar.xz) = 2216560
+>>>>>>> upstream/master
