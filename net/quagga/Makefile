@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quagga
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	SAVANNAH
 
@@ -16,15 +15,19 @@ BUILD_DEPENDS=	gawk:lang/gawk
 
 CONFLICTS=	openbgpd openospfd zebra quagga-esr frr pimd
 
+<<<<<<< HEAD
 # Quagga uses shared libraries as plugins, but
 # does not fail with safestack as no port depends
 # on these internal library plugins:
 USE_HARDENING=	safestack
 
+=======
+USES=		compiler:c11 cpe gmake libtool makeinfo \
+		perl5 readline ssl
+>>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exampledir=${PREFIX}/share/examples/quagga
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool makeinfo perl5 readline compiler:c11 cpe
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

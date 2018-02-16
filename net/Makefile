@@ -196,6 +196,7 @@
     SUBDIR += google-startup-scripts
     SUBDIR += googlecl
     SUBDIR += gopher
+    SUBDIR += goreplay
     SUBDIR += gotthard
     SUBDIR += gq
     SUBDIR += grdesktop
@@ -1109,7 +1110,6 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
-    SUBDIR += quagga-esr
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted
