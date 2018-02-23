@@ -1006,6 +1006,7 @@
     SUBDIR += py-impacket
     SUBDIR += py-ipaddress
     SUBDIR += py-iplib
+    SUBDIR += py-iptools
     SUBDIR += py-kafka-python
     SUBDIR += py-kombu
     SUBDIR += py-ldap
@@ -1124,7 +1125,6 @@
     SUBDIR += radreport
     SUBDIR += radsecproxy
     SUBDIR += radvd
-    SUBDIR += raggle
     SUBDIR += rclone
     SUBDIR += rdapper
     SUBDIR += rdesktop

@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	archivemount
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cybernoia.de/software/archivemount/
 
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Mount archives with FUSE
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
+=======
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		fuse gmake iconv libarchive pkgconfig
+>>>>>>> upstream/master
 GNU_CONFIGURE=	yes
-USES=		fuse pkgconfig iconv gmake libarchive
 
 PLIST_FILES=	bin/archivemount \
 		man/man1/archivemount.1.gz
