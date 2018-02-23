@@ -14,9 +14,8 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
-=======
+
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 LIB_DEPENDS+=	libpng.so:graphics/png \
@@ -25,7 +24,6 @@ LIB_DEPENDS+=	libpng.so:graphics/png \
 MAKE_JOBS_UNSAFE=	yes
 
 SFSUBDIR=	snapshot_2018-01-17
->>>>>>> upstream/master
 
 USES=		autoreconf:build libtool gmake ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
