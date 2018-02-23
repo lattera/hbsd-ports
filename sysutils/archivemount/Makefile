@@ -9,16 +9,13 @@ MASTER_SITES=	http://www.cybernoia.de/software/archivemount/
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Mount archives with FUSE
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-=======
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse gmake iconv libarchive pkgconfig
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
+
+USE_HARDENING=	pie:off relro:off
 
 PLIST_FILES=	bin/archivemount \
 		man/man1/archivemount.1.gz

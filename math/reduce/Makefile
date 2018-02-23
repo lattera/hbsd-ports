@@ -14,13 +14,9 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		autoreconf:build gmake libtool ncurses
-=======
 USES=		autoreconf:build libtool gmake ncurses
->>>>>>> upstream/master
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
