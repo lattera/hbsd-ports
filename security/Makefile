@@ -1260,6 +1260,7 @@
     SUBDIR += tlswrap
     SUBDIR += tmux-cssh
     SUBDIR += tor
+    SUBDIR += tor-capsicum
     SUBDIR += tor-devel
     SUBDIR += tpm-tools
     SUBDIR += tpmmanager
