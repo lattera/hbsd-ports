@@ -8,7 +8,7 @@ CATEGORIES=	security net ipv6
 MASTER_SITES=	http://distsets.hardenedbsd.org/
 PKGNAMESUFFIX=	-capsicum
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Anonymizing overlay network for TCP
 
 LICENSE=	BSD3CLAUSE
