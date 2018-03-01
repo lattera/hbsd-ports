@@ -14,17 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-MAKE_JOBS_UNSAFE=yes
-USES=		cmake:noninja compiler:c++11-lang gettext gmake perl5 readline
-=======
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicui18n.so:devel/icu \
 		libmsgpuck.so:devel/msgpuck \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
+
+USE_HARDENING=	pie:off
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
@@ -34,7 +30,6 @@ CMAKE_ON=	ENABLE_DIST
 MAKE_JOBS_UNSAFE=	yes
 USES=		cmake:noninja compiler:c++11-lang gettext-runtime gmake perl5 readline ssl
 USE_PERL5=	build
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
