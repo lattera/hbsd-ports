@@ -19,14 +19,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		cmake:outsource desktop-file-utils gettext localbase:ldflags pathfix pkgconfig shared-mime-info
-=======
 USES=		cmake:outsource desktop-file-utils gettext localbase:ldflags pathfix \
 		pkgconfig shared-mime-info ssl
->>>>>>> freebsd/master
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext
 PATHFIX_WRKSRC=	${WRKSRC}/remmina
