@@ -12,12 +12,9 @@ COMMENT=	Better top(1) - interactive process viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-=======
 USES=		autoreconf libtool localbase ncurses pkgconfig python:2.7,build shebangfix
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unicode
 USE_GITHUB=	yes
