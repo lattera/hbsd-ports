@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	htop
-PORTVERSION=	2.0.2
+DISTVERSION=	2.1.0-26
+DISTVERSIONSUFFIX=	-g697f5bb
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -11,15 +12,18 @@ COMMENT=	Better top(1) - interactive process viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
+=======
+USES=		autoreconf libtool localbase ncurses pkgconfig python:2.7,build shebangfix
+>>>>>>> upstream/master
 GNU_CONFIGURE=	yes
-LIBS+=		-lexecinfo
-
 CONFIGURE_ARGS=	--enable-unicode
-USES=		autoreconf libtool ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	hishamhm
+SHEBANG_FILES=	scripts/MakeHeader.py
+
 PLIST_FILES=	bin/htop \
 		man/man1/htop.1.gz \
 		share/applications/htop.desktop \
