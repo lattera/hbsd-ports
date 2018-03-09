@@ -4,6 +4,7 @@
 PORTNAME=	matplotlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -79,6 +80,12 @@ TKAGGBACKEND_BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver
 WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${FLAVOR}
+.endif
+
 post-extract:
 	${FIND} ${WRKSRC} -name \*.py | ${XARGS} ${CHMOD} -x
 
@@ -107,4 +114,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
