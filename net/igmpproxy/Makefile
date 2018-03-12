@@ -12,17 +12,11 @@ COMMENT=	Multicast forwarding IGMP proxy
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	safestack
+
 USES=		autoreconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	pali
-<<<<<<< HEAD
-
-USE_HARDENING=	safestack
-
-USE_RC_SUBR=	igmpproxy
-USES=		autoreconf
-=======
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	igmpproxy
 
