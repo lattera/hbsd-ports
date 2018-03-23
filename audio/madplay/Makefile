@@ -16,11 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmad.so:audio/libmad \
 		libid3tag.so:audio/libid3tag
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 USES=		localbase
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lz
