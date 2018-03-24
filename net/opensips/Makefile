@@ -33,14 +33,10 @@ GINSTALL=		ginstall
 WRKSRC=			${WRKDIR}/opensips-${PORTVERSION}
 DOCSDIR=		share/doc/opensips
 
-<<<<<<< HEAD
-USE_HARDENING=		pie:off relro:off
-
-USE_RC_SUBR=		opensips
-=======
 USERS=			opensips
 GROUPS=			opensips
->>>>>>> freebsd/master
+
+USE_HARDENING=		pie:off relro:off
 
 USES=			gmake ncurses perl5 pkgconfig python:2.7 shebangfix ssl
 USE_RC_SUBR=		opensips
