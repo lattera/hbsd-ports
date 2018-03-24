@@ -26,9 +26,6 @@ FLOWD_USER=	_flowd
 USERS=		${FLOWD_USER}
 GROUPS=		${FLOWD_USER}
 
-USE_HARDENING=	cfi safestack
-CFI_OVERRIDE=	-fno-sanitize=cfi-icall
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPERL}
