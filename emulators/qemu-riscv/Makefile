@@ -14,11 +14,9 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-=======
 USES=	gmake libtool makeinfo pkgconfig python:2.7,build
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off relro:off
 
 USE_GITHUB=	yes
 GH_TUPLE=	riscv:riscv-qemu:ec023da \
