@@ -17,17 +17,11 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 CONFLICTS=	openbgpd openospfd zebra quagga-esr quagga
 
-<<<<<<< HEAD
 # FRR uses shared libraries as plugins, but
 # does not fail with safestack as no port depends
 # on these internal library plugins:
 USE_HARDENING=	safestack
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	FRRouting
-
-=======
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf bison gmake pkgconfig libtool makeinfo readline
