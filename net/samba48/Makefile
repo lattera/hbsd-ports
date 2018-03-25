@@ -1,28 +1,28 @@
 # Created by: timur@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME?=			${SAMBA4_BASENAME}-devel
-PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=			0
+PORTNAME=			${SAMBA4_BASENAME}48
+PORTVERSION=			${SAMBA4_VERSION}
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
 
-MAINTAINER?=			timur@FreeBSD.org
-COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
+MAINTAINER=			timur@FreeBSD.org
+COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
-CONFLICTS?=			samba4-4.0.* samba4[1-689]-4.* p5-Parse-Pidl-4.*
+CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-79]-4.* p5-Parse-Pidl-4.*
 
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.7.3
+SAMBA4_VERSION=			4.8.0
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -60,13 +60,16 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 				--with-lockdir="${SAMBA4_LOCKDIR}" \
 				--with-statedir="${SAMBA4_LOCKDIR}" \
 				--with-cachedir="${SAMBA4_LOCKDIR}" \
+				--with-bind-dns-dir=${SAMBA4_BINDDNSDIR} \
 				--with-privatedir="${SAMBA4_PRIVATEDIR}" \
 				--with-logfilebase="${SAMBA4_LOGDIR}"
-# Flags
+# XXX: Flags
 CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
+CPPFLAGS+=			-I${LOCALBASE}/include
+LDFLAGS+=			-L${LOCALBASE}/lib
 
 USES=				cpe compiler waf pkgconfig perl5 \
-				readline iconv shebangfix
+				iconv shebangfix
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
 WAF_CMD=			buildtools/bin/waf
@@ -75,6 +78,7 @@ CONFIGURE_LOG=			bin/config.log
 PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
 PLIST_SUB+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+SUB_LIST+=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 # Options
 OPTIONS_SUB=			yes
@@ -89,7 +93,7 @@ OPTIONS_DEFINE+=		DEVELOPER MANDOC
 OPTIONS_DEFINE_amd64=		AESNI
 OPTIONS_DEFAULT_amd64=		AESNI
 
-OPTIONS_DEFINE+=		CLUSTER CUPS GLUSTERFS GPGME NTVFS SPOTLIGHT
+OPTIONS_DEFINE+=		CUPS GPGME NTVFS SPOTLIGHT
 
 OPTIONS_RADIO=			DNS ZEROCONF
 OPTIONS_RADIO_DNS=		NSUPDATE BIND99 BIND910 BIND911
@@ -118,6 +122,8 @@ BIND910_DESC=			Use Bind 9.10 as AD DC DNS server frontend
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
+PLIST_SUB+=			CLUSTER="@comment "
+SUB_LIST+=			CLUSTER="@comment "
 # XXX: Unconditional dependencies which can't be switched off(if present in the system)
 # popt
 LIB_DEPENDS+=			libpopt.so:devel/popt
@@ -134,41 +140,101 @@ RUN_DEPENDS+=			jansson>=2.10:devel/jansson
 # Needed for IDL compiler
 BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
 # Libarchive
+SAMBA4_BUNDLED_LIBS+=		!libarchive
 BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
-SAMBA4_BUNDLED_LIBS+=		!libarchive
+### Bundled libraries
+#SAMBA4_BUNDLED_CMOCKA=		yes
+#SAMBA4_BUNDLED_TALLOC=		yes
+#SAMBA4_BUNDLED_TEVENT=		yes
+#SAMBA4_BUNDLED_TDB=		yes
+#SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_LDB=			13
 # cmocka
+.if defined(SAMBA4_BUNDLED_CMOCKA)
+SAMBA4_BUNDLED_LIBS+=		cmocka
+CONFLICTS+=			cmocka-1.*
+PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
+SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA=""
+.else
+SAMBA4_BUNDLED_LIBS+=		!cmocka
 BUILD_DEPENDS+=			cmocka>=1.1.1:sysutils/cmocka
 RUN_DEPENDS+=			cmocka>=1.1.1:sysutils/cmocka
-SAMBA4_BUNDLED_LIBS+=		!cmocka
+PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
+SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
+.endif
 # talloc
-BUILD_DEPENDS+=			talloc>=2.1.9:devel/talloc
-RUN_DEPENDS+=			talloc>=2.1.9:devel/talloc
-SAMBA4_BUNDLED_LIBS+=		!talloc,!pytalloc-util
+.if defined(SAMBA4_BUNDLED_TALLOC)
+SAMBA4_BUNDLED_LIBS+=		talloc
+CONFLICTS+=			talloc-2.*
+PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
+SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
+.else
+SAMBA4_BUNDLED_LIBS+=		!talloc
+BUILD_DEPENDS+=			talloc>=2.1.11:devel/talloc
+RUN_DEPENDS+=			talloc>=2.1.11:devel/talloc
+PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
+SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
+.endif
 # tevent
-BUILD_DEPENDS+=			tevent>=0.9.34:devel/tevent
-RUN_DEPENDS+=			tevent>=0.9.34:devel/tevent
-SAMBA4_BUNDLED_LIBS+=		!tevent,!pytevent
+.if defined(SAMBA4_BUNDLED_TEVENT)
+SAMBA4_BUNDLED_LIBS+=		tevent
+CONFLICTS+=			tevent-0.*
+PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
+SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
+.else
+SAMBA4_BUNDLED_LIBS+=		!tevent
+BUILD_DEPENDS+=			tevent>=0.9.36:devel/tevent
+RUN_DEPENDS+=			tevent>=0.9.36:devel/tevent
+PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
+SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
+.endif
 # tdb
-BUILD_DEPENDS+=			tdb>=1.3.14:databases/tdb
-RUN_DEPENDS+=			tdb>=1.3.14:databases/tdb
-SAMBA4_BUNDLED_LIBS+=		!tdb,!pytdb
+.if defined(SAMBA4_BUNDLED_TDB)
+SAMBA4_BUNDLED_LIBS+=		tdb
+CONFLICTS+=			tdb-1.*
+PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
+SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
+.else
+SAMBA4_BUNDLED_LIBS+=		!tdb
+BUILD_DEPENDS+=			tdb>=1.3.15:databases/tdb
+RUN_DEPENDS+=			tdb>=1.3.15:databases/tdb
+PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
+SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
+.endif
 # ldb
-SAMBA4_LDB=			12
-.if !defined(SAMBA4_LDB) || ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.0:databases/ldb13
-.elif ${SAMBA4_LDB} == 12
-BUILD_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
-RUN_DEPENDS+=			ldb12>=1.2.2:databases/ldb12
-.elif ${SAMBA4_LDB} == 11
+.if defined(SAMBA4_BUNDLED_LDB) || !defined(SAMBA4_LDB)
+SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_BUNDLED_LIBS+=		ldb
+CONFLICTS+=			ldb-1.* ldb1[23]-1.*
+PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
+SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
+.else
+.       if ${SAMBA4_LDB} == 13
+BUILD_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
+.       elif ${SAMBA4_LDB} == 12
+BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
+RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
+.       elif ${SAMBA4_LDB} == 11
 BUILD_DEPENDS+=			ldb>=1.1.29:databases/ldb
 RUN_DEPENDS+=			ldb>=1.1.29:databases/ldb
+.       endif
+SAMBA4_BUNDLED_LIBS+=		!ldb
+PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
+SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 .endif
-SAMBA4_BUNDLED_LIBS+=		!ldb,!pyldb,!pyldb-util
+
+.if defined(SAMBA4_BUNDLED_TALLOC) || defined(SAMBA4_BUNDLED_TEVENT) || defined(SAMBA4_BUNDLED_TDB)
+SAMBA4_BUNDLED_LIBS+=		replace
+.endif
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
-
+# Set the test environment variables
+TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
+				SHA1SUM=/sbin/sha1 \
+				SHA256SUM=/sbin/sha256 \
+				MD5SUM=/sbin/md5
 TEST_DEPENDS+=			python:lang/python \
 				bash:shells/bash \
 				tshark:net/tshark
@@ -190,6 +256,7 @@ CONFIGURE_ARGS+=		\
 				--with-sendfile-support \
 				--disable-ctdb-tests \
 				${ICONV_CONFIGURE_BASE}
+
 ##############################################################################
 BIND99_RUN_DEPENDS=		bind99>=9.9.0.0:dns/bind99
 BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
@@ -204,29 +271,28 @@ MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 ##############################################################################
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
-DEBUG_VARS_ON=			WITH_DEBUG=yes
-DEBUG_CFLAGS=			-g -ggdb -gdwarf-2 -gstrict-dwarf -O0
+DEBUG_FLAGS=			-g -ggdb3 -O0
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
 GDB_CMD?=			${LOCALBASE}/bin/gdb
 # https://bugzilla.samba.org/show_bug.cgi?id=8969
+PICKY_DEVELOPER_IMPLIES=	DEVELOPER
+PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
+
 DEVELOPER_IMPLIES=		NTVFS
 DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
 DEVELOPER_BUILD_DEPENDS=	${GDB_CMD}:devel/gdb
 DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
 DEVELOPER_VARS_OFF=		GDB_CMD=true
-
-PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
-# XXX: Mostly used in conjuction with DEVELOPER option, don't enable it if you don't know what you are doing
+# XXX: Mostly used in conjuction with the DEVELOPER option, don't enable it
+# if you don't know what you are doing
 NTVFS_CONFIGURE_WITH=		ntvfs-fileserver
+NTVFS_PLIST_FILES=		lib/shared-modules/service/smb.so \
+				lib/samba4/private/libntvfs-samba4.so
 ##############################################################################
-AESNI_CONFIGURE_ON=		--accel-aes=intelaesni
-AESNI_CONFIGURE_OFF=		--accel-aes=none
-
 CLUSTER_CONFIGURE_WITH=		cluster-support
 
 CUPS_CONFIGURE_ENABLE=		cups iprint
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
-
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 FAM_USES=			fam
 FAM_CONFIGURE_WITH=		fam
@@ -254,23 +320,20 @@ UTMP_CONFIGURE_WITH=		utmp
 
 AD_DC_CONFIGURE_OFF=		--without-ad-dc
 
-#NTVFS_PREVENTS=			AD_DC
-#NTVFS_PREVENTS_MSG=		NTVFS needs AD_DC
-
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads dnsupdate
 
 LDAP_CONFIGURE_WITH=		ldap
+LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
 LDAP_USE=			OPENLDAP=yes
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
-# LIBZFS_CONFIGURE_WITH=		libzfs
-# LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
+LIBZFS_CONFIGURE_WITH=		libzfs
+LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
 
 MANDOC_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
 MANDOC_CONFIGURE_ENV_OFF=	XSLTPROC="true"
-
 # !SAMBA4_SUBPORT
 .endif
 
@@ -290,6 +353,8 @@ LIB_DEPENDS+=			libdbus-1.so:devel/dbus
 LIB_DEPENDS+=			libdbus-glib-1.so:devel/dbus-glib
 .endif
 
+SAMBA4_MODULES+=		vfs_freebsd
+
 SAMBA4_MODULES+=		idmap_nss idmap_autorid idmap_rid idmap_hash idmap_tdb idmap_tdb2 idmap_script nss-info_hash
 # List of extra modules taken from RHEL build
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197320
@@ -300,7 +365,7 @@ SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_template nss-info_rfc2307 nss-
 .if ${PORT_OPTIONS:MDEVELOPER}
 SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts perfcount_test \
 				vfs_fake_dfq vfs_skel_opaque vfs_skel_transparent vfs_shadow_copy_test vfs_fake_acls \
-				vfs_nfs4acl_xattr
+				vfs_nfs4acl_xattr vfs_error_inject
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -324,9 +389,24 @@ PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
 USES+=				python:2.7,build,test
 CONFIGURE_ARGS+=		--disable-python
 PLIST_SUB+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
+SUB_LIST+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
 .else
 USES+=				python:2.7
 PLIST_SUB+=			SAMBA4_PYTHON2=""
+SUB_LIST+=			SAMBA4_PYTHON2=""
+
+.if !defined(SAMBA4_BUNDLED_TALLOC)
+SAMBA4_BUNDLED_LIBS+=		!pytalloc-util
+.endif
+.if !defined(SAMBA4_BUNDLED_TEVENT)
+SAMBA4_BUNDLED_LIBS+=		!pytevent
+.endif
+.if !defined(SAMBA4_BUNDLED_TDB)
+SAMBA4_BUNDLED_LIBS+=		!pytdb
+.endif
+.if !defined(SAMBA4_BUNDLED_LDB)
+SAMBA4_BUNDLED_LIBS+=		!pyldb,!pyldb-util
+.endif
 # External Python modules
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
@@ -358,11 +438,12 @@ CONFIGURE_ENV+=			PYTHON3_SO_ABI_FLAG=.${SAMBA4_PYTHON3_SO_ABI}
 CONFIGURE_ARGS+=		--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
 
 PLIST_SUB+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
+SUB_LIST+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
 .else
 PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
+SUB_LIST+=			SAMBA4_PYTHON3="@comment "
 .endif
 .endif
-
 # !SAMBA4_SUBPORT
 .endif
 
@@ -371,22 +452,24 @@ PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
 ##############################################################################
 
 .if !defined(SAMBA4_SUBPORT)
-
+# Require llvm 4.0 and AMD64
+.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64" && ${OSVERSION} >= 1100511
+CONFIGURE_ARGS+=		--accel-aes=intelaesni
+PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
+.else
+CONFIGURE_ARGS+=		--accel-aes=none
+.endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 CFLAGS_amd64+=			-fno-omit-frame-pointer
 # No fancy color error messages
 CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-
-TEST_ENV+=			PYTHON="${PYTHON_CMD}" SHA1SUM=/sbin/sha1
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=			-fno-color-diagnostics
 .endif
-
-.if ${readline_ARGS} == port
-CFLAGS+=			-D_FUNCTION_DEF
-.endif
+#.if ${readline_ARGS} == port
+#CFLAGS+=			-D_FUNCTION_DEF
+#.endif
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
 SHEBANG_FILES=			${PATCH_WRKSRC}/source4/scripting/bin/* ${PATCH_WRKSRC}/selftest/*
@@ -441,12 +524,25 @@ pre-build-MANDOC-off:
 				source4/lib/registry/man/regpatch.1 \
 				source4/lib/registry/man/regshell.1 \
 				source4/lib/registry/man/regtree.1 \
+				source4/scripting/man/samba_gpoupdate.8 \
 				source4/torture/man/gentest.1 \
 				source4/torture/man/locktest.1 \
 				source4/torture/man/masktest.1 \
 				source4/torture/man/smbtorture.1 \
 				source4/utils/man/ntlm_auth4.1 \
-				source4/utils/man/oLschema2ldif.1
+				source4/utils/man/oLschema2ldif.1 \
+				lib/tdb/man/tdbdump.8 \
+				lib/tdb/man/tdbbackup.8 \
+				lib/tdb/man/tdbtool.8 \
+				lib/talloc/man/talloc.3 \
+				lib/tdb/man/tdbrestore.8 \
+				lib/ldb/man/ldb.3 \
+				lib/ldb/man/ldbadd.1 \
+				lib/ldb/man/ldbsearch.1 \
+				lib/ldb/man/ldbmodify.1 \
+				lib/ldb/man/ldbrename.1 \
+				lib/ldb/man/ldbdel.1 \
+				lib/ldb/man/ldbedit.1
 					${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
 					${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .endfor
