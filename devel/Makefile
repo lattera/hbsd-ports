@@ -4362,6 +4362,8 @@
     SUBDIR += py-construct
     SUBDIR += py-construct28
     SUBDIR += py-contextlib2
+    SUBDIR += py-coreapi
+    SUBDIR += py-coreschema
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
@@ -4533,6 +4535,7 @@
     SUBDIR += py-isodate
     SUBDIR += py-isort
     SUBDIR += py-iterpipes
+    SUBDIR += py-itypes
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.functools
     SUBDIR += py-jaraco.itertools
