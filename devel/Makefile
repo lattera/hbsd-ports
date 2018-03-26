@@ -870,7 +870,6 @@
     SUBDIR += gtkparasite
     SUBDIR += gtranslator
     SUBDIR += guichan
-    SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += gumbo
     SUBDIR += gvfs
@@ -5500,6 +5499,7 @@
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-google-api-client
     SUBDIR += rubygem-google-protobuf
+    SUBDIR += rubygem-google-protobuf351
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
