@@ -11,14 +11,12 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU stream editor
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 LICENSE=	GPLv3+ GFDL
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.DOC
->>>>>>> freebsd/master
+
+USE_HARDENING=	safestack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="${MAKEINFO} --no-split"
