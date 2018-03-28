@@ -29,20 +29,12 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
+USE_HARDENING=	pie:off
+
 USES=		compiler:openmp gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
-<<<<<<< HEAD
-
-USE_HARDENING=	pie:off
-
-MAKE_JOBS_UNSAFE=	yes
-
-# Requires openmp
-USE_GCC=	yes
-=======
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
