@@ -29,6 +29,7 @@ CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:v1.3.2:ct
 CT_VARS=		DSO_EXTMODS+=ct
+CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:46334b3:echo
 ECHO_VARS=		DSO_EXTMODS+=echo

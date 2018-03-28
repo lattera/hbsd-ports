@@ -201,24 +201,7 @@ IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
 .endif
 
-<<<<<<< HEAD
-.if ${PORT_OPTIONS:MCT}
-GIT_CT_VERSION=	1.3.2
-GH_ACCOUNT+=	grahamedgecombe:ct
-GH_PROJECT+=	nginx-ct:ct
-GH_TAGNAME+=	v${GIT_CT_VERSION}:ct
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
-.if ${PORT_OPTIONS:MDSO}
-CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
-.else
-CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
-.endif
-NGINX_OPENSSL=	yes
-USE_HTTP_SSL=	yes
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
-=======
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base && ${PORT_OPTIONS:MCT}
->>>>>>> freebsd/master
 IGNORE=		CT option requires OpenSSL 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
 .endif
 
