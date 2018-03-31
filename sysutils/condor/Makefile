@@ -24,14 +24,10 @@ LIB_DEPENDS=	libkrb5support.so:security/krb5 \
 		libexpat.so:textproc/expat2 \
 		${PY_BOOST}
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
-=======
 # Does not work with Python 3
 USES=		cmake:noninja cpe perl5 pgsql python:2.7 shebangfix ssl
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 CPE_VENDOR=	condor_project
 SHEBANG_FILES=	src/condor_scripts/condor_qsub \
