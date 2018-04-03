@@ -17,14 +17,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-=======
 USES=		cpe desktop-file-utils gmake localbase:ldflags \
 		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	cam/feh-cam
->>>>>>> upstream/master
 USE_XORG=	x11 xt xinerama
 USE_PERL5=	run
 CPE_VENDOR=	daniel_friesel
