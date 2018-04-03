@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png
 
-USE_HARDENING=	safestack
+USE_HARDENING=	cfi safestack
 
 USES=		cpe desktop-file-utils gmake localbase:ldflags \
 		perl5 shebangfix tar:bzip2
