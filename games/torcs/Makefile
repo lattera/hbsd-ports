@@ -33,6 +33,8 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+USE_SAFESTACK=	yes
+
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
 INSTDIR=	${PREFIX}/share/games/${PORTNAME}
