@@ -24,7 +24,8 @@ USE_SDL=	sdl2
 USE_GL=		gl glew
 INSTALLS_ICONS=	yes
 
-USE_HARDENING=	safestack
+USE_HARDENING=	cfi safestack
+CFI_OVERRIDE=	-fno-sanitize=cfi-icall
 
 PORTDATA=	*
 
