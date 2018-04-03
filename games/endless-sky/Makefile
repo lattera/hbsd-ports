@@ -25,6 +25,8 @@ USE_GL=		gl glew
 LLD_UNSAFE=	yes
 INSTALLS_ICONS=	yes
 
+USE_HARDENING=	safestack
+
 PORTDATA=	*
 
 post-build:
