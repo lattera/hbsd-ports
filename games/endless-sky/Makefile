@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 USES=		compiler:c++11-lib jpeg localbase:ldflags openal scons
 USE_SDL=	sdl2
 USE_GL=		gl glew
-LLD_UNSAFE=	yes
 INSTALLS_ICONS=	yes
 
 USE_HARDENING=	safestack
