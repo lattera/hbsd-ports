@@ -1,14 +1,13 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
 # $FreeBSD$
 
-PORTNAME=	with-editor
-PORTVERSION=	2.7.2
+PORTNAME=	ghub
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	editors elisp
+CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
+COMMENT=	Minuscule client library for the Github API
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,20 +16,19 @@ USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-INFO=		with-editor
-MAKE_ENV+=	EFLAGS="-L ${PREFIX}/${EMACS_SITE_LISPDIR}"
+INFO=		ghub
 NO_ARCH=	yes
 PORTDOCS=	README.md
 
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/with-editor.el \
-		${EMACS_VERSION_SITE_LISPDIR}/with-editor.elc \
-		${EMACS_VERSION_SITE_LISPDIR}/with-editor-autoloads.el
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/ghub.el \
+		${EMACS_VERSION_SITE_LISPDIR}/ghub.elc \
+		${EMACS_VERSION_SITE_LISPDIR}/ghub-autoloads.el
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc \
+	${INSTALL_DATA} ${WRKSRC}/ghub*.el* \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
 do-install-DOCS-on:
