@@ -19,14 +19,10 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		compiler:c11 gmake jpeg pkgconfig python:2.7,build shebangfix
-=======
 USES=		compiler:c++14-lang gmake jpeg pkgconfig python:2.7,build shebangfix
 
->>>>>>> freebsd/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame				# explicit (master port)
