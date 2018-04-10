@@ -8712,7 +8712,6 @@ www/hydra||2016-11-01|Has expired: Broken for more than 6 months
 math/py-pyfst||2016-11-01|Has expired: Broken for more than 6 months
 archivers/ruby-zip||2016-11-01|Has expired: Broken will all supported versions of Ruby
 devel/ruby-langscan||2016-11-01|Has expired: Broken will all supported versions of Ruby
-math/octave-forge-dicom||2016-11-01|Has expired: Broken for more than 6 months
 graphics/linux-c6-libGLU|graphics/linux-c6-dri|2016-11-04|Unused
 graphics/linux-c7-libGLU|graphics/linux-c7-dri|2016-11-04|Unused
 multimedia/libmovtar||2016-11-05|Not used anymore, abandonware
@@ -10156,3 +10155,9 @@ textproc/py-curator-py|textproc/py-elasticsearch-curator|2018-04-09|Follow exist
 sysutils/memtest|sysutils/memtester|2018-04-09|Use actual upstream name
 textproc/elasticsearch5-x-pack||2018-04-09|Use elasticsearch-plugin to install X-Pack
 textproc/kibana5-x-pack||2018-04-09|Use kibana-plugin to install X-Pack
+textproc/elasticsearch||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-hq||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-marvel||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-migration||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-plugin-sql||2018-04-09|ElasticSearch 1.x End of Life
+textproc/elasticsearch-river-rabbitmq||2018-04-09|ElasticSearch 1.x End of Life
