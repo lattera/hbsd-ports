@@ -1,16 +1,16 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	deldir
-DISTVERSION=	0.1-15
+PORTNAME=	SQUAREM
+DISTVERSION=	2017.10-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	Delaunay Triangulation and Dirichlet (Voronoi) Tessellation
+COMMENT=	Squared Extrapolation Methods for Accelerating EM-Like Algorithms
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

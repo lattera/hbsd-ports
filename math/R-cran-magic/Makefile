@@ -1,18 +1,17 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	lava
-DISTVERSION=	1.6.1
+PORTNAME=	magic
+DISTVERSION=	1.5-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	Latent Variable Models
+COMMENT=	Create and Investigate Magic Squares
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-numDeriv>0:math/R-cran-numDeriv \
-		R-cran-SQUAREM>0:math/R-cran-SQUAREM
+CRAN_DEPENDS=	R-cran-abind>0:devel/R-cran-abind
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
