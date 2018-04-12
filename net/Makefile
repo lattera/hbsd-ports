@@ -1063,6 +1063,7 @@
     SUBDIR += py-netif
     SUBDIR += py-netifaces
     SUBDIR += py-netlib
+    SUBDIR += py-netsnmpagent
     SUBDIR += py-netstring
     SUBDIR += py-nnpy
     SUBDIR += py-ntplib
@@ -1135,6 +1136,7 @@
     SUBDIR += py-wmi-query
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
+    SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
     SUBDIR += pygopherd
