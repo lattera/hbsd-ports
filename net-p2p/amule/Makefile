@@ -11,18 +11,13 @@ DISTNAME=	aMule-${PORTVERSION}
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-=======
 LICENSE=	GPLv2+
->>>>>>> freebsd/master
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule-devel-[0-9]*
+
+USE_HARDENING=	safestack
 
 USES=		bison desktop-file-utils gmake perl5 pkgconfig shebangfix \
 		tar:xz
