@@ -18,16 +18,12 @@ LICENSE_FILE_NOKIA-LGPL-EXCEPTION=	${WRKSRC}/LICENSE.NOKIA-LGPL-EXCEPTION
 LICENSE_PERMS_BOOST-1.0=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-=======
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
->>>>>>> freebsd/master
 		libgpg-error.so:security/libgpg-error
+
+USE_HARDENING=	safestack
 
 USES=		cmake:outsource desktop-file-utils shared-mime-info tar:xz
 USE_QT5=	buildtools_build concurrent core dbus gui linguisttools network \
