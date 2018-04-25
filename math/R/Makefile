@@ -19,29 +19,14 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 BUILD_DEPENDS=	texi2any:print/texinfo
 RUN_DEPENDS=	gmake:devel/gmake # R packages may require GNU make
 
+USE_HARDENING=	pie:off relro:off
+
 # possible TODO
 # - Use --with-recommended-packages=no by default
 # - Add an option for recommended packages
 # - Create ports for each of the recommended packages
 # - Create a meta-port for the recommended packages
 
-<<<<<<< HEAD
-USE_HARDENING=		pie:off relro:off
-
-CONFIGURE_ARGS=		--disable-java \
-			--enable-R-shlib \
-			--with-readline \
-			rdocdir=${DOCSDIR}
-GNU_CONFIGURE=		yes
-INSTALL_TARGET=		install-strip
-USES=			gmake iconv libtool localbase \
-			pathfix perl5 readline:port
-USE_PERL5=		build
-USE_LDCONFIG=		${PREFIX}/lib/R/lib
-
-OPTIONS_DEFINE=		FLANG ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF \
-			X11
-=======
 USES=		gmake iconv libtool localbase pathfix perl5 readline:port
 USE_LDCONFIG=	${PREFIX}/lib/R/lib
 USE_PERL5=	build
@@ -55,7 +40,6 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	LIBVER=${LIBVER}
 
 OPTIONS_DEFINE=		FLANG ICU INFO LDOUBLE LETTER MEMPROF NLS OPENMP RPROF X11
->>>>>>> freebsd/master
 OPTIONS_EXCLUDE_aarch64=	FLANG OPENMP
 OPTIONS_EXCLUDE_armv6=	FLANG OPENMP
 OPTIONS_EXCLUDE_armv7=	FLANG OPENMP
