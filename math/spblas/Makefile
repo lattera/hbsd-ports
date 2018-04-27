@@ -10,12 +10,9 @@ DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NIST Sparse Basic Linear Algebra Subprograms (BLAS)
-
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 LICENSE=	PD
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 USES=		dos2unix uidfix zip
 USE_GCC=	yes
