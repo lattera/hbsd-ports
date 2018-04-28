@@ -4473,7 +4473,6 @@ devel/crossvc||2013-07-26|Has expired: Depends on Qt 3.x
 devel/dbus-qt3||2013-07-26|Has expired: Depends on Qt 3.x
 devel/esvn||2013-07-26|Has expired: Depends on Qt 3.x
 devel/kdesdk3||2013-07-26|Has expired: Depends on Qt 3.x
-devel/kdevelop||2013-07-26|Has expired: Depends on Qt 3.x
 devel/kodos||2013-07-26|Has expired: Depends on Qt 3.x
 devel/kprof||2013-07-26|Has expired: Depends on Qt 3.x
 devel/kscope||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9984,7 +9983,6 @@ deskutils/kdeplasma-addons|deskutils/kdeplasma-addons-kde4|2018-02-22|Make room 
 games/pairs|games/pairs-kde4|2018-02-22|Make room for KDE updates
 audio/kio-audiocd|audio/kio-audiocd-kde4|2018-02-22|Make room for KDE updates
 audio/kscd|audio/kscd-kde4|2018-02-22|Make room for KDE updates
-astro/kstars|astro/kstars-kde4|2018-02-22|Make room for KDE updates
 comms/kremotecontrol|comms/kremotecontrol-kde4|2018-02-22|Make room for KDE updates
 graphics/ksnapshot|graphics/ksnapshot-kde4|2018-02-22|Make room for KDE updates
 graphics/ksaneplugin|graphics/ksaneplugin-kde4|2018-02-22|Make room for KDE updates
@@ -10177,3 +10175,6 @@ math/octave-forge-ocs||2018-04-25|Removed, depends on expired math/octave-forge-
 net/google-daemon|sysutils/py-google-compute-engine|2018-04-25|Has expired: Please use sysutils/py-google-compute-engine instead
 net/google-startup-scripts|sysutils/py-google-compute-engine|2018-04-25|Has expired: Please use sysutils/py-google-compute-engine instead
 math/octave-forge-odepkg||2018-04-25|Has expired, not a valid package for Octave version >= 4.2.1
+devel/kdevelop-php|devel/kdevelop-php-kde4|2018-04-28|Make room for KDevelop upgrade
+devel/kdevelop-php-docs|devel/kdevelop-php-docs-kde4|2018-04-28|Make room for KDevelop upgrade
+devel/kdevplatform|devel/kdevplatform-kde4|2018-04-28|Make room for KDevelop upgrade
