@@ -14,20 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
-<<<<<<< HEAD
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
-OPTIONS_DEFAULT=DTRACE
-OPTIONS_SUB=	yes
 
 LLVM_OBJDUMP_UNSAFE=	yes
 
-OPTIONS_DEFAULT_FreeBSD_10=	BUNDLED_SSL
-OPTIONS_DEFAULT+=		${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
-=======
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
 OPTIONS_DEFAULT=	BUNDLED_SSL DTRACE
 OPTIONS_SUB=		yes
->>>>>>> upstream/master
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -85,13 +77,9 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 
 .endif
 
-<<<<<<< HEAD
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-=======
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != amd64
->>>>>>> upstream/master
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 
