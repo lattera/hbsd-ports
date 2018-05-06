@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	8.1.1.s20180504
+PORTVERSION=	9.0.0.s20180429
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
 DISTNAME=	gcc-${DIST_VERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 8
+COMMENT=	GNU Compiler Collection 9
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -26,12 +26,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc8-8.*
-
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
-
-USE_HARDENING=	retpoline:off
 
 # DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
