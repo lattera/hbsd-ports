@@ -12,9 +12,15 @@ COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
 LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
+
 RUN_DEPENDS=	${SCILAB_CMD}:math/scilab
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
+=======
+DEPRECATED=	Cannot build with newer opencv
+EXPIRATION_DATE=	2018-06-07
+>>>>>>> freebsd/master
 
 USES=		dos2unix pkgconfig tar:xz
 DOS2UNIX_FILES=	etc/SIVP.start \
