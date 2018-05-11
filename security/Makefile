@@ -532,6 +532,7 @@
     SUBDIR += p5-Authen-TypeKey
     SUBDIR += p5-Business-PayPal-EWP
     SUBDIR += p5-Bytes-Random-Secure
+    SUBDIR += p5-Bytes-Random-Secure-Tiny
     SUBDIR += p5-CACertOrg-CA
     SUBDIR += p5-CSP
     SUBDIR += p5-Cisco-Hash
@@ -600,6 +601,7 @@
     SUBDIR += p5-Crypt-Passwd-XS
     SUBDIR += p5-Crypt-PasswdMD5
     SUBDIR += p5-Crypt-Password-Util
+    SUBDIR += p5-Crypt-Perl
     SUBDIR += p5-Crypt-Primes
     SUBDIR += p5-Crypt-RC4
     SUBDIR += p5-Crypt-RC5
