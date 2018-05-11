@@ -1002,8 +1002,10 @@
     SUBDIR += py-python-registry
     SUBDIR += py-python-social-auth
     SUBDIR += py-python3-openid
+    SUBDIR += py-pywinrm
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
+    SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
     SUBDIR += py-safe
