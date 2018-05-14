@@ -18,13 +18,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/${PKGNAMEPREFIX}binutils
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=	gmake iconv libtool tar:bzip2 makeinfo compiler
-=======
 USES=	gmake iconv libtool tar:xz makeinfo compiler
->>>>>>> freebsd/master
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
