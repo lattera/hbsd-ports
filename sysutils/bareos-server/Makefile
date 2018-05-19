@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# Created by: Alonso Cardenas <acm@FreeBSD.org>
-# $FreeBSD: head/sysutils/bareos-server/Makefile 456228 2017-12-13 20:06:09Z acm $
-=======
 # $FreeBSD$
->>>>>>> freebsd/master
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
@@ -41,11 +36,7 @@ SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-<<<<<<< HEAD
-OPTIONS_DEFAULT=	GNUTLS
-=======
 OPTIONS_DEFAULT=	OPENSSL
->>>>>>> freebsd/master
 OPTIONS_SINGLE=		CRYPTO
 OPTIONS_SINGLE_CRYPTO=	OPENSSL GNUTLS
 OPTIONS_SUB=		yes
@@ -58,11 +49,7 @@ SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
-<<<<<<< HEAD
-OPTIONS_SINGLE+=	DATABASE
-=======
 OPTIONS_SINGLE+=		DATABASE
->>>>>>> freebsd/master
 DATABASE_DESC=		Database support
 
 NDMP_CONFIGURE_ON=	--enable-ndmp=yes

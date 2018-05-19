@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD: head/sysutils/bareos-traymonitor/Makefile 426216 2016-11-16 07:13:27Z acm $
-=======
 # $FreeBSD$
->>>>>>> freebsd/master
 
 PORTNAME=	bareos
 
@@ -24,7 +19,7 @@ WITH_BAT=	yes
 PLIST=		${.CURDIR}/pkg-plist
 MAKE_ENV+=	MAKEOBJDIRPREFIX=/
 
-MASTERDIR=	${.CURDIR}/../bareos-server
+MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 
 CONFIGURE_ARGS+=	--enable-traymonitor=yes \
 			--with-qwt=${LOCALBASE}/lib \

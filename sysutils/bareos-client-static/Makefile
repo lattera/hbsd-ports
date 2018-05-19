@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# Created by: Alonso Cardenas <acm@FreeBSD.org>
-# $FreeBSD: head/sysutils/bareos-client-static/Makefile 445197 2017-07-07 02:19:21Z acm $
-=======
 # $FreeBSD$
->>>>>>> freebsd/master
 
 PORTNAME=	bareos
 PORTREVISION=	1
@@ -14,7 +9,7 @@ COMMENT=	Backup archiving recovery open sourced (static client)
 CONFLICTS=	bareos16-client-static-*
 
 PLIST=		${.CURDIR}/pkg-plist
-MASTERDIR=	${.CURDIR}/../bareos-server
+MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 
 PLIST_FILES=	sbin/bareos-fd-static \
 		sbin/bconsole-static
