@@ -1,20 +1,21 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	dfdatetime
-PORTVERSION=	20180510
-CATEGORIES=	security devel python
+PORTNAME=	dtfabric
+PORTVERSION=	20180522
+CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
-		https://github.com/log2timeline/dfdatetime/releases/download/${PORTVERSION}/
+		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	Digital Forensics Date and Time
+COMMENT=	Tooling for data type and structure management
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
