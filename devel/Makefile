@@ -1696,6 +1696,7 @@
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
+    SUBDIR += lua-rds-parser
     SUBDIR += lua-stdlib
     SUBDIR += lua-stdlib-debug
     SUBDIR += lua-stdlib-normalize
@@ -4920,6 +4921,7 @@
     SUBDIR += py-rcsparse
     SUBDIR += py-rebulk
     SUBDIR += py-rednose
+    SUBDIR += py-rekall-efilter
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
