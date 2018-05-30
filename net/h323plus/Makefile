@@ -14,18 +14,9 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 
-<<<<<<< HEAD
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-CONFLICTS=	openh323-[0-9]*
-
 USE_HARDENING=	pie:off relro:off
 
-USES=		gmake
-GNU_CONFIGURE=	yes
-=======
 USES=		gmake ssl
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
