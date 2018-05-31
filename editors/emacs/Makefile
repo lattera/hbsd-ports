@@ -24,14 +24,8 @@ COMMENT+=	(Canna Japanese input flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
-BROKEN_aarch64=	Fails to link: missing sbrk
-CONFLICTS_INSTALL=	emacs-devel emacs-devel_nox
-
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> freebsd/master
 FLAVORS=		full canna nox
 full_CONFLICTS_INSTALL=	emacs-canna emacs-nox
 canna_CONFLICTS_INSTALL=	emacs emacs-nox
