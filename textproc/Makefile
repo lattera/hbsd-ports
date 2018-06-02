@@ -381,11 +381,6 @@
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
     SUBDIR += kf5-syntax-highlighting
-    SUBDIR += kibana3
-    SUBDIR += kibana41
-    SUBDIR += kibana43
-    SUBDIR += kibana44
-    SUBDIR += kibana45
     SUBDIR += kibana46
     SUBDIR += kibana5
     SUBDIR += kibana5-search-guard
@@ -704,6 +699,7 @@
     SUBDIR += p5-PPI-HTML
     SUBDIR += p5-PPI-XS
     SUBDIR += p5-PPIx-EditorTools
+    SUBDIR += p5-PPIx-QuoteLike
     SUBDIR += p5-PPIx-Regexp
     SUBDIR += p5-PPIx-Utilities
     SUBDIR += p5-Parse-BooleanLogic
