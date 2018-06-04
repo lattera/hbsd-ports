@@ -15,12 +15,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/BSD
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-=======
 USES=		autoreconf
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
