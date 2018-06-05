@@ -20,6 +20,11 @@ CONFLICTS=	openbgpd openospfd zebra quagga frr4
 USE_GITHUB=	yes
 GH_ACCOUNT=	FRRouting
 
+# FRR uses shared libraries as plugins, but
+# does not fail with safestack as no port depends
+# on these internal library plugins:
+USE_HARDENING= safestack
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf bison gmake pkgconfig libtool makeinfo readline
