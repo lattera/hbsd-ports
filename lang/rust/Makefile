@@ -2,7 +2,7 @@
 # $FreeBSD: head/lang/rust/Makefile 470016 2018-05-15 13:43:34Z dumbbell $
 
 PORTNAME=	rust
-PORTVERSION?=	1.26.0
+PORTVERSION?=	1.26.2
 PORTREVISION?=
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
