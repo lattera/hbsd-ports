@@ -32,23 +32,14 @@ RUN_DEPENDS=	bash:shells/bash	\
 
 CONFLICTS_INSTALL=	protobuf # https://gitlab.kitware.com/paraview/paraview/issues/18225
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-USES=		alias desktop-file-utils cmake:outsource jpeg python:2.7 shebangfix
-USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		linguisttools_build assistant_run qt3support \
-		corelib dbus designer gui help-tools network script \
-		sql svg xml webkit assistantclient clucene \
-		xmlpatterns xmlpatterns-tool help
-=======
 USES=		alias cmake:outsource jpeg localbase python:2.7 shebangfix
 USE_QT5=	core gui help network sql widgets x11extras buildtools_build qmake_build
->>>>>>> upstream/master
 USE_GL=		gl glu
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm dri3proto
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
+
+USE_HARDENING=	pie:off relro:off
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
