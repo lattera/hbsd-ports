@@ -16,13 +16,8 @@ COMMENT+=	(No X flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
-CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
-
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> freebsd/master
 FLAVORS=		full nox
 full_CONFLICTS_INSTALL=	emacs-devel-nox
 nox_CONFLICTS_INSTALL=	emacs-devel
