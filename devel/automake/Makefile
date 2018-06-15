@@ -17,13 +17,9 @@ LICENSE_FILE_GFDL=	${WRKSRC}/doc/fdl.texi
 BUILD_DEPENDS=	autoconf>=2.69:devel/autoconf
 RUN_DEPENDS=	autoconf>=2.69:devel/autoconf
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-BUILD_VERSION=	1.15
-=======
 BUILD_VERSION=	1.16
->>>>>>> freebsd/master
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 USES=		cpe makeinfo perl5 tar:xz
 GNU_CONFIGURE=	yes
