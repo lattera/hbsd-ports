@@ -1288,6 +1288,7 @@
     SUBDIR += py-dbfread
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
+    SUBDIR += py-docx2txt
     SUBDIR += py-dsv
     SUBDIR += py-duecredit
     SUBDIR += py-elasticsearch
@@ -1334,6 +1335,7 @@
     SUBDIR += py-nltk
     SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
+    SUBDIR += py-orange3-text
     SUBDIR += py-pager
     SUBDIR += py-pandocfilters
     SUBDIR += py-paragrep
@@ -1341,6 +1343,7 @@
     SUBDIR += py-parsimonious
     SUBDIR += py-parso
     SUBDIR += py-pdfminer
+    SUBDIR += py-pdfminer3k
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyctpp2
