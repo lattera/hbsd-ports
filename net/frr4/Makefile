@@ -18,17 +18,13 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 CONFLICTS=	openbgpd openospfd zebra quagga frr3
 
-<<<<<<< HEAD
 # FRR uses shared libraries as plugins, but
 # does not fail with safestack as no port depends
 # on these internal library plugins:
 USE_HARDENING=	safestack
 
-USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool makeinfo readline
-=======
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 		makeinfo python:2.7,build readline
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
