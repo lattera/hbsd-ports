@@ -23,10 +23,15 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
 		protoc:devel/protobuf
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 USES=		iconv gmake qmake sqlite ssl
 USE_QT4=	gui corelib network sql sql-sqlite3 \
+=======
+USES=		iconv gmake qmake qt:4 sqlite ssl
+USE_QT=		gui corelib network sql sql-sqlite3 \
+>>>>>>> upstream/master
 		moc_build rcc_build uic_build
 USE_SDL=	mixer
 QMAKE_SOURCE_PATH=	pokerth.pro
