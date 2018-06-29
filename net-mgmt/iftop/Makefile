@@ -11,8 +11,9 @@ COMMENT=	Display bandwidth usage on an interface by host
 
 LICENSE=	GPLv2
 
-USES=		ncurses
 USE_HARDENING=	cfi safestack
+
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
