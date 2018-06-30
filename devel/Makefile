@@ -1324,6 +1324,7 @@
     SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kio-extras
+    SUBDIR += kodi-platform
     SUBDIR += kore
     SUBDIR += kronosnet
     SUBDIR += ksql
@@ -1790,6 +1791,7 @@
     SUBDIR += mpatrol
     SUBDIR += mph
     SUBDIR += mq4cpp
+    SUBDIR += msbuild
     SUBDIR += msgpack
     SUBDIR += msgpack-d
     SUBDIR += msgpuck
