@@ -15,15 +15,9 @@ BUILD_DEPENDS=	gnubc>0:math/gnubc \
 		gnustat:sysutils/coreutils \
 		gsed:textproc/gsed
 
-<<<<<<< HEAD
-BUILD_DEPENDS=	gnubc>0:math/gnubc
-
 USE_HARDENING=	pie:off
 
-USES=		fuse gmake python:build shebangfix
-=======
 USES=		bison:build fuse gmake python:build shebangfix
->>>>>>> freebsd/master
 SHEBANG_FILES=	../../arch/lkl/scripts/headers_install.py
 BINARY_ALIAS=	sed=gsed \
 		stat=gnustat
