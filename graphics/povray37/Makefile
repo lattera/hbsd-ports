@@ -14,22 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	Does not build: c++: Internal error: Killed (program cc1plus)
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
-OPTIONS_DEFAULT=PNG JPEG
-OPTIONS_SUB=	yes
-IO_DESC=	Without I/O restrictions (security risk)
-EXAMPLES_DESC=	Install example scenes
-DOCS_DESC=	Install HTML documentation
-=======
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		autoreconf:build gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	POV-Ray
->>>>>>> upstream/master
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY=${MAINTAINER} \
