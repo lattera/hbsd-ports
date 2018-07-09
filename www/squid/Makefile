@@ -29,13 +29,9 @@ BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to s
 
 CONFLICTS=	squid*-3.*
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		compiler cpe perl5 shebangfix tar:xz
-=======
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
->>>>>>> freebsd/master
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
