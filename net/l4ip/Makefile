@@ -13,12 +13,10 @@ COMMENT=	L4 health check daemon for IPFILTER
 
 LICENSE=	NONE
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 DEPRECATED=	unknown license
 EXPIRATION_DATE=	2018-08-15
->>>>>>> freebsd/master
+
+USE_HARDENING=	pie:off
 
 USES=		gmake ssl tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
