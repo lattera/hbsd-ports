@@ -13,15 +13,9 @@ COMMENT=	Easy way to make any app work through Tor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-<<<<<<< HEAD
-USE_GITHUB=	yes
-GH_ACCOUNT=	dgoulet
-
 USE_HARDENING=	safestack
 
-=======
 USES=		alias gmake libtool tar:xz
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
