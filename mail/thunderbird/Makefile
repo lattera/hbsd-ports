@@ -28,13 +28,8 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 		zip:archivers/zip
 #		soundtouch>=1.9.0:audio/soundtouch \
 
-<<<<<<< HEAD
-LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> freebsd/master
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
 USE_MOZILLA=	-cairo -soundtouch
