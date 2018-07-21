@@ -26,16 +26,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 CONFLICTS=	tigervnc-devel-[0-9]* \
 		tightvnc-[0-9]*
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 CFI_OVERRIDE=	-fno-sanitize=cfi-icall
 
-USES=		autoreconf:build cmake:noninja cpe iconv jpeg libtool pkgconfig \
-		python ssl
-=======
 USES=		autoreconf:build cmake:noninja cpe iconv jpeg libtool \
 		pkgconfig python ssl
->>>>>>> freebsd/master
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
