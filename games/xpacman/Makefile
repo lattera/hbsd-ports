@@ -14,11 +14,17 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/misc/9x18.pcf.gz:x11-fonts/font-misc-misc
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
+=======
+USES=	compiler
+>>>>>>> upstream/master
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-doublesize
-CPPFLAGS+=	-I${LOCALBASE}/include
+# Build ignores CFLAGS, CXXFLAGS
+CPPFLAGS+=	-I${LOCALBASE}/include ${CPPFLAGS_${CHOSEN_COMPILER_TYPE}}
+CPPFLAGS_clang=	-Wno-c++11-narrowing
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/pacman
