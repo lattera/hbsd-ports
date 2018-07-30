@@ -14,11 +14,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/misc/9x18.pcf.gz:x11-fonts/font-misc-misc
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 USES=	compiler
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-doublesize
