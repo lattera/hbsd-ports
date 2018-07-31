@@ -16,15 +16,12 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS=	xmms:multimedia/xmms
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-=======
 USES=		gmake
->>>>>>> upstream/master
 USE_GNOME=	glib12
 HAS_CONFIGURE=	yes
 USE_CSTD=	gnu89
+
+USE_HARDENING=	pie:off relro:off
 
 OPTIONS_DEFINE=	NLS
 
