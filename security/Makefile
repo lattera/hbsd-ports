@@ -1318,6 +1318,7 @@
     SUBDIR += unicornscan
     SUBDIR += unssh
     SUBDIR += vault
+    SUBDIR += vanguards-tor
     SUBDIR += veracrypt
     SUBDIR += vinetto
     SUBDIR += vlock
