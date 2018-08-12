@@ -21,7 +21,10 @@ BB_ACCOUNT=	dismine
 BB_PROJECT=	${PORTNAME}
 BB_COMMIT=	fccfd7b0aa17
 
-QMAKE_ARGS=	CONFIG+="no_ccache" CONFIG+="noTests" CONFIG+="noRunPath"
+QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
+.if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
+QMAKE_ARGS+=	CONFIG+="no_ccache"
+.endif
 BINARY_ALIAS=	hg=/usr/bin/true
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
