@@ -453,6 +453,7 @@
     SUBDIR += diffuse
     SUBDIR += ding-libs
     SUBDIR += directfb
+    SUBDIR += dispy
     SUBDIR += dissy
     SUBDIR += distcc
     SUBDIR += distel
@@ -5287,6 +5288,7 @@
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
     SUBDIR += pychecker
+    SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
@@ -6295,6 +6297,7 @@
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
     SUBDIR += xdgpaths
+    SUBDIR += xeus
     SUBDIR += xfce4-dev-tools
     SUBDIR += xfce4-vala
     SUBDIR += xmake
