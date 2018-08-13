@@ -1291,6 +1291,7 @@
     SUBDIR += tcpcrypt
     SUBDIR += teleport
     SUBDIR += testssl.sh
+    SUBDIR += theonionbox
     SUBDIR += tinc
     SUBDIR += tinc-devel
     SUBDIR += tinyca
