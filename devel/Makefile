@@ -415,6 +415,7 @@
     SUBDIR += cx_Freeze
     SUBDIR += cxmon
     SUBDIR += cxref
+    SUBDIR += cxxopts
     SUBDIR += cxxtest
     SUBDIR += cxxtools
     SUBDIR += d-feet
@@ -1684,13 +1685,12 @@
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
-    SUBDIR += llvm33
-    SUBDIR += llvm34
     SUBDIR += llvm35
     SUBDIR += llvm38
     SUBDIR += llvm40
     SUBDIR += llvm50
     SUBDIR += llvm60
+    SUBDIR += llvm70
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -6329,6 +6329,7 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
+    SUBDIR += zapcc
     SUBDIR += zeal
     SUBDIR += zookeeper
     SUBDIR += zpu-binutils
