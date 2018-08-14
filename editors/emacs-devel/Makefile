@@ -16,11 +16,7 @@ COMMENT+=	(No X flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-=======
 LIB_DEPENDS=	libgmp.so:math/gmp
->>>>>>> upstream/master
 
 FLAVORS=		full nox
 full_CONFLICTS_INSTALL=	emacs-devel-nox
@@ -37,6 +33,8 @@ CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	eb787d7
+
+USE_HARDENING=	pie:off relro:off
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var \
