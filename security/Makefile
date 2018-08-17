@@ -827,7 +827,6 @@
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-ssh2-0
     SUBDIR += pev
-    SUBDIR += pft
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
