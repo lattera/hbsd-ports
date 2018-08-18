@@ -196,6 +196,7 @@
     SUBDIR += bcpp
     SUBDIR += bcunit
     SUBDIR += bear
+    SUBDIR += benchmark
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
     SUBDIR += bglibs
@@ -4195,6 +4196,7 @@
     SUBDIR += poxml
     SUBDIR += poxml-kde4
     SUBDIR += ppl
+    SUBDIR += pprof
     SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
