@@ -43,6 +43,7 @@
     SUBDIR += chemps2
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
+    SUBDIR += chrono
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += colt
@@ -216,6 +217,7 @@
     SUBDIR += pycdf
     SUBDIR += pynn
     SUBDIR += qcl
+    SUBDIR += qmcpack
     SUBDIR += qtresistors
     SUBDIR += quantum-espresso
     SUBDIR += rdkit
