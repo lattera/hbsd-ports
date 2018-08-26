@@ -13,11 +13,17 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-USES=		gmake
+USES=		compiler gmake
 USE_XORG=	x11 xext
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
+=======
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
+MAKE_ARGS=	CDEFS="${CXXFLAGS}"
+>>>>>>> upstream/master
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
