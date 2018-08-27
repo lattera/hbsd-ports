@@ -1,4 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
 # $FreeBSD$
 
 CATEGORIES=		devel
