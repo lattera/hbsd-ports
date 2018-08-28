@@ -1342,6 +1342,7 @@
     SUBDIR += lattice-ice40-examples-hx1k
     SUBDIR += lattice-ice40-examples-hx8k
     SUBDIR += lattice-ice40-tools
+    SUBDIR += lazygit
     SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += leatherman
@@ -4812,6 +4813,7 @@
     SUBDIR += py-palm
     SUBDIR += py-parallax
     SUBDIR += py-parsedatetime
+    SUBDIR += py-parver
     SUBDIR += py-patch
     SUBDIR += py-path.py
     SUBDIR += py-pathlib
