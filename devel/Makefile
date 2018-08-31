@@ -72,6 +72,7 @@
     SUBDIR += R-cran-tibble
     SUBDIR += R-cran-tidyr
     SUBDIR += R-cran-tidyselect
+    SUBDIR += R-cran-vcd
     SUBDIR += R-cran-withr
     SUBDIR += RStudio
     SUBDIR += SpecTcl
@@ -4857,6 +4858,7 @@
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-ptable
+    SUBDIR += py-ptpython
     SUBDIR += py-ptrace
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
