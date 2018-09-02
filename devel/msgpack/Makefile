@@ -16,10 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	msgpack-c
 
-OPTIONS_DEFINE=	TEST
-
-TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
-TEST_TEST_TARGET=	test
+TEST_TARGET=	test
 
 .include <bsd.port.options.mk>
 
@@ -28,8 +25,7 @@ TEST_TEST_TARGET=	test
 USE_GCC=	yes
 .endif
 
-# poudriere doesn't run tests yet, so hook them manually
-# https://github.com/freebsd/poudriere/pull/355
-pre-install-TEST-on: do-test
+pre-test:
+	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}
 
 .include <bsd.port.mk>
