@@ -14,13 +14,9 @@ BUILD_DEPENDS=	pngtopnm:graphics/netpbm
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		tar:bzip2
-=======
 USES=		compiler tar:bzip2
->>>>>>> freebsd/master
 USE_WX=		2.8
 
 BINARY_ALIAS=	wx-config=${WX_CONFIG}
