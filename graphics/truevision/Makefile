@@ -16,10 +16,15 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+=======
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix pkgconfig \
+>>>>>>> freebsd/master
 		python:2.7 shared-mime-info tar:bzip2
+USE_CXXSTD=	gnu++98
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 USE_GL=		gl
 GNU_CONFIGURE=	yes
