@@ -118,6 +118,7 @@
     SUBDIR += libsvm-python
     SUBDIR += libxc
     SUBDIR += linsmith
+    SUBDIR += lm
     SUBDIR += madness
     SUBDIR += massxpert
     SUBDIR += mbdyn
@@ -136,7 +137,9 @@
     SUBDIR += mol2ps
     SUBDIR += mpb
     SUBDIR += mpqc
+    SUBDIR += msms
     SUBDIR += multiwfn
+    SUBDIR += namd
     SUBDIR += ncs
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx

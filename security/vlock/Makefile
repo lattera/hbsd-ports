@@ -24,9 +24,13 @@ CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 USES=	gmake
 USE_CSTD=	gnu99
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 OPTIONS_DEFINE=	ROOTPWD VLOCKSCRIPTS CACASAVER
+=======
+OPTIONS_DEFINE=	ROOTPWD VLOCKSCRIPTS CACASAVER DOCS
+>>>>>>> upstream/master
 OPTIONS_DEFAULT=	ROOTPWD
 OPTIONS_SUB=	yes
 ROOTPWD_DESC=	Enable unlock using root password

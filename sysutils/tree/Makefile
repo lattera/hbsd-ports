@@ -19,7 +19,11 @@ PLIST_FILES=	bin/tree \
 
 PORTDOCS=	CHANGES README
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
+=======
+OPTIONS_DEFINE=	DOCS
+>>>>>>> upstream/master
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tree ${STAGEDIR}${PREFIX}/bin

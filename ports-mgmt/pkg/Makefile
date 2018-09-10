@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.10.5
-PORTREVISION=	2
+PORTREVISION=	3
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://distsets.hardenedbsd.org/
@@ -28,7 +28,11 @@ CONFIGURE_ARGS+= \
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:configure
+=======
+OPTIONS_DEFINE=	DOCS
+>>>>>>> upstream/master
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
@@ -81,9 +85,11 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
 
 .include <bsd.port.post.mk>

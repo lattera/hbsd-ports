@@ -22,9 +22,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 OPTIONS_DEFINE=	SSL SASL
+=======
+OPTIONS_DEFINE=	SSL SASL DOCS
+>>>>>>> upstream/master
 OPTIONS_DEFAULT=	SSL
 
 SASL_USE=	my_tags=sasl

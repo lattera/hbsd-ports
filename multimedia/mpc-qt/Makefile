@@ -24,6 +24,10 @@ USE_GL=		gl
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
+=======
+OPTIONS_DEFINE=	DOCS
+>>>>>>> upstream/master
 
 .include <bsd.port.mk>
