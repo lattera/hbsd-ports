@@ -28,11 +28,9 @@ CONFIGURE_ARGS+= \
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:configure
-=======
+
 OPTIONS_DEFINE=	DOCS
->>>>>>> upstream/master
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
