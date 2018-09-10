@@ -1,10 +1,6 @@
 --- src/network/ssl/qsslsocket_openssl11_symbols_p.h.orig	2018-02-08 18:24:48 UTC
 +++ src/network/ssl/qsslsocket_openssl11_symbols_p.h
-<<<<<<< HEAD
-@@ -75,6 +75,15 @@
-=======
 @@ -75,15 +75,44 @@
->>>>>>> freebsd/master
  #error "You are not supposed to use this header file, include qsslsocket_openssl_symbols_p.h instead"
  #endif
  
@@ -20,8 +16,6 @@
  const unsigned char * q_ASN1_STRING_get0_data(const ASN1_STRING *x);
  
  Q_AUTOTEST_EXPORT BIO *q_BIO_new(const BIO_METHOD *a);
-<<<<<<< HEAD
-=======
  Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
  
 +#ifdef LIBRESSL_VERSION_NUMBER
@@ -85,4 +79,3 @@
  
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
->>>>>>> freebsd/master
