@@ -13,11 +13,8 @@ COMMENT=	Lightweight tunnel proxy which can help you get through firewalls
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-=======
->>>>>>> origin/master
 BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
 
 LIB_DEPENDS=	libev.so:devel/libev \
