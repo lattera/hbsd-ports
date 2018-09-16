@@ -17,10 +17,13 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	UnRAR license
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+<<<<<<< HEAD
 BROKEN_SSL=	openssl-devel
 
 USE_HARDENING=	pie:off safestack
 
+=======
+>>>>>>> freebsd/master
 OPTIONS_DEFINE=	OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
 OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
