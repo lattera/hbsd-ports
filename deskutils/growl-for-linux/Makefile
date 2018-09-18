@@ -11,6 +11,8 @@ COMMENT=	Notification system compatible with Growl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	pie:off
+
 BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
@@ -18,13 +20,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-<<<<<<< HEAD
-BROKEN_powerpc64=	fails to compile: balloon.c:160: error: nested functions are disabled, use -fnested-functions to re-enable
-
-USE_HARDENING=	pie:off
-
-=======
->>>>>>> freebsd/master
 CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 GH_ACCOUNT=	mattn
