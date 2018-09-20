@@ -15,16 +15,14 @@ COMMENT=	Terminal emulator for the X Window System
 
 LICENSE=	MIT
 
+USE_HARDENING=	safestack
+
 USES=		cpe ncurses tar:tgz
 USE_XORG=	xft xmu xt x11 xpm ice
 
 GNU_CONFIGURE=	yes
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 CPE_VENDOR=	invisible-island
->>>>>>> freebsd/master
 
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 
