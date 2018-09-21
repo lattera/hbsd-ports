@@ -24,7 +24,11 @@ COMMENT=	Official AT&T release of KornShell 93
 
 LICENSE=	EPL
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
+=======
+CONFLICTS=	ksh93-devel-*
+>>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	EXAMPLES STATIC
 

@@ -4460,6 +4460,7 @@
     SUBDIR += py-construct
     SUBDIR += py-construct28
     SUBDIR += py-contextlib2
+    SUBDIR += py-cookiecutter
     SUBDIR += py-coreapi
     SUBDIR += py-coreschema
     SUBDIR += py-country
@@ -4655,6 +4656,7 @@
     SUBDIR += py-jellyfish
     SUBDIR += py-jenkins-job-builder
     SUBDIR += py-jep
+    SUBDIR += py-jinja2-time
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
