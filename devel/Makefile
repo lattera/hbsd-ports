@@ -4590,6 +4590,7 @@
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
     SUBDIR += py-git-up
+    SUBDIR += py-git-url-parse
     SUBDIR += py-git_semver
     SUBDIR += py-gitdb2
     SUBDIR += py-gitless
@@ -4940,6 +4941,7 @@
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-flake8
     SUBDIR += py-pytest-flakes
+    SUBDIR += py-pytest-helpers-namespace
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
@@ -4955,6 +4957,7 @@
     SUBDIR += py-python-editor
     SUBDIR += py-python-engineio
     SUBDIR += py-python-gflags
+    SUBDIR += py-python-gilt
     SUBDIR += py-python-gist
     SUBDIR += py-python-gitlab
     SUBDIR += py-python-jenkins
@@ -5138,6 +5141,7 @@
     SUBDIR += py-traitlets
     SUBDIR += py-traits
     SUBDIR += py-transaction
+    SUBDIR += py-tree-format
     SUBDIR += py-trollius
     SUBDIR += py-ttystatus
     SUBDIR += py-tvrage
