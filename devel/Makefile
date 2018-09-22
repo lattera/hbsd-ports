@@ -4736,6 +4736,7 @@
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mock
+    SUBDIR += py-molecule
     SUBDIR += py-mondrian
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
@@ -6111,6 +6112,7 @@
     SUBDIR += rudeconfig
     SUBDIR += rudiments
     SUBDIR += runsnakerun
+    SUBDIR += rust-bindgen
     SUBDIR += rust-cbindgen
     SUBDIR += rvi
     SUBDIR += rvm
