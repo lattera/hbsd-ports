@@ -4823,6 +4823,7 @@
     SUBDIR += py-path.py
     SUBDIR += py-pathlib
     SUBDIR += py-pathlib2
+    SUBDIR += py-pathspec
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
@@ -5210,6 +5211,7 @@
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-xxhash
     SUBDIR += py-yaml
+    SUBDIR += py-yamllint
     SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
