@@ -30,17 +30,8 @@ CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 # XXX bug 224740: configure hangs
 CONFIGURE_ENV+=	gl_cv_func_printf_enomem=no
 .endif
-<<<<<<< HEAD
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 USE_HARDENING=	pie:off relro:off
-
-USES=		cpe gmake iconv perl5 charsetfix tar:xz
-USE_PERL5=	build	# build - required for tests and man page generation
-USE_LDCONFIG=	yes
-=======
->>>>>>> upstream/master
 
 INFO=		coreutils
 
