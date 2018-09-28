@@ -42,7 +42,11 @@ USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm xorgpr
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
+=======
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pygments
+>>>>>>> freebsd/master
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
