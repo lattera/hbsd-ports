@@ -21,17 +21,11 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		desktop-file-utils gettext gmake gnome jpeg libtool localbase \
-		pathfix pkgconfig tar:xz
-USE_GNOME=	cairo intltool librsvg2 gtk30 gnomedesktop3 introspection
-=======
 USES=		desktop-file-utils gettext gnome jpeg localbase \
 		meson pkgconfig python:build,3.4+ shebangfix tar:xz
 USE_GNOME=	cairo librsvg2 gtk30 gnomedesktop3 introspection
->>>>>>> freebsd/master
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	${WRKSRC}/meson_post_install.py

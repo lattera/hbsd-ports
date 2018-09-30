@@ -20,18 +20,11 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 
 PORTSCOUT=	limitw:1,even
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		compiler:c++11-lib desktop-file-utils gettext gmake gnome \
-		libarchive libtool pathfix pkgconfig python:run shebangfix \
-		sqlite tar:xz
-USE_GNOME=	gtk30 intltool introspection:build libxslt:build
-=======
 USES=		compiler:c++11-lib gettext gmake gnome libtool localbase \
 		pathfix pkgconfig python:3.4+,build shebangfix sqlite tar:xz
 USE_GNOME=	glib20 intltool introspection:build libxml2 
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

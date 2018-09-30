@@ -29,18 +29,12 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		autoreconf desktop-file-utils gettext gmake gnome pathfix \
-		pkgconfig shared-mime-info tar:xz
-USE_GNOME=	gtk30 intlhack libxml2 vte3
-=======
 USES=		autoreconf desktop-file-utils gettext gmake gnome localbase \
 		pathfix pkgconfig shared-mime-info tar:xz
 USE_GNOME=	cairo gtk30 intlhack libxml2 vte3
 USE_XORG=	x11
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-ssh
