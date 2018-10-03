@@ -16,10 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	zip:archivers/zip \
 		tif22pnm:graphics/tif22pnm
 
+<<<<<<< HEAD
 BROKEN_FreeBSD_12=	running make Makedep... error; configure: error: cannot compute depends
 
 USE_HARDENING=	pie:off relro:off
 
+=======
+>>>>>>> upstream/master
 #USE_GITHUB=	yes
 GH_ACCOUNT=	pts
 
