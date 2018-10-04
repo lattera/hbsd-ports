@@ -13,6 +13,7 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	zip:archivers/zip \
 		tif22pnm:graphics/tif22pnm
 
@@ -22,9 +23,10 @@ USE_HARDENING=	pie:off relro:off
 GH_ACCOUNT=	pts
 
 USES=		ghostscript:run gmake jpeg:run perl5
+USE_GCC=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKE=gmake ac_cv_path_pts_bash="${SH}"
+CONFIGURE_ENV=	ac_cv_path_pts_bash="${SH}"
 CONFIGURE_ARGS=	--enable-gif
 MAKE_ENV=	MAKE=gmake
 ALL_TARGET=	${PORTNAME}
