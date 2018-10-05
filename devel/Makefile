@@ -348,6 +348,7 @@
     SUBDIR += containers
     SUBDIR += cook
     SUBDIR += courier-unicode
+    SUBDIR += coursier
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
@@ -1369,6 +1370,7 @@
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
+    SUBDIR += libb2
     SUBDIR += libbde
     SUBDIR += libbegemot
     SUBDIR += libbfd
@@ -5511,6 +5513,7 @@
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-byebug
+    SUBDIR += rubygem-c21e
     SUBDIR += rubygem-cabin
     SUBDIR += rubygem-caesars
     SUBDIR += rubygem-cairo-gobject
@@ -5562,6 +5565,8 @@
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-expressions
+    SUBDIR += rubygem-cucumber-formatter-dots
+    SUBDIR += rubygem-cucumber-messages
     SUBDIR += rubygem-cucumber-tag_expressions
     SUBDIR += rubygem-cucumber-wire
     SUBDIR += rubygem-curses
