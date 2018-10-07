@@ -13,7 +13,12 @@ COMMENT=	GNOME 2 game featuring a bizarre flying GNOME logo
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
+=======
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+>>>>>>> freebsd/master
 
 GNU_CONFIGURE=	yes
 USES=		pathfix gmake pkgconfig
