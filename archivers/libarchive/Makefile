@@ -3,10 +3,6 @@
 PORTNAME=	libarchive
 PORTVERSION=	3.3.3
 PORTEPOCH=	1
-<<<<<<< HEAD
-PORTREVISION=	2
-=======
->>>>>>> freebsd/master
 CATEGORIES=	archivers
 MASTER_SITES=	https://libarchive.org/downloads/
 
