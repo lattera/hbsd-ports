@@ -19,17 +19,12 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
 		libidn.so:dns/libidn
 
-<<<<<<< HEAD
-USE_HARDENING= pie:off relro:off
-
-USES=		compiler:c++11-lang gmake localbase:ldflags perl5 ssl tar:bzip2
-GNU_CONFIGURE=	yes
-=======
 USES=		compiler:c++11-lang gmake localbase:ldflags perl5 pkgconfig ssl \
 		tar:bzip2
->>>>>>> upstream/master
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl
+
+USE_HARDENING= pie:off relro:off
 
 CONFLICTS=	courier-[0-9]* imap-uw-[0-9]* panda-imap-[0-9]*
 
