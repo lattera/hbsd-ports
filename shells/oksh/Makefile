@@ -10,15 +10,13 @@ COMMENT=	Portable OpenBSD Korn shell
 
 LICENSE=	PD
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
-=======
+
 OPTIONS_DEFINE=		CURSES STATIC
 OPTIONS_DEFAULT=	CURSES
 
 CURSES_DESC=	Use ncurses for screen clearing routines
 CURSES_USES=	ncurses
->>>>>>> freebsd/master
 
 HAS_CONFIGURE=	yes
 
