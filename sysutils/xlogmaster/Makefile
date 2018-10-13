@@ -10,12 +10,10 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-=======
 DEPRECATED=	Uses obsolete glib12
 EXPIRATION_DATE=	2018-12-20
->>>>>>> freebsd/master
+
+USE_HARDENING=	pie:off relro:off
 
 USE_GNOME=	gtk12
 USES=		gmake makeinfo
