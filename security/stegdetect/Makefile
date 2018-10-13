@@ -10,7 +10,12 @@ MASTER_SITES=	http://www.sourcefiles.org/Graphics/Tools/Miscellaneous/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
+=======
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+>>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
