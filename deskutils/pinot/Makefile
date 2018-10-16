@@ -40,20 +40,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 GH_TAGNAME=	c14d6d5
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
-		--enable-mempool=no
-CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lboost_system
-
-USES=		compiler:c++11-lang autoreconf gettext libarchive \
-=======
 USES=		compiler:c++11-lang autoreconf gettext gnome libarchive \
->>>>>>> freebsd/master
 		libtool pkgconfig python shebangfix sqlite:3 ssl
 USE_CXXSTD=	c++11
 USE_XORG=	pixman
