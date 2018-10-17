@@ -2,18 +2,6 @@ Obtained from:	https://chromium-review.googlesource.com/c/chromiumos/third_party
 
 --- src/tlsdate-helper.c.orig	2015-05-28 18:49:40 UTC
 +++ src/tlsdate-helper.c
-<<<<<<< HEAD
-@@ -374,7 +374,7 @@ void
- openssl_time_callback (const SSL* ssl, int where, int ret)
- {
-   if (where == SSL_CB_CONNECT_LOOP &&
--      (ssl->state == SSL3_ST_CR_SRVR_HELLO_A || ssl->state == SSL3_ST_CR_SRVR_HELLO_B))
-+      (SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_A || SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_B))
-   {
-     // XXX TODO: If we want to trust the remote system for time,
-     // can we just read that time out of the remote system and if the
-@@ -1133,10 +1133,12 @@ run_ssl (uint32_t *time_map, int time_is
-=======
 @@ -370,11 +370,29 @@ xfree (void *ptr)
    free(ptr);
  }
@@ -36,8 +24,9 @@ Obtained from:	https://chromium-review.googlesource.com/c/chromiumos/third_party
  openssl_time_callback (const SSL* ssl, int where, int ret)
  {
    if (where == SSL_CB_CONNECT_LOOP &&
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
-       (ssl->state == SSL3_ST_CR_SRVR_HELLO_A || ssl->state == SSL3_ST_CR_SRVR_HELLO_B))
+-      (ssl->state == SSL3_ST_CR_SRVR_HELLO_A || ssl->state == SSL3_ST_CR_SRVR_HELLO_B))
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++      (SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_A || SSL_get_state(ssl) == SSL3_ST_CR_SRVR_HELLO_B))
 +#else
 +      (SSL_get_state(ssl) == TLS_ST_CR_SRVR_HELLO))
 +#endif
@@ -173,7 +162,6 @@ Obtained from:	https://chromium-review.googlesource.com/c/chromiumos/third_party
    ctx = NULL;
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L
    if (0 == strcmp("sslv23", protocol))
->>>>>>> freebsd/master
    {
      verb ("V: using SSLv23_client_method()");
      ctx = SSL_CTX_new(SSLv23_client_method());
