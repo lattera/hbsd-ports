@@ -29,14 +29,9 @@ USES=		blaslapack cmake fortran gl jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
-<<<<<<< HEAD
-SLAVEDIRS=	cad/gmsh-occ
-
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
-=======
->>>>>>> freebsd/master
 MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
