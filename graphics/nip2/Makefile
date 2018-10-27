@@ -17,13 +17,9 @@ LIB_DEPENDS=	libvips.so:graphics/vips \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		bison desktop-file-utils dos2unix gettext gmake pkgconfig \
-=======
 USES=		autoreconf:build bison desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
->>>>>>> freebsd/master
 		shared-mime-info
 
 DOS2UNIX_GLOB=	*.def
