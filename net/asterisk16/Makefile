@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	15.6.1
+PORTVERSION=	16.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
-PKGNAMESUFFIX=	15
+PKGNAMESUFFIX=	16
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -15,9 +15,6 @@ COMMENT=	Open Source PBX and telephony toolkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Asterisk 15.x will reach EOL on 2019-10-03. Please migrate to net/asterisk16
-EXPIRATION_DATE=2019-10-03
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
@@ -58,7 +55,7 @@ MAKE_ARGS+=	NOISY_BUILD=yes \
 
 CONFLICTS=		ossp-uuid-[0-9]*
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk13 asterisk16
+CONFLICTS_INSTALL=	asterisk13 asterisk15
 
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
