@@ -33,13 +33,9 @@ BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -latomic
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-<<<<<<< HEAD
 USE_HARDENING=  safestack
 
-USES=	cpe libedit
-=======
 USES=	compiler:c11 cpe libedit
->>>>>>> freebsd/master
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.12.3
 
