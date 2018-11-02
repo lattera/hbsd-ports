@@ -13,19 +13,14 @@ COMMENT=	Softether VPN solution
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_HARDENING=	safestack
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-=======
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
 USE_RC_SUBR=	softether_bridge softether_client softether_server
->>>>>>> freebsd/master
 
 DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
 		src/Cedar/*.* src/Mayaqua/*.*
