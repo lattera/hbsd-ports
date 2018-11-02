@@ -63,15 +63,7 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 
 .if empty(PORT_OPTIONS:MBUNDLED_SSL)
 
-<<<<<<< HEAD
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
-IGNORE=		node.js requires openssl 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf or enable BUNDLED_SSL option
-.endif
-
 .if !empty(SSL_DEFAULT:Mlibressl*) || defined(LIBRESSL_IS_OPENSSL)
-=======
-.if !empty(SSL_DEFAULT:Mlibressl*)
->>>>>>> freebsd/master
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 
