@@ -21,14 +21,9 @@ ONLY_FOR_ARCHS=	amd64 i386
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		help2man:misc/help2man
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-CONFLICTS=	grub-0*
-SSP_UNSAFE=	yes
-=======
 USES=		autoreconf bison cpe gettext gmake tar:xz
->>>>>>> freebsd/master
 USE_GCC=	7	# Fails to build with GCC 8, cf. PR 232961, or clang
 
 GNU_CONFIGURE=	yes
