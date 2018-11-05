@@ -13,24 +13,11 @@ COMMENT=	Softether VPN solution (development version)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_HARDENING=	safestack
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-USES=		dos2unix gmake iconv localbase readline ssl
-DOS2UNIX_FILES=	src/Mayaqua/Network.c
-USE_GITHUB=	yes
-GH_ACCOUNT=	SoftEtherVPN
-GH_PROJECT=	SoftEtherVPN
-GH_TAGNAME=	1e17c9b
-ALL_TARGET=	build
-MAKE_ENV=	STAGEDIR=${STAGEDIR} ICONV_LIB=${ICONV_LIB}
-USE_RC_SUBR=	vpnserver vpnclient vpnbridge
-PORTDOCS=	AUTHORS.TXT BUILD_UNIX.TXT ChangeLog README THIRD_PARTY.TXT \
-		WARNING.TXT
-=======
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
 USE_RC_SUBR=	softether_bridge softether_client softether_server
@@ -38,7 +25,6 @@ USE_RC_SUBR=	softether_bridge softether_client softether_server
 DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
 		src/Cedar/*.* src/Mayaqua/*.*
 SUB_FILES=	vpncmd
->>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	DOCS UNLOCK
 
