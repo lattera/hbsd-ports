@@ -15,12 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-GNU_CONFIGURE=	yes
-=======
->>>>>>> freebsd/master
 USES=		gmake
 
 GNU_CONFIGURE=	yes
