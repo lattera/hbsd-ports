@@ -22,13 +22,9 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libmhash.so:security/mhash \
 		libpng.so:graphics/png
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		pkgconfig python:2.7,build scons zip
-=======
 USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build scons zip
->>>>>>> freebsd/master
 USE_GNOME=	gtk20 libxml2
 MAKE_ARGS=	${MAKE_ENV} BUILD=release
 SSP_UNSAFE=	yes
