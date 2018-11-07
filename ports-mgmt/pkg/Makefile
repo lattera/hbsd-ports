@@ -12,6 +12,8 @@ COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
+USE_HARDENING=	pie:configure
+
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
@@ -20,15 +22,10 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
 
-CONFIGURE_ARGS+= \
-	--disable-silent-rules
-
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
-
-USE_HARDENING=	pie:configure
 
 OPTIONS_DEFINE=	DOCS
 
