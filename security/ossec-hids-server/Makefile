@@ -1,16 +1,10 @@
-# Created by: Valerio Daelli <valerio.daelli@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	ossec-hids
-PORTVERSION=	2.8.3
-DISTVERSIONPREFIX=	v
-PORTREVISION?=	3
-CATEGORIES=	security
-PKGNAMESUFFIX=	-server
+OSSEC_TYPE=	server
 
-MAINTAINER=	dominik.lisiak@bemsoft.pl
-COMMENT?=	Security tool to monitor and check logs and intrusions
+MASTERDIR=	${.CURDIR}/../ossec-hids-local
 
+<<<<<<< HEAD
 USE_GITHUB=	yes
 GH_ACCOUNT=	ossec
 USE_RC_SUBR=	ossec-hids
@@ -148,3 +142,6 @@ post-install-PGSQL-on:
 	@cd ${WRKSRC} && ${INSTALL_DATA} src/os_dbd/postgresql.schema ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
+=======
+.include "${MASTERDIR}/Makefile"
+>>>>>>> freebsd/master
