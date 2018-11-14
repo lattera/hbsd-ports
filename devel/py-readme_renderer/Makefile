@@ -1,17 +1,16 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	statsd
-PORTVERSION=	3.3.0
+PORTNAME=	readme_renderer
+PORTVERSION=	24.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
-COMMENT=	Simple statsd client
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Library for rendering "readme" descriptions
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
