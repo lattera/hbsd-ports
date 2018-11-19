@@ -3,7 +3,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -21,12 +20,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
-GHC_VERSION=		8.4.3
+GHC_VERSION=		8.4.4
 HSCOLOUR_VERSION=	1.24.4
+LLVM_VERSION=		50
 
-DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
-EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
+CONFLICTS_INSTALL=	ghc-7.4.* ghc-7.6.* ghc-7.8.* ghc-7.10.* ghc-8.0.* ghc-8.4.3
 
+<<<<<<< HEAD
 CONFLICTS=	ghc-7.4.* ghc-7.6.* ghc-7.8.* ghc-7.10.* ghc-8.0.*
 
 LIB_DEPENDS+=	libgmp.so:math/gmp
@@ -289,14 +289,8 @@ post-install:
 .endif
 	(for f in ${_EXECUTABLES} $$(${FIND} ${GHC_LIBDIR} -name '*.so*'); do \
 		${STRIP_CMD} $$f; done)
+=======
+.include "${.CURDIR}/../../lang/ghc/bsd.ghc.mk"
+>>>>>>> freebsd/master
 
 .include <bsd.port.mk>
-
-# Create a bootstrap compiler tar ball: run this in an interactive poudriere jail
-.PHONY: create-bootstrap
-create-bootstrap:
-	cd ${WRKSRC} \
-	&& gmake binary-dist TAR_COMP=xz \
-	&& mv ${WRKSRC}/ghc-${GHC_VERSION}-${ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
-	&& sha256 ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
-	&& stat -f %z ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
