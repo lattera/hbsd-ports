@@ -10,6 +10,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
 LIB_DEPENDS+=	libgmp.so:math/gmp
 
+USE_HARDENING=	pie:off
+LLVM_AR_UNSAFE=	yes
+
 USES=		autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=	en_US.UTF-8
 USE_PERL5=	build
