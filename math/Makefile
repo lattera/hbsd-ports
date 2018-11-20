@@ -199,6 +199,7 @@
     SUBDIR += eval
     SUBDIR += facile
     SUBDIR += fann
+    SUBDIR += fcl
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float
@@ -313,6 +314,7 @@
     SUBDIR += lean
     SUBDIR += levmar
     SUBDIR += libRmath
+    SUBDIR += libccd
     SUBDIR += libflame
     SUBDIR += liblbfgs
     SUBDIR += libmesh
@@ -474,6 +476,7 @@
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
+    SUBDIR += octomap
     SUBDIR += ogdf
     SUBDIR += oleo
     SUBDIR += openblas
