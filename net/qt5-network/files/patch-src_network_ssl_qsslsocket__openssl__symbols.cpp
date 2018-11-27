@@ -1,8 +1,3 @@
-<<<<<<< HEAD
---- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2018-06-15 07:29:31 UTC
-+++ src/network/ssl/qsslsocket_openssl_symbols.cpp
-@@ -150,6 +150,14 @@ DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w,
-=======
 * Boilerplate for SSL_CTX_set1_groups() used in qsslcontext_openssl.cpp
 *
 * Prepend the path of the SSL libraries used for building so the same libraries are
@@ -16,7 +11,6 @@
 --- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	2018-10-21 15:55:52 UTC
 +++ src/network/ssl/qsslsocket_openssl_symbols.cpp
 @@ -150,6 +150,14 @@ DEFINEFUNC2(int, BN_is_word, BIGNUM *a, 
->>>>>>> freebsd/master
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_base_id, EVP_PKEY *a, a, return NID_undef, return)
  DEFINEFUNC(int, RSA_bits, RSA *a, a, return 0, return)
@@ -31,7 +25,7 @@
  DEFINEFUNC(int, DSA_bits, DSA *a, a, return 0, return)
  DEFINEFUNC(int, OPENSSL_sk_num, OPENSSL_STACK *a, a, return -1, return)
  DEFINEFUNC2(void, OPENSSL_sk_pop_free, OPENSSL_STACK *a, a, void (*b)(void*), b, return, DUMMYARG)
-@@ -159,6 +167,7 @@ DEFINEFUNC(void, OPENSSL_sk_free, OPENSSL_STACK *a, a,
+@@ -159,6 +167,7 @@ DEFINEFUNC(void, OPENSSL_sk_free, OPENSS
  DEFINEFUNC2(void *, OPENSSL_sk_value, OPENSSL_STACK *a, a, int b, b, return 0, return)
  DEFINEFUNC(int, SSL_session_reused, SSL *a, a, return 0, return)
  DEFINEFUNC2(unsigned long, SSL_CTX_set_options, SSL_CTX *ctx, ctx, unsigned long op, op, return 0, return)
@@ -39,7 +33,7 @@
  DEFINEFUNC3(size_t, SSL_get_client_random, SSL *a, a, unsigned char *out, out, size_t outlen, outlen, return 0, return)
  DEFINEFUNC3(size_t, SSL_SESSION_get_master_key, const SSL_SESSION *ses, ses, unsigned char *out, out, size_t outlen, outlen, return 0, return)
  DEFINEFUNC6(int, CRYPTO_get_ex_new_index, int class_index, class_index, long argl, argl, void *argp, argp, CRYPTO_EX_new *new_func, new_func, CRYPTO_EX_dup *dup_func, dup_func, CRYPTO_EX_free *free_func, free_func, return -1, return)
-@@ -168,7 +177,9 @@ DEFINEFUNC(const SSL_METHOD *, TLS_client_method, DUMM
+@@ -168,7 +177,9 @@ DEFINEFUNC(const SSL_METHOD *, TLS_clien
  DEFINEFUNC(const SSL_METHOD *, TLS_server_method, DUMMYARG, DUMMYARG, return 0, return)
  DEFINEFUNC(ASN1_TIME *, X509_getm_notBefore, X509 *a, a, return 0, return)
  DEFINEFUNC(ASN1_TIME *, X509_getm_notAfter, X509 *a, a, return 0, return)
@@ -49,11 +43,7 @@
  DEFINEFUNC(EVP_PKEY *, X509_get_pubkey, X509 *a, a, return 0, return)
  DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE *a, a, X509_STORE_CTX_verify_cb verify_cb, verify_cb, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(X509) *, X509_STORE_CTX_get0_chain, X509_STORE_CTX *a, a, return 0, return)
-<<<<<<< HEAD
-@@ -406,7 +417,7 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
-=======
 @@ -406,7 +417,7 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey,
->>>>>>> freebsd/master
  DEFINEFUNC2(int, SSL_CTX_use_RSAPrivateKey, SSL_CTX *a, a, RSA *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return 0, return)
@@ -62,11 +52,7 @@
  DEFINEFUNC(SSL_CONF_CTX *, SSL_CONF_CTX_new, DUMMYARG, DUMMYARG, return 0, return);
  DEFINEFUNC(void, SSL_CONF_CTX_free, SSL_CONF_CTX *a, a, return ,return);
  DEFINEFUNC2(void, SSL_CONF_CTX_set_ssl_ctx, SSL_CONF_CTX *a, a, SSL_CTX *b, b, return, return);
-<<<<<<< HEAD
-@@ -537,6 +548,9 @@ DEFINEFUNC(void, EC_KEY_free, EC_KEY *ecdh, ecdh, retu
-=======
 @@ -537,6 +548,9 @@ DEFINEFUNC(void, EC_KEY_free, EC_KEY *ec
->>>>>>> freebsd/master
  DEFINEFUNC2(size_t, EC_get_builtin_curves, EC_builtin_curve * r, r, size_t nitems, nitems, return 0, return)
  #if OPENSSL_VERSION_NUMBER >= 0x10002000L
  DEFINEFUNC(int, EC_curve_nist2nid, const char *name, name, return 0, return)
@@ -76,11 +62,7 @@
  #endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
  #endif // OPENSSL_NO_EC
  
-<<<<<<< HEAD
-@@ -782,8 +796,8 @@ static QPair<QLibrary*, QLibrary*> loadOpenSsl()
-=======
 @@ -782,8 +796,8 @@ static QPair<QLibrary*, QLibrary*> loadO
->>>>>>> freebsd/master
  #endif
  #if defined(SHLIB_VERSION_NUMBER) && !defined(Q_OS_QNX) // on QNX, the libs are always libssl.so and libcrypto.so
      // first attempt: the canonical name is libssl.so.<SHLIB_VERSION_NUMBER>
@@ -91,11 +73,7 @@
      if (libcrypto->load() && libssl->load()) {
          // libssl.so.<SHLIB_VERSION_NUMBER> and libcrypto.so.<SHLIB_VERSION_NUMBER> found
          return pair;
-<<<<<<< HEAD
-@@ -800,8 +814,8 @@ static QPair<QLibrary*, QLibrary*> loadOpenSsl()
-=======
 @@ -800,8 +814,8 @@ static QPair<QLibrary*, QLibrary*> loadO
->>>>>>> freebsd/master
      //  macOS's /usr/lib/libssl.dylib, /usr/lib/libcrypto.dylib will be picked up in the third
      //    attempt, _after_ <bundle>/Contents/Frameworks has been searched.
      //  iOS does not ship a system libssl.dylib, libcrypto.dylib in the first place.
@@ -106,27 +84,6 @@
      if (libcrypto->load() && libssl->load()) {
          // libssl.so.0 and libcrypto.so.0 found
          return pair;
-<<<<<<< HEAD
-@@ -856,7 +870,7 @@ bool q_resolveOpenSslSymbols()
-     static bool symbolsResolved = false;
-     static bool triedToResolveSymbols = false;
- #ifndef QT_NO_THREAD
--#if QT_CONFIG(opensslv11)
-+#if QT_CONFIG(opensslv11) && !defined(LIBRESSL_VERSION_NUMBER)
-     QMutexLocker locker(QMutexPool::globalInstanceGet((void *)&q_OPENSSL_init_ssl));
- #else
-     QMutexLocker locker(QMutexPool::globalInstanceGet((void *)&q_SSL_library_init));
-@@ -877,7 +891,7 @@ bool q_resolveOpenSslSymbols()
-         // failed to load them
-         return false;
- 
--#if QT_CONFIG(opensslv11)
-+#if QT_CONFIG(opensslv11) && !defined(LIBRESSL_VERSION_NUMBER)
- 
-     RESOLVEFUNC(OPENSSL_init_ssl)
-     RESOLVEFUNC(OPENSSL_init_crypto)
-=======
->>>>>>> freebsd/master
 @@ -885,17 +899,30 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EVP_CIPHER_CTX_reset)
      RESOLVEFUNC(EVP_PKEY_base_id)
