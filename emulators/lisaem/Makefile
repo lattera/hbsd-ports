@@ -12,15 +12,11 @@ COMMENT=	Apple Lisa 2 Emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-USES=		compiler tar:bzip2
-=======
 BUILD_DEPENDS=	pngtopnm:graphics/netpbm
 
+USE_HARDENING=	pie:off
+
 USES=		compiler:c++11-lang tar:bzip2
->>>>>>> freebsd/master
 USE_WX=		2.8
 
 BINARY_ALIAS=	wx-config=${WX_CONFIG}
