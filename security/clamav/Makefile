@@ -2,7 +2,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.100.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -12,11 +12,10 @@ COMMENT=	Command line virus scanner written entirely in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		cpe gmake gnome libtool ncurses pathfix ssl
+USES=		cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_LDCONFIG=	yes
 
