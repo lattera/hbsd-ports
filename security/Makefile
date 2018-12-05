@@ -1229,6 +1229,7 @@
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
+    SUBDIR += seal
     SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok
