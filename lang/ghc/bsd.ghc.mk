@@ -10,14 +10,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
-<<<<<<< HEAD
-LIB_DEPENDS+=	libgmp.so:math/gmp
-
 USE_HARDENING=	pie:off
 LLVM_AR_UNSAFE=	yes
 
-=======
->>>>>>> upstream/master
 USES=		autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=	en_US.UTF-8
 USE_PERL5=	build
