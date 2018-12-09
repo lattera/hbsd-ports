@@ -18,17 +18,12 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libopenal.so:audio/openal-soft \
 		libmpeg2.so:multimedia/libmpeg2
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		gettext gmake pkgconfig
-USE_SDL=	sdl
-=======
 USES=		desktop-file-utils gettext gl gmake \
 		gnome localbase pkgconfig shared-mime-info
 
 USE_SDL=	sdl2
->>>>>>> freebsd/master
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_XORG=	x11
