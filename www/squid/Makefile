@@ -28,13 +28,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to std::ctype
 
-<<<<<<< HEAD
-CONFLICTS=	squid*-3.*
-
 USE_HARDENING=	safestack
 
-=======
->>>>>>> freebsd/master
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
 
 CONFLICTS=	squid*-3.*
