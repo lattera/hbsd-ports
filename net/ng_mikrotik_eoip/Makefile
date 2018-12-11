@@ -11,13 +11,8 @@ COMMENT=	Netgraph node for Mikrotik EoIP tunneling
 
 LICENSE=	BSD2CLAUSE
 
-<<<<<<< HEAD
-BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
-
 USE_HARDENING=	pie:off relro:off
 
-=======
->>>>>>> upstream/master
 SSP_UNSAFE=	kernel module does not support ssp
 
 OPTIONS_DEFINE=	PTABLE
