@@ -23,13 +23,9 @@ ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc sparc64
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		bison cpe gmake iconv libedit localbase \
-=======
 USES=		bison cpe gmake gnome iconv libedit localbase \
->>>>>>> freebsd/master
 		shebangfix sqlite ssl ncurses
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
