@@ -31,14 +31,10 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		compiler:c++11-lang pkgconfig makeinfo gmake iconv jpeg
-=======
 USES=		compiler:c++11-lang pkgconfig makeinfo gmake \
 		iconv:wchar_t jpeg readline
->>>>>>> freebsd/master
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
