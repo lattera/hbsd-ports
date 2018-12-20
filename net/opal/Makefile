@@ -14,9 +14,13 @@ LICENSE=	MPL10
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 USES=		gmake pathfix pkgconfig tar:xz
+=======
+USES=		compiler:c11 gmake pathfix pkgconfig tar:xz
+>>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
