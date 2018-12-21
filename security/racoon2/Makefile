@@ -10,23 +10,17 @@ RACOON2_COMMIT_DATE=20181215
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-USES=		perl5 tar:tgz ssl
-CONFIGURE_ARGS+=	--disable-kinkd
-PLIST_SUB+=	KINK="@comment "
-=======
 CONFLICTS=	racoon2-legacy-*
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     zoulasc
 GH_TAGNAME=     ${HASH}
 
+USE_HARDENING=	pie:off
+
 USES=		autoreconf:build perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--enable-natt \
 			--prefix=${PREFIX}
->>>>>>> freebsd/master
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
