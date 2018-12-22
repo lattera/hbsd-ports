@@ -11,14 +11,9 @@ COMMENT=	IRC client for KDE
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libenchant.so:textproc/enchant
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-=======
 USES=		cmake cpe desktop-file-utils gettext gnome kde:5 perl5 \
 		pkgconfig python qt:5 ssl tar:bzip2
 USE_GNOME=	glib20
->>>>>>> upstream/master
 USE_PERL5=	build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n notifications \
 		service widgetsaddons windowsystem xmlgui
@@ -28,6 +23,8 @@ USE_QT=		core dbus gui multimedia network phonon4 printsupport sql svg \
 USE_XORG=	ice sm x11 xext xrender xscrnsaver
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
+USE_HARDENING=	pie:off
 
 CMAKE_ARGS=	-DMANDIR:STRING=man
 
