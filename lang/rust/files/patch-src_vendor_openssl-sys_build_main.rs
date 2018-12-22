@@ -46,22 +46,11 @@ https://github.com/sfackler/rust-openssl/commit/e75793e8962d
      use std::process::{self, Command};
  
      use super::env;
-<<<<<<< HEAD
-@@ -500,7 +503,8 @@ See rust-openssl README for more information:
-=======
 @@ -500,6 +503,8 @@ See rust-openssl README for more information:
->>>>>>> upstream/master
              (7, _) => ('7', 'x'),
              (8, 0) => ('8', '0'),
              (8, 1) => ('8', '1'),
--            _ => version_error(),
 +            (8, _) => ('8', 'x'),
-<<<<<<< HEAD
-+            _ => ('8', 'x'),
-         };
- 
-         println!("cargo:libressl=true");
-=======
 +            (9, 0) => ('9', '0'),
              _ => version_error(),
          };
@@ -75,4 +64,3 @@ https://github.com/sfackler/rust-openssl/commit/e75793e8962d
  due to this version mismatch.
  
  "
->>>>>>> upstream/master
