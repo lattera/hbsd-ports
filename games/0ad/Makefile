@@ -26,15 +26,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libtiff.so:graphics/tiff \
 		libsodium.so:security/libsodium
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
-BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
-MAKE_ARGS=	config=release verbose=1
-CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
-=======
->>>>>>> freebsd/master
 USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake iconv jpeg openal:al \
 		pkgconfig python:build tar:xz
 USE_GNOME=	libxml2 gtk20
