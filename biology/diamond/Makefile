@@ -14,14 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-<<<<<<< HEAD
-USES=		cmake:outsource
-
 USE_HARDENING=	pie:off
 
-=======
 USES=		cmake
->>>>>>> freebsd/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbuchfink
 
