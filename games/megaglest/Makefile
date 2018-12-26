@@ -29,13 +29,9 @@ GH_PROJECT=	megaglest-source
 
 SUB_FILES=	pkg-message
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		cmake compiler:c++11-lib display:build dos2unix jpeg lua \
-=======
 USES=		cmake:insource compiler:c++11-lib display:build dos2unix jpeg lua \
->>>>>>> freebsd/master
 		openal:al,alut pkgconfig
 USE_GL=		glew gl glu
 USE_SDL=	sdl2
