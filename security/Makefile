@@ -304,7 +304,6 @@
     SUBDIR += keyprint
     SUBDIR += kf5-kdesu
     SUBDIR += kgpg
-    SUBDIR += kgpg-kde4
     SUBDIR += kickpass
     SUBDIR += klee
     SUBDIR += kleopatra
@@ -322,7 +321,6 @@
     SUBDIR += kripp
     SUBDIR += kstart
     SUBDIR += kwalletmanager
-    SUBDIR += kwalletmanager-kde4
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5
@@ -1287,7 +1285,6 @@
     SUBDIR += stud
     SUBDIR += stunnel
     SUBDIR += subversion-gnome-keyring
-    SUBDIR += subversion-kwallet
     SUBDIR += subweb
     SUBDIR += sudo
     SUBDIR += sudoscript
