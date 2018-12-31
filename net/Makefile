@@ -422,7 +422,6 @@
     SUBDIR += librsync2
     SUBDIR += libsignal
     SUBDIR += libsocket++
-    SUBDIR += libsrtp
     SUBDIR += libsrtp2
     SUBDIR += libstorj
     SUBDIR += libtnl
@@ -968,17 +967,12 @@
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RPC2
     SUBDIR += pecl-amqp
-    SUBDIR += pecl-apn
     SUBDIR += pecl-geoip
-    SUBDIR += pecl-ip2location
-    SUBDIR += pecl-mosquitto
-    SUBDIR += pecl-oauth
     SUBDIR += pecl-oauth2
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-yaz
-    SUBDIR += pecl-yp
     SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger

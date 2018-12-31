@@ -152,8 +152,6 @@
     SUBDIR += launchy
     SUBDIR += libkdepim
     SUBDIR += libopensync-plugin-vformat-devel
-    SUBDIR += libstreamanalyzer
-    SUBDIR += libstreams
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += ljit
@@ -197,7 +195,6 @@
     SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
-    SUBDIR += phpcollab
     SUBDIR += phpicalendar
     SUBDIR += pim-data-exporter
     SUBDIR += pim-sieve-editor
@@ -248,16 +245,11 @@
     SUBDIR += shutter
     SUBDIR += silence
     SUBDIR += simpleagenda
-    SUBDIR += simplegroupware
     SUBDIR += sliderule
     SUBDIR += spice-gtk
     SUBDIR += strigi
-    SUBDIR += strigiclient
-    SUBDIR += strigidaemon
-    SUBDIR += strigiutils
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-kde4
-    SUBDIR += surrealtodo
     SUBDIR += synapse
     SUBDIR += syncthing-gtk
     SUBDIR += systempreferences

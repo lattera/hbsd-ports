@@ -56,7 +56,6 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asusoled
-    SUBDIR += ataidle
     SUBDIR += atf-allwinner
     SUBDIR += atitvout
     SUBDIR += atop
@@ -157,7 +156,6 @@
     SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine-masterfiles38
     SUBDIR += cfengine-masterfiles39
-    SUBDIR += cfengine22
     SUBDIR += cfengine310
     SUBDIR += cfengine311
     SUBDIR += cfengine312
@@ -890,7 +888,6 @@
     SUBDIR += pear-I18Nv2
     SUBDIR += pear-Log
     SUBDIR += pear-Translation2
-    SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
     SUBDIR += personality
@@ -1263,7 +1260,6 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng310
     SUBDIR += syslog-ng311
     SUBDIR += syslog-ng312
@@ -1273,8 +1269,6 @@
     SUBDIR += syslog-ng317
     SUBDIR += syslog-ng318
     SUBDIR += syslog-ng319
-    SUBDIR += syslog-ng36
-    SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39
     SUBDIR += syslogger
     SUBDIR += sysrc

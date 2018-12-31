@@ -315,7 +315,6 @@
     SUBDIR += kqoauth
     SUBDIR += kr
     SUBDIR += krb5
-    SUBDIR += krb5-114
     SUBDIR += krb5-115
     SUBDIR += krb5-116
     SUBDIR += krb5-appl
@@ -823,7 +822,6 @@
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Net_Portscan
     SUBDIR += pear-Text_Password
-    SUBDIR += pecl-crack
     SUBDIR += pecl-crypto
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-krb5
@@ -838,7 +836,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php-suhosin
     SUBDIR += php56-filter
     SUBDIR += php56-hash
     SUBDIR += php56-mcrypt
@@ -855,7 +852,6 @@
     SUBDIR += php73-hash
     SUBDIR += php73-openssl
     SUBDIR += php73-sodium
-    SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
     SUBDIR += pidgin-encryption

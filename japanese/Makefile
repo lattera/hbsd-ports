@@ -217,7 +217,6 @@
     SUBDIR += p5-WWW-MobileCarrierJP
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
-    SUBDIR += php5-mecab
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn
@@ -260,7 +259,6 @@
     SUBDIR += skkserv
     SUBDIR += slimeforest
     SUBDIR += slrn
-    SUBDIR += spamassassin
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += t2ps
