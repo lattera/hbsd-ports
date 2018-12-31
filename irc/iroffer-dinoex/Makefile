@@ -14,17 +14,14 @@ LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-=======
 USES=		ssl
->>>>>>> upstream/master
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
+
+USE_HARDENING=	pie:off relro:off
 
 IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
