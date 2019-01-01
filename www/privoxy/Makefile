@@ -17,12 +17,8 @@ USES=		autoreconf cpe gmake shebangfix
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		autoreconf cpe gmake shebangfix
-=======
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	tools/privoxy-log-parser.pl tools/privoxy-regression-test.pl tools/uagen.pl
 

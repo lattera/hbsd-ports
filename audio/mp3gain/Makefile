@@ -12,17 +12,13 @@ COMMENT=	Tool to normalize the gain of MP3 files
 
 LICENSE=	LGPL21
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		zip dos2unix uidfix
-=======
 LIB_DEPENDS=	libmpg123.so:audio/mpg123
 
 USES=		zip gmake uidfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
->>>>>>> upstream/master
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mp3gain
