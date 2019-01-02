@@ -18,17 +18,12 @@ LIB_DEPENDS=	libstfl.so:devel/stfl \
 		libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
 
-<<<<<<< HEAD
-USES=		compiler:c++11-lib gettext gmake gnome iconv:translit ncurses \
-		pkgconfig sqlite shebangfix ssl
-USE_GITHUB=	yes
-USE_HARDENING=	safestack
-=======
 USES=		cargo compiler:c++11-lib gettext gmake gnome iconv:translit ncurses \
 		pkgconfig sqlite shebangfix ssl tar:xz
->>>>>>> upstream/master
 USE_CXXSTD=	gnu++11
 USE_GNOME=	libxml2
+
+USE_HARDENING=	safestack
 
 MAKE_ARGS=	CARGO=${CARGO_CARGO_BIN} mandir=${PREFIX}/man prefix=${PREFIX}
 MAKE_ENV=	${CARGO_ENV}
