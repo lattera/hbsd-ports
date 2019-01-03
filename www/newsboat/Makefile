@@ -23,8 +23,6 @@ USES=		cargo compiler:c++11-lib gettext gmake gnome iconv:translit ncurses \
 USE_CXXSTD=	gnu++11
 USE_GNOME=	libxml2
 
-USE_HARDENING=	safestack
-
 MAKE_ARGS=	CARGO=${CARGO_CARGO_BIN} mandir=${PREFIX}/man prefix=${PREFIX}
 MAKE_ENV=	${CARGO_ENV}
 
