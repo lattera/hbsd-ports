@@ -12,15 +12,9 @@ COMMENT=	Program set interconverts between various bibliography formats
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
-USES=	gmake tar:tgz
-
 USE_HARDENING=	pie:off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-=======
 USES=		gmake
->>>>>>> freebsd/master
 
 HAS_CONFIGURE=	yes
 TEST_TARGET=	test
