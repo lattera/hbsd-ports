@@ -12,13 +12,8 @@ COMMENT=	Small, efficient HTTP proxy server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USE_GITHUB=	yes
-
-=======
->>>>>>> freebsd/master
 OPTIONS_DEFINE=	REVERSE TRANSPARENT XHEADER
 REVERSE_DESC=		Reverse proxy support
 TRANSPARENT_DESC=	Transparent proxy support
