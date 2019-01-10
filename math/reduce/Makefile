@@ -16,16 +16,12 @@ BROKEN_aarch64=		fails to install: Reduce-svn4372-src/cslbuild/aarch64-unknown-f
 BROKEN_armv6=		fails to compile: redfront.h:118:12: conflicting types for '__wcwidth'
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-RUN_DEPENDS=	gnuplot:math/gnuplot
-=======
 BUILD_DEPENDS=	gnuplot:math/gnuplot
->>>>>>> freebsd/master
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
+
+USE_HARDENING=	pie:off
 
 USES=		autoreconf:build libtool gmake ncurses jpeg
 USE_XORG=	x11 xext xorgproto xft
