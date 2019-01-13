@@ -15,13 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 INFO=		tar
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		charsetfix cpe iconv:${STATIC_ARGS} localbase makeinfo tar:xz
-=======
 USES=		charsetfix cpe iconv:${STATIC_ARGS} localbase tar:xz
->>>>>>> freebsd/master
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
