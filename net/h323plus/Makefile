@@ -13,13 +13,11 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpt.so:devel/ptlib
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
-=======
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	willamowius
 GH_PROJECT=	h323plus
->>>>>>> upstream/master
 
 USES=		gmake ssl
 USE_LDCONFIG=	yes
