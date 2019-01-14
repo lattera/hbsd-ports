@@ -1,5 +1,6 @@
---- src/libstrongswan/plugins/openssl/openssl_plugin.c.orig	2016-10-08 12:17:09 UTC
+--- src/libstrongswan/plugins/openssl/openssl_plugin.c.orig	2018-12-14 15:48:24 UTC
 +++ src/libstrongswan/plugins/openssl/openssl_plugin.c
+<<<<<<< HEAD
 @@ -20,6 +20,10 @@
  #include <threading/mutex.h>
  #include <threading/thread_value.h>
@@ -12,6 +13,9 @@
  #include <openssl/evp.h>
  #include <openssl/conf.h>
 @@ -623,7 +627,7 @@ plugin_t *openssl_plugin_create()
+=======
+@@ -810,7 +810,7 @@ plugin_t *openssl_plugin_create()
+>>>>>>> upstream/master
  		},
  	);
  
