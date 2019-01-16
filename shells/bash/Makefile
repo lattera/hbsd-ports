@@ -26,6 +26,9 @@ COMMENT=		GNU Project's Bourne Again SHell
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+# STATIC option requires special hardening treatment, see below.
+USE_HARDENING=		safestack
+
 OPTIONS_DEFINE=		FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
 FDESCFS_DESC=		Enable use of /dev/fd
 HELP_DESC=		Enable builtin help
@@ -38,14 +41,6 @@ GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
-<<<<<<< HEAD
-# STATIC option requires special hardening treatment, see below.
-USE_HARDENING=		safestack
-
-COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
-
-=======
->>>>>>> freebsd/master
 FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
 FDESCFS_SUB_FILES=	pkg-message
 
