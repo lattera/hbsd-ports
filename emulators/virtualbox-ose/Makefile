@@ -113,17 +113,16 @@ OPTIONS_DEFAULT+=	PYTHON
 CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
-<<<<<<< HEAD
 .if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT5)
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
 .if ${PORT_OPTIONS:MQT[45]} && empty(PORT_OPTIONS:MX11)
 BROKEN=		QT frontend requires X11 support. Run 'make config' again!
-=======
+.endif
+
 .if ${ARCH} == "amd64"
 _ELF32!=	kldstat -q -m elf32 && echo yes || echo no
->>>>>>> upstream/master
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
