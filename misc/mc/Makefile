@@ -15,18 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	mc-light-4*
 
-<<<<<<< HEAD
-USES=		gmake shebangfix perl5 pkgconfig python:2.7,run tar:xz libtool
-USE_HARDENING=	safestack
-=======
 USES=		gmake gnome libtool perl5 pkgconfig python:2.7,run shebangfix tar:xz
->>>>>>> upstream/master
 SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${ZIP_CMD} UNZIP=${UNZIP_CMD}
+
+USE_HARDENING=	safestack
 
 OPTIONS_DEFINE=	DOCS EDITOR ICONV NLS SFTP SMB SUBSHELL X11
 OPTIONS_DEFAULT=EDITOR ICONV SFTP SLANG SMB SUBSHELL X11
