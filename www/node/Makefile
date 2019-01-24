@@ -18,7 +18,6 @@ BROKEN_SSL=		openssl libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js 11.x requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
-
 LLVM_OBJDUMP_UNSAFE=	yes
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
@@ -72,21 +71,12 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 
 .include <bsd.port.options.mk>
 
-<<<<<<< HEAD
-.if empty(PORT_OPTIONS:MBUNDLED_SSL)
-
-.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} != openssl111
-IGNORE=		node.js requires openssl 1.1.0, add DEFAULT_VERSIONS+=ssl=openssl111 to /etc/make.conf or enable BUNDLED_SSL option
-.endif
-
-.if !empty(SSL_DEFAULT:Mlibressl*) || ( defined(LIBRESSL_IS_OPENSSL) && empty(SSL_DEFAULT:Mopenssl*) )
+.if empty(PORT_OPTIONS:MBUNDLED_SSL) && defined(LIBRESSL_IS_OPENSSL) && empty(SSL_DEFAULT:Mopenssl*)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
 
-=======
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
 BROKEN_SSL+=	base
->>>>>>> freebsd/master
 .endif
 
 .include <bsd.port.pre.mk>
