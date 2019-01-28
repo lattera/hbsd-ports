@@ -12,15 +12,9 @@ COMMENT=	GTK based Gnutella client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-USES=		iconv localbase:ldflags pkgconfig tar:xz
-=======
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gnome iconv localbase:ldflags pkgconfig tar:xz
->>>>>>> upstream/master
 USE_GNOME=	glib20 libxml2
 
 HAS_CONFIGURE=	yes
@@ -35,6 +29,8 @@ CONFIGURE_ARGS=	-O -Dyacc='byacc' \
 		-Dusemymalloc='n'
 MAKE_ARGS=	INSTALL_PREFIX="${STAGEDIR}"
 INSTALL_TARGET=	install install.man
+
+USE_HARDENING=	pie:off relro:off
 
 PLIST_SUB=	ARCH="${ARCH}" OPSYS="${OPSYS:tl}"
 

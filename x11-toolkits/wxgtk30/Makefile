@@ -50,14 +50,10 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 CONFIGURE_ENV=	X11BASE="${LOCALBASE}" \
 		ac_cv_header_sys_inotify_h=no
 
-<<<<<<< HEAD
 
 USE_HARDENING=	pie:off relro:off
 
-OPTIONS_DEFINE=	GSTREAMER MSPACK NLS WEBKIT
-=======
 OPTIONS_DEFINE=	GSTREAMER NOTIFY MSPACK NLS WEBKIT
->>>>>>> upstream/master
 OPTIONS_DEFAULT=GSTREAMER MSPACK WEBKIT
 MSPACK_DESC=	Microsoft archives support
 OPTIONS_SUB=	yes
