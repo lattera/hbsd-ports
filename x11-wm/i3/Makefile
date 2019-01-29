@@ -12,16 +12,9 @@ COMMENT=	Improved dynamic tiling window manager
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 
-LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
-		libxcb-util.so:x11/xcb-util \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxcb-icccm.so:x11/xcb-util-wm \
-=======
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
->>>>>>> upstream/master
 		libev.so:devel/libev \
 		libpangocairo-1.0.so:x11-toolkits/pango \
 		libpcre.so:devel/pcre \
