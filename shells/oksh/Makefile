@@ -10,11 +10,9 @@ COMMENT=	Portable OpenBSD Korn shell
 
 LICENSE=	PD
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
-=======
+
 HAS_CONFIGURE=	yes
->>>>>>> upstream/master
 
 OPTIONS_DEFINE=		CURSES STATIC
 OPTIONS_DEFAULT=	CURSES
