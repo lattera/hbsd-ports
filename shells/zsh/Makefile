@@ -20,15 +20,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf iconv ncurses shebangfix tar:xz
-
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-EXTRA_PATCHES=	${FILESDIR}/vcs_info_p4.patch:-p1
+USES=		autoreconf iconv ncurses shebangfix tar:xz
 
-=======
->>>>>>> freebsd/master
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \
