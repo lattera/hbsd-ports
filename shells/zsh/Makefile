@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.7
-PORTREVISION=	1
+DISTVERSION=	5.7.1
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
@@ -23,10 +22,13 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		autoreconf iconv ncurses shebangfix tar:xz
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 EXTRA_PATCHES=	${FILESDIR}/vcs_info_p4.patch:-p1
 
+=======
+>>>>>>> freebsd/master
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \
