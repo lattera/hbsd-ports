@@ -33,19 +33,14 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libpng.so:graphics/png \
 		libassimp.so:multimedia/assimp
 
-<<<<<<< HEAD
-USES=		autoreconf compiler:c++11-lib gmake pkgconfig
-
-USE_HARDENING=	pie:off relro:off
-
-=======
 USES=		autoreconf compiler:c++11-lib gl gmake pkgconfig
->>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
 GH_TAGNAME=	20190203
 USE_GL=		gl
 USE_SDL=	image2 sdl2
+
+USE_HARDENING=	pie:off relro:off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
