@@ -1,16 +1,3 @@
-<<<<<<< HEAD
---- src/ufdbchkport.c.orig	2017-05-03 00:23:20 UTC
-+++ src/ufdbchkport.c
-@@ -2331,7 +2331,7 @@ int UFDBopenssl_connect( 
-    errno = 0;
-    ret = SSL_connect( *ssl );
-    saved_errno = errno;
--   state = (*ssl)->state;
-+   state = SSL_state(*ssl);
-    if (ret > 0  &&  state == SSL_ST_OK)
-    {
-       if ((*ssl)->version == SSL2_VERSION  &&  UFDBglobalHttpsNoSSLv2)
-=======
 --- src/ufdbchkport.c.orig	2019-02-08 07:02:37 UTC
 +++ src/ufdbchkport.c
 @@ -84,7 +84,7 @@ static volatile int tls_inited = 0;
@@ -67,4 +54,3 @@
     if (ret > 0  &&  state == SSL_ST_OK)
  #else
     if (ret > 0  &&  state == TLS_ST_OK)
->>>>>>> freebsd/master
