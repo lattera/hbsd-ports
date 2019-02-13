@@ -19,18 +19,10 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-<<<<<<< HEAD
 USE_HARDENING?=	pie:off relro:off
 
-HAS_CONFIGURE=	yes
-USES?=		cpe gmake pkgconfig bison perl5 python:2.7,build tar:xz
-USE_PERL5=	build
-MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
-=======
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
->>>>>>> upstream/master
 USE_XORG=	pixman
 USE_GNOME+=	cairo glib20 libxml2
 .endif
