@@ -21,8 +21,6 @@ USES=		libedit pkgconfig:both
 USE_GITHUB=	yes
 USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster cbsd-statsd-jail
 
-USE_HARDENING=	pie:off relro:off
-
 CFLAGS_powerpc64=	-mminimal-toc
 
 SUB_FILES=	pkg-message pkg-deinstall
