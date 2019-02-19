@@ -7,12 +7,10 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Scientific calculator for X
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
->>>>>>> upstream/master
+
+USE_HARDENING=	safestack
 
 RUN_DEPENDS=	font-misc-misc>=1.1.2:x11-fonts/font-misc-misc \
 		font-adobe-100dpi>=1.0.3:x11-fonts/font-adobe-100dpi \
