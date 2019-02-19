@@ -357,6 +357,7 @@
     SUBDIR += cons-test
     SUBDIR += containers
     SUBDIR += cook
+    SUBDIR += corrade
     SUBDIR += courier-unicode
     SUBDIR += coursier
     SUBDIR += covtool
@@ -4323,6 +4324,7 @@
     SUBDIR += py-args
     SUBDIR += py-arpeggio
     SUBDIR += py-arrow
+    SUBDIR += py-asciimatics
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
@@ -4713,11 +4715,13 @@
     SUBDIR += py-json-py
     SUBDIR += py-json-sempai
     SUBDIR += py-json_tricks
+    SUBDIR += py-jsondiff
     SUBDIR += py-jsonform
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonlines
     SUBDIR += py-jsonpatch
+    SUBDIR += py-jsonpath-rw
     SUBDIR += py-jsonpickle
     SUBDIR += py-jsonpointer
     SUBDIR += py-jsonref
@@ -4810,6 +4814,7 @@
     SUBDIR += py-mypy_extensions
     SUBDIR += py-nagioscheck
     SUBDIR += py-naiveBayesClassifier
+    SUBDIR += py-nanotime
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert

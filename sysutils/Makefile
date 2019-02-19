@@ -97,6 +97,7 @@
     SUBDIR += bareos16-client-static
     SUBDIR += bareos16-server
     SUBDIR += bareos16-traymonitor
+    SUBDIR += bastille
     SUBDIR += batmon
     SUBDIR += battmond
     SUBDIR += battray
@@ -1013,6 +1014,7 @@
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-azure-cli-vm
     SUBDIR += py-bcfg2
+    SUBDIR += py-bitrot
     SUBDIR += py-cdmi
     SUBDIR += py-croniter
     SUBDIR += py-crontab
