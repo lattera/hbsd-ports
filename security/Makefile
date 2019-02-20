@@ -1046,6 +1046,7 @@
     SUBDIR += py-stix
     SUBDIR += py-stix2
     SUBDIR += py-stix2-patterns
+    SUBDIR += py-taxii2-client
     SUBDIR += py-tlslite
     SUBDIR += py-trezor
     SUBDIR += py-trustedpickle
