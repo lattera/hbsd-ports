@@ -14,14 +14,8 @@ COMMENT=	Display PDF files and convert them to other formats
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 USE_HARDENING=  safestack
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
-
-=======
->>>>>>> upstream/master
 CONFLICTS_INSTALL=	xpdf
 .if !defined(MASTERDIR)
 CONFLICTS_INSTALL+=	xpdf3-* xpdf-*
