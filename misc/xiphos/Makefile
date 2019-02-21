@@ -24,16 +24,12 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
 		libenchant.so:textproc/enchant
 RUN_DEPENDS=	yelp:x11/yelp
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-USES=		gettext pkgconfig waf
-=======
 USES=		gettext gnome pkgconfig waf
 USE_GNOME=	cairo gtkhtml4 intlhack gtk30 gconf2 libgsf \
 		gtk-update-icon-cache
 
->>>>>>> upstream/master
+USE_HARDENING=	pie:off relro:off
+
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CXXFLAGS+=	-ftemplate-depth=1024
