@@ -216,6 +216,7 @@
     SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
+    SUBDIR += hockeypuck
     SUBDIR += honeybadger
     SUBDIR += honggfuzz
     SUBDIR += hotssh
