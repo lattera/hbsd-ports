@@ -12,13 +12,8 @@ COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		compiler:c++11-lib gmake
-
-=======
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/mk-livestatus/unixcat \
