@@ -1,13 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	xev
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Print contents of X events
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
+=======
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+>>>>>>> upstream/master
 
 XORG_CAT=	app
 USE_XORG=	x11 xrandr
