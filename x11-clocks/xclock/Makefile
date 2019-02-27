@@ -7,16 +7,11 @@ CATEGORIES=	x11-clocks
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Analog and digital clock for X
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-XORG_CAT=	app
-USE_XORG=	xrender xft xkbfile xt xaw
-=======
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
->>>>>>> upstream/master
+USE_HARDENING=	safestack
+
 USES=		iconv
 XORG_CAT=	app
 USE_XORG=	x11 xaw xft xkbfile xmu xrender xt
