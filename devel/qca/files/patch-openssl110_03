@@ -338,95 +338,24 @@ index f0b9431..3bbbfdc 100644
  #ifndef OSSL_097
  // comment this out if you'd rather use openssl 0.9.6
  #define OSSL_097
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -52,6 +57,75 @@
-=======
 @@ -52,6 +55,16 @@
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	((_STACK*) (1 ? p : (type*)0))
  #endif
  
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
 +    #define OSSL_110
 +#endif
 +
 +// OpenSSL 1.1.0 compatibility macros
-+#if defined(OSSL_110)
++#ifdef OSSL_110
 +#define M_ASN1_IA5STRING_new() ASN1_IA5STRING_new()
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-+#else
-+#ifndef LIBRESSL_VERSION_NUMBER
-+static HMAC_CTX *HMAC_CTX_new() { return new HMAC_CTX(); }
-+static void HMAC_CTX_free(HMAC_CTX *x) { free(x); }
-+static void EVP_PKEY_up_ref(EVP_PKEY *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_EVP_PKEY); }
-+static void X509_up_ref(X509 *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_X509); }
-+static void X509_CRL_up_ref(X509_CRL *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_X509_CRL); }
-+static DSA *EVP_PKEY_get0_DSA(EVP_PKEY *x) { return x->pkey.dsa; }
-+static DH *EVP_PKEY_get0_DH(EVP_PKEY *x) { return x->pkey.dh; }
-+#endif
-+static int RSA_meth_set_sign(RSA_METHOD *meth,
-+                      int (*sign) (int type, const unsigned char *m,
-+                                   unsigned int m_length,
-+                                   unsigned char *sigret, unsigned int *siglen,
-+                                   const RSA *rsa))
-+{
-+    meth->rsa_sign = sign;
-+    return 1;
-+}
-+int RSA_meth_set_verify(RSA_METHOD *meth,
-+                        int (*verify) (int dtype, const unsigned char *m,
-+                                       unsigned int m_length,
-+                                       const unsigned char *sigbuf,
-+                                       unsigned int siglen, const RSA *rsa))
-+{
-+    meth->rsa_verify = verify;
-+    return 1;
-+}
-+void X509_REQ_get0_signature(const X509_REQ *req, const ASN1_BIT_STRING **psig,
-+                             const X509_ALGOR **palg)
-+{
-+    if (psig != NULL)
-+        *psig = req->signature;
-+    if (palg != NULL)
-+        *palg = req->sig_alg;
-+}
-+int X509_REQ_get_signature_nid(const X509_REQ *req)
-+{
-+    return OBJ_obj2nid(req->sig_alg->algorithm);
-+}
-+void X509_CRL_get0_signature(const X509_CRL *crl, const ASN1_BIT_STRING **psig,
-+                             const X509_ALGOR **palg)
-+{
-+    if (psig != NULL)
-+        *psig = crl->signature;
-+    if (palg != NULL)
-+        *palg = crl->sig_alg;
-+}
-+int X509_CRL_get_signature_nid(const X509_CRL *crl)
-+{
-+    return OBJ_obj2nid(crl->sig_alg->algorithm);
-+}
-+const ASN1_INTEGER *X509_REVOKED_get0_serialNumber(const X509_REVOKED *x)
-+{
-+    return x->serialNumber;
-+}
-+const ASN1_TIME *X509_REVOKED_get0_revocationDate(const X509_REVOKED *x)
-+{
-+    return x->revocationDate;
-+}
-=======
 +#define RSA_F_RSA_EAY_PRIVATE_DECRYPT RSA_F_RSA_OSSL_PRIVATE_DECRYPT
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
 +#endif
 +
  using namespace QCA;
  
  namespace opensslQCAPlugin {
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -93,7 +167,7 @@ static QByteArray bio2ba(BIO *b)
-=======
 @@ -93,7 +106,7 @@ static QByteArray bio2ba(BIO *b)
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	return buf;
  }
  
@@ -435,11 +364,7 @@ index f0b9431..3bbbfdc 100644
  {
  	SecureArray buf(BN_num_bytes(n) + 1);
  	buf[0] = 0; // positive
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -109,7 +183,7 @@ static BIGNUM *bi2bn(const BigInteger &n)
-=======
 @@ -109,7 +122,7 @@ static BIGNUM *bi2bn(const BigInteger &n)
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  // take lowest bytes of BIGNUM to fit
  // pad with high byte zeroes to fit
@@ -448,11 +373,7 @@ index f0b9431..3bbbfdc 100644
  {
  	SecureArray buf(BN_num_bytes(n));
  	BN_bn2bin(n, (unsigned char *)buf.data());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -127,8 +201,16 @@ static SecureArray dsasig_der_to_raw(const SecureArray
-=======
 @@ -127,8 +140,11 @@ static SecureArray dsasig_der_to_raw(const SecureArray &in)
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	const unsigned char *inp = (const unsigned char *)in.data();
  	d2i_DSA_SIG(&sig, &inp, in.size());
  
@@ -466,11 +387,7 @@ index f0b9431..3bbbfdc 100644
  	SecureArray result;
  	result.append(part_r);
  	result.append(part_s);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -143,13 +225,21 @@ static SecureArray dsasig_raw_to_der(const SecureArray
-=======
 @@ -143,12 +159,16 @@ static SecureArray dsasig_raw_to_der(const SecureArray &in)
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		return SecureArray();
  
  	DSA_SIG *sig = DSA_SIG_new();
@@ -491,12 +408,7 @@ index f0b9431..3bbbfdc 100644
  
  	int len = i2d_DSA_SIG(sig, NULL);
  	SecureArray result(len);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
- 	unsigned char *p = (unsigned char *)result.data();
-@@ -1004,29 +1094,39 @@ class opensslHashContext : public HashContext (public)
-=======
 @@ -1004,29 +1024,39 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	opensslHashContext(const EVP_MD *algorithm, Provider *p, const QString &type) : HashContext(p, type)
  	{
  		m_algorithm = algorithm;
@@ -542,11 +454,7 @@ index f0b9431..3bbbfdc 100644
  		return a;
  	}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1037,7 +1137,7 @@ class opensslHashContext : public HashContext (public)
-=======
 @@ -1037,7 +1067,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  protected:
  	const EVP_MD *m_algorithm;
@@ -555,11 +463,7 @@ index f0b9431..3bbbfdc 100644
  };
  
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1047,9 +1147,23 @@ class opensslPbkdf1Context : public KDFContext (public
-=======
 @@ -1047,7 +1077,21 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	opensslPbkdf1Context(const EVP_MD *algorithm, Provider *p, const QString &type) : KDFContext(p, type)
  	{
  		m_algorithm = algorithm;
@@ -582,13 +486,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	Provider::Context *clone() const
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
- 	{
- 		return new opensslPbkdf1Context( *this );
-@@ -1081,16 +1195,16 @@ class opensslPbkdf1Context : public KDFContext (public
-=======
 @@ -1081,16 +1125,16 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		  DK = Tc<0..dkLen-1>
  		*/
  		// calculate T_1
@@ -611,11 +509,7 @@ index f0b9431..3bbbfdc 100644
  		}
  
  		// shrink a to become DK, of the required length
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1136,19 +1250,19 @@ class opensslPbkdf1Context : public KDFContext (public
-=======
 @@ -1136,19 +1180,19 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		  DK = Tc<0..dkLen-1>
  		*/
  		// calculate T_1
@@ -641,11 +535,7 @@ index f0b9431..3bbbfdc 100644
  			++(*iterationCount);
  		}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1163,7 +1277,7 @@ class opensslPbkdf1Context : public KDFContext (public
-=======
 @@ -1163,7 +1207,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  protected:
  	const EVP_MD *m_algorithm;
@@ -654,11 +544,7 @@ index f0b9431..3bbbfdc 100644
  };
  
  class opensslPbkdf2Context : public KDFContext
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1231,12 +1345,28 @@ class opensslHMACContext : public MACContext (public)
-=======
 @@ -1231,12 +1275,28 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	opensslHMACContext(const EVP_MD *algorithm, Provider *p, const QString &type) : MACContext(p, type)
  	{
  		m_algorithm = algorithm;
@@ -689,11 +575,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	KeyLength keyLength() const
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1246,14 +1376,18 @@ class opensslHMACContext : public MACContext (public)
-=======
 @@ -1246,14 +1306,18 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	void update(const MemoryRegion &a)
  	{
@@ -715,11 +597,7 @@ index f0b9431..3bbbfdc 100644
  		*out = sa;
  	}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1263,7 +1397,7 @@ class opensslHMACContext : public MACContext (public)
-=======
 @@ -1263,7 +1327,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	}
  
  protected:
@@ -728,11 +606,7 @@ index f0b9431..3bbbfdc 100644
  	const EVP_MD *m_algorithm;
  };
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1277,7 +1411,7 @@ class EVPKey
-=======
 @@ -1277,7 +1341,7 @@ class EVPKey
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  public:
  	enum State { Idle, SignActive, SignError, VerifyActive, VerifyError };
  	EVP_PKEY *pkey;
@@ -741,11 +615,7 @@ index f0b9431..3bbbfdc 100644
  	State state;
  	bool raw_type;
  	SecureArray raw;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1287,19 +1421,23 @@ class EVPKey
-=======
 @@ -1287,19 +1351,23 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		pkey = 0;
  		raw_type = false;
  		state = Idle;
@@ -770,11 +640,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	void reset()
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1322,8 +1460,8 @@ class EVPKey
-=======
 @@ -1322,8 +1390,8 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		else
  		{
  			raw_type = false;
@@ -785,11 +651,7 @@ index f0b9431..3bbbfdc 100644
  				state = SignError;
  		}
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1339,8 +1477,8 @@ class EVPKey
-=======
 @@ -1339,8 +1407,8 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		else
  		{
  			raw_type = false;
@@ -800,11 +662,7 @@ index f0b9431..3bbbfdc 100644
  				state = VerifyError;
  		}
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1352,7 +1490,7 @@ class EVPKey
-=======
 @@ -1352,7 +1420,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			if (raw_type)
  				raw += in;
  			else
@@ -813,11 +671,7 @@ index f0b9431..3bbbfdc 100644
  					state = SignError;
  		}
  		else if(state == VerifyActive)
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1360,7 +1498,7 @@ class EVPKey
-=======
 @@ -1360,7 +1428,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			if (raw_type)
  				raw += in;
  			else
@@ -826,11 +680,7 @@ index f0b9431..3bbbfdc 100644
  					state = VerifyError;
  		}
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1373,17 +1511,24 @@ class EVPKey
-=======
 @@ -1373,17 +1441,20 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			unsigned int len = out.size();
  			if (raw_type)
  			{
@@ -854,11 +704,7 @@ index f0b9431..3bbbfdc 100644
  				{
  					state = SignError;
  					return SecureArray ();
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1395,7 +1540,7 @@ class EVPKey
-=======
 @@ -1395,7 +1466,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  				}
  			}
  			else {
@@ -867,11 +713,7 @@ index f0b9431..3bbbfdc 100644
  				{
  					state = SignError;
  					return SecureArray();
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1418,16 +1563,24 @@ class EVPKey
-=======
 @@ -1418,16 +1489,19 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  				SecureArray out(EVP_PKEY_size(pkey));
  				int len = 0;
  
@@ -894,11 +736,7 @@ index f0b9431..3bbbfdc 100644
  				{
  					state = VerifyError;
  					return false;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1447,7 +1600,7 @@ class EVPKey
-=======
 @@ -1447,7 +1521,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			}
  			else
  			{
@@ -907,11 +745,7 @@ index f0b9431..3bbbfdc 100644
  				{
  					state = VerifyError;
  					return false;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1561,9 +1714,11 @@ static bool make_dlgroup(const QByteArray &seed, int b
-=======
 @@ -1561,9 +1635,11 @@ static bool make_dlgroup(const QByteArray &seed, int bits, int counter, DLParams
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		return false;
  	if(ret_counter != counter)
  		return false;
@@ -926,11 +760,7 @@ index f0b9431..3bbbfdc 100644
  	DSA_free(dsa);
  	return true;
  }
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1826,10 +1981,11 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -1826,10 +1902,11 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			return;
  
  		// extract the public key into DER format
@@ -944,11 +774,7 @@ index f0b9431..3bbbfdc 100644
  		p = (unsigned char *)result.data();
  
  		// put the DER public key back into openssl
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1852,7 +2008,7 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -1852,7 +1929,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual int maximumEncryptSize(EncryptionAlgorithm alg) const
  	{
@@ -957,11 +783,7 @@ index f0b9431..3bbbfdc 100644
  		int size = 0;
  		switch(alg)
  		{
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1867,7 +2023,7 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -1867,7 +1944,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual SecureArray encrypt(const SecureArray &in, EncryptionAlgorithm alg)
  	{
@@ -970,11 +792,7 @@ index f0b9431..3bbbfdc 100644
  		SecureArray buf = in;
  		int max = maximumEncryptSize(alg);
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -1900,7 +2056,7 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -1900,7 +1977,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual bool decrypt(const SecureArray &in, SecureArray *out, EncryptionAlgorithm alg)
  	{
@@ -983,11 +801,7 @@ index f0b9431..3bbbfdc 100644
  		SecureArray result(RSA_size(rsa));
  		int pad;
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2021,14 +2177,10 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -2021,14 +2098,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		RSA *rsa = RSA_new();
@@ -1005,11 +819,7 @@ index f0b9431..3bbbfdc 100644
  			RSA_free(rsa);
  			return;
  		}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2036,7 +2188,7 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -2036,7 +2109,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		// When private key has no Public Exponent (e) or Private Exponent (d)
  		// need to disable blinding. Otherwise decryption will be broken.
  		// http://www.mail-archive.com/openssl-users@openssl.org/msg63530.html
@@ -1018,11 +828,7 @@ index f0b9431..3bbbfdc 100644
  			RSA_blinding_off(rsa);
  
  		evp.pkey = EVP_PKEY_new();
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2049,10 +2201,7 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -2049,10 +2122,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		RSA *rsa = RSA_new();
@@ -1034,11 +840,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			RSA_free(rsa);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2065,27 +2214,42 @@ class RSAKey : public RSAContext (public)
-=======
 @@ -2065,27 +2135,42 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual BigInteger n() const
  	{
@@ -1086,11 +888,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  private slots:
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2134,10 +2298,12 @@ class DSAKeyMaker : public QThread (public)
-=======
 @@ -2134,10 +2219,12 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	virtual void run()
  	{
  		DSA *dsa = DSA_new();
@@ -1107,11 +905,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DSA_free(dsa);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2212,10 +2378,11 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2212,10 +2299,11 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			return;
  
  		// extract the public key into DER format
@@ -1125,11 +919,7 @@ index f0b9431..3bbbfdc 100644
  		p = (unsigned char *)result.data();
  
  		// put the DER public key back into openssl
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2244,7 +2411,7 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2244,7 +2332,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		else
  			transformsig = false;
  
@@ -1138,11 +928,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	virtual void startVerify(SignatureAlgorithm, SignatureFormat format)
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2255,7 +2422,7 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2255,7 +2343,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		else
  			transformsig = false;
  
@@ -1151,11 +937,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	virtual void update(const MemoryRegion &in)
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2305,13 +2472,14 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2305,13 +2393,14 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		DSA *dsa = DSA_new();
@@ -1176,11 +958,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DSA_free(dsa);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2327,12 +2495,13 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2327,12 +2416,13 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		DSA *dsa = DSA_new();
@@ -1199,11 +977,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DSA_free(dsa);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2345,17 +2514,26 @@ class DSAKey : public DSAContext (public)
-=======
 @@ -2345,17 +2435,26 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual DLGroup domain() const
  	{
@@ -1233,11 +1007,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  private slots:
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2404,9 +2582,10 @@ class DHKeyMaker : public QThread (public)
-=======
 @@ -2404,9 +2503,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	virtual void run()
  	{
  		DH *dh = DH_new();
@@ -1251,11 +1021,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DH_free(dh);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2478,12 +2657,15 @@ class DHKey : public DHContext (public)
-=======
 @@ -2478,11 +2578,14 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		if(!sec)
  			return;
  
@@ -1274,12 +1040,7 @@ index f0b9431..3bbbfdc 100644
  
  		evp.reset();
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
- 		evp.pkey = EVP_PKEY_new();
-@@ -2498,10 +2680,13 @@ class DHKey : public DHContext (public)
-=======
 @@ -2498,10 +2601,13 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual SymmetricKey deriveKey(const PKeyBase &theirs)
  	{
@@ -1296,11 +1057,7 @@ index f0b9431..3bbbfdc 100644
  		if(ret <= 0)
  			return SymmetricKey();
  		result.resize(ret);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2531,12 +2716,13 @@ class DHKey : public DHContext (public)
-=======
 @@ -2531,12 +2637,13 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		DH *dh = DH_new();
@@ -1319,11 +1076,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DH_free(dh);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2552,11 +2738,12 @@ class DHKey : public DHContext (public)
-=======
 @@ -2552,11 +2659,12 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		evp.reset();
  
  		DH *dh = DH_new();
@@ -1340,11 +1093,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DH_free(dh);
  			return;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2569,17 +2756,26 @@ class DHKey : public DHContext (public)
-=======
 @@ -2569,17 +2677,26 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	virtual DLGroup domain() const
  	{
@@ -1374,11 +1123,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  private slots:
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2618,10 +2814,14 @@ class QCA_RSA_METHOD (public)
-=======
 @@ -2618,10 +2735,14 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		key = _key;
  		RSA_set_method(rsa, rsa_method());
@@ -1395,11 +1140,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	RSA_METHOD *rsa_method()
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2630,12 +2830,16 @@ class QCA_RSA_METHOD (public)
-=======
 @@ -2630,12 +2751,16 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  		if(!ops)
  		{
@@ -1422,23 +1163,7 @@ index f0b9431..3bbbfdc 100644
  		}
  		return ops;
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2654,7 +2858,11 @@ class QCA_RSA_METHOD (public)
- 		}
- 		else
- 		{
-+#if OPENSSL_VERSION_NUMBER > 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-+			RSAerr(RSA_F_RSA_OSSL_PRIVATE_DECRYPT, RSA_R_UNKNOWN_PADDING_TYPE);
-+#else
- 			RSAerr(RSA_F_RSA_EAY_PRIVATE_DECRYPT, RSA_R_UNKNOWN_PADDING_TYPE);
-+#endif
- 			return -1;
- 		}
- 
-@@ -2675,6 +2883,7 @@ class QCA_RSA_METHOD (public)
-=======
 @@ -2675,6 +2800,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		return -1;
  	}
  
@@ -1446,11 +1171,7 @@ index f0b9431..3bbbfdc 100644
  	static int rsa_sign(int type, const unsigned char *m, unsigned int m_len, unsigned char *sigret, unsigned int *siglen, const RSA *rsa)
  	{
  		QCA_RSA_METHOD *self = (QCA_RSA_METHOD *)RSA_get_app_data(rsa);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2691,7 +2900,6 @@ class QCA_RSA_METHOD (public)
-=======
 @@ -2691,7 +2817,6 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		}
  		else
  		{
@@ -1458,11 +1179,7 @@ index f0b9431..3bbbfdc 100644
  			// make X509 packet
  			X509_SIG sig;
  			ASN1_TYPE parameter;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2765,6 +2973,7 @@ class QCA_RSA_METHOD (public)
-=======
 @@ -2765,6 +2890,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  		return 1;
  	}
@@ -1470,11 +1187,7 @@ index f0b9431..3bbbfdc 100644
  
  	static int rsa_finish(RSA *rsa)
  	{
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2866,21 +3075,22 @@ class MyPKeyContext : public PKeyContext (public)
-=======
 @@ -2866,21 +2992,22 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	PKeyBase *pkeyToBase(EVP_PKEY *pkey, bool sec) const
  	{
  		PKeyBase *nk = 0;
@@ -1500,11 +1213,7 @@ index f0b9431..3bbbfdc 100644
  		{
  			DHKey *c = new DHKey(provider());
  			c->evp.pkey = pkey;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2898,8 +3108,10 @@ class MyPKeyContext : public PKeyContext (public)
-=======
 @@ -2898,8 +3025,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		EVP_PKEY *pkey = get_pkey();
  
@@ -1516,11 +1225,7 @@ index f0b9431..3bbbfdc 100644
  			return QByteArray();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2912,8 +3124,10 @@ class MyPKeyContext : public PKeyContext (public)
-=======
 @@ -2912,8 +3041,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		EVP_PKEY *pkey = get_pkey();
  
@@ -1532,11 +1237,7 @@ index f0b9431..3bbbfdc 100644
  			return QString();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -2978,9 +3192,10 @@ class MyPKeyContext : public PKeyContext (public)
-=======
 @@ -2978,9 +3109,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			return SecureArray();
  
  		EVP_PKEY *pkey = get_pkey();
@@ -1548,11 +1249,7 @@ index f0b9431..3bbbfdc 100644
  			return SecureArray();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3007,9 +3222,10 @@ class MyPKeyContext : public PKeyContext (public)
-=======
 @@ -3007,9 +3139,10 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			return QString();
  
  		EVP_PKEY *pkey = get_pkey();
@@ -1564,11 +1261,7 @@ index f0b9431..3bbbfdc 100644
  			return QString();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3110,11 +3326,18 @@ class X509Item (public)
-=======
 @@ -3110,11 +3243,18 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			crl = from.crl;
  
  			if(cert)
@@ -1589,11 +1282,7 @@ index f0b9431..3bbbfdc 100644
  		}
  
  		return *this;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3220,7 +3443,7 @@ class X509Item (public)
-=======
 @@ -3220,7 +3360,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  //
  // This code is mostly taken from OpenSSL v0.9.5a
  // by Eric Young
@@ -1602,11 +1291,7 @@ index f0b9431..3bbbfdc 100644
  {
  	QDateTime qdt;
  	char *v;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3318,7 +3541,7 @@ class MyCertContext : public CertContext (public)
-=======
 @@ -3318,7 +3458,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	void fromX509(X509 *x)
  	{
@@ -1615,11 +1300,7 @@ index f0b9431..3bbbfdc 100644
  		item.cert = x;
  		make_props();
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3349,7 +3572,7 @@ class MyCertContext : public CertContext (public)
-=======
 @@ -3349,7 +3489,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		if(priv.key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(priv.key()->type() == PKey::DSA)
@@ -1628,11 +1309,7 @@ index f0b9431..3bbbfdc 100644
  		else
  			return false;
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3480,7 +3703,7 @@ class MyCertContext : public CertContext (public)
-=======
 @@ -3480,7 +3620,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  		const MyCertContext *our_cc = this;
  		X509 *x = our_cc->item.cert;
@@ -1641,19 +1318,11 @@ index f0b9431..3bbbfdc 100644
  		sk_X509_push(untrusted_list, x);
  
  		const MyCertContext *other_cc = static_cast<const MyCertContext *>(other);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3595,14 +3818,31 @@ class MyCertContext : public CertContext (public)
-=======
 @@ -3595,14 +3735,30 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  				p.policies = get_cert_policies(ex);
  		}
  
 -		if (x->signature)
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-+#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
-=======
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
 +#ifdef OSSL_110
 +		const
 +#endif
@@ -1685,11 +1354,7 @@ index f0b9431..3bbbfdc 100644
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3634,7 +3874,11 @@ class MyCertContext : public CertContext (public)
-=======
 @@ -3634,7 +3790,11 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			p.sigalgo = QCA::EMSA3_SHA512;
  			break;
  		default:
@@ -1702,11 +1367,7 @@ index f0b9431..3bbbfdc 100644
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3751,7 +3995,7 @@ class MyCAContext : public CAContext (public)
-=======
 @@ -3751,7 +3911,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		if(privateKey -> key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(privateKey -> key()->type() == PKey::DSA)
@@ -1715,11 +1376,7 @@ index f0b9431..3bbbfdc 100644
  		else
  			return 0;
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -3934,7 +4178,7 @@ class MyCSRContext : public CSRContext (public)
-=======
 @@ -3934,7 +4094,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		if(priv.key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(priv.key()->type() == PKey::DSA)
@@ -1728,11 +1385,7 @@ index f0b9431..3bbbfdc 100644
  		else
  			return false;
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4095,14 +4339,17 @@ class MyCSRContext : public CSRContext (public)
-=======
 @@ -4095,14 +4255,17 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  		sk_X509_EXTENSION_pop_free(exts, X509_EXTENSION_free);
  
@@ -1755,11 +1408,7 @@ index f0b9431..3bbbfdc 100644
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4122,7 +4369,7 @@ class MyCSRContext : public CSRContext (public)
-=======
 @@ -4122,7 +4285,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			p.sigalgo = QCA::EMSA1_SHA1;
  			break;
  		default:
@@ -1768,11 +1417,7 @@ index f0b9431..3bbbfdc 100644
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4186,7 +4433,7 @@ class MyCRLContext : public CRLContext (public)
-=======
 @@ -4186,7 +4349,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	void fromX509(X509_CRL *x)
  	{
@@ -1781,9 +1426,6 @@ index f0b9431..3bbbfdc 100644
  		item.crl = x;
  		make_props();
  	}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4238,8 +4485,8 @@ class MyCRLContext : public CRLContext (public)
-=======
 @@ -4231,15 +4394,15 @@ public:
  
  		issuer = get_cert_name(X509_CRL_get_issuer(x));
@@ -1794,7 +1436,6 @@ index f0b9431..3bbbfdc 100644
 +		p.nextUpdate = ASN1_UTCTIME_QDateTime(X509_CRL_get0_nextUpdate(x), NULL);
  
  		STACK_OF(X509_REVOKED)* revokeStack  = X509_CRL_get_REVOKED(x);
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  		for (int i = 0; i < sk_X509_REVOKED_num(revokeStack); ++i) {
  			X509_REVOKED *rev = sk_X509_REVOKED_value(revokeStack, i);
@@ -1805,11 +1446,7 @@ index f0b9431..3bbbfdc 100644
  			QCA::CRLEntry::Reason reason = QCA::CRLEntry::Unspecified;
  			int pos = X509_REVOKED_get_ext_by_NID(rev, NID_crl_reason, -1);
  			if (pos != -1) {
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4288,13 +4535,18 @@ class MyCRLContext : public CRLContext (public)
-=======
 @@ -4288,13 +4451,18 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			p.revoked.append(thisEntry);
  		}
  
@@ -1833,11 +1470,7 @@ index f0b9431..3bbbfdc 100644
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4326,7 +4578,7 @@ class MyCRLContext : public CRLContext (public)
-=======
 @@ -4326,7 +4494,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			p.sigalgo = QCA::EMSA3_SHA512;
  			break;
  		default:
@@ -1846,11 +1479,7 @@ index f0b9431..3bbbfdc 100644
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4487,21 +4739,21 @@ Validity MyCertContext::validate(const QList<CertConte
-=======
 @@ -4487,21 +4655,21 @@ Validity MyCertContext::validate(const QList<CertContext*> &trusted, const QList
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		const MyCertContext *cc = static_cast<const MyCertContext *>(trusted[n]);
  		X509 *x = cc->item.cert;
@@ -1875,11 +1504,7 @@ index f0b9431..3bbbfdc 100644
  		crl_list.append(x);
  	}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4526,7 +4778,7 @@ Validity MyCertContext::validate(const QList<CertConte
-=======
 @@ -4526,7 +4694,7 @@ Validity MyCertContext::validate(const QList<CertContext*> &trusted, const QList
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	int ret = X509_verify_cert(ctx);
  	int err = -1;
  	if(!ret)
@@ -1888,11 +1513,7 @@ index f0b9431..3bbbfdc 100644
  
  	// cleanup
  	X509_STORE_CTX_free(ctx);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4560,21 +4812,21 @@ Validity MyCertContext::validate_chain(const QList<Cer
-=======
 @@ -4560,21 +4728,21 @@ Validity MyCertContext::validate_chain(const QList<CertContext*> &chain, const Q
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		const MyCertContext *cc = static_cast<const MyCertContext *>(trusted[n]);
  		X509 *x = cc->item.cert;
@@ -1917,11 +1538,7 @@ index f0b9431..3bbbfdc 100644
  		crl_list.append(x);
  	}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4599,7 +4851,7 @@ Validity MyCertContext::validate_chain(const QList<Cer
-=======
 @@ -4599,7 +4767,7 @@ Validity MyCertContext::validate_chain(const QList<CertContext*> &chain, const Q
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	int ret = X509_verify_cert(ctx);
  	int err = -1;
  	if(!ret)
@@ -1930,11 +1547,7 @@ index f0b9431..3bbbfdc 100644
  
  	// grab the chain, which may not be fully populated
  	STACK_OF(X509) *xchain = X509_STORE_CTX_get_chain(ctx);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -4663,7 +4915,7 @@ class MyPKCS12Context : public PKCS12Context (public)
-=======
 @@ -4663,7 +4831,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			for(int n = 1; n < chain.count(); ++n)
  			{
  				X509 *x = static_cast<const MyCertContext *>(chain[n])->item.cert;
@@ -1943,11 +1556,7 @@ index f0b9431..3bbbfdc 100644
  				sk_X509_push(ca, x);
  			}
  		}
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -5398,7 +5650,7 @@ class MyTLSContext : public TLSContext (public)
-=======
 @@ -5398,7 +5566,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		OpenSSL_add_ssl_algorithms();
  		SSL_CTX *ctx = 0;
  		switch (version) {
@@ -1956,11 +1565,7 @@ index f0b9431..3bbbfdc 100644
  		case TLS::SSL_v2:
  			ctx = SSL_CTX_new(SSLv2_client_method());
  			break;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -5429,8 +5681,8 @@ class MyTLSContext : public TLSContext (public)
-=======
 @@ -5429,8 +5597,8 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		STACK_OF(SSL_CIPHER) *sk = SSL_get_ciphers(ssl);
  		QStringList cipherList;
  		for(int i = 0; i < sk_SSL_CIPHER_num(sk); ++i) {
@@ -1971,11 +1576,7 @@ index f0b9431..3bbbfdc 100644
  		}
  
  		SSL_free(ssl);
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -5807,13 +6059,15 @@ class MyTLSContext : public TLSContext (public)
-=======
 @@ -5807,13 +5975,15 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	{
  		SessionInfo sessInfo;
  
@@ -1995,11 +1596,7 @@ index f0b9431..3bbbfdc 100644
  			sessInfo.version = TLS::SSL_v2;
  		else {
  			qDebug("unexpected version response");
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -5821,7 +6075,7 @@ class MyTLSContext : public TLSContext (public)
-=======
 @@ -5821,7 +5991,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		}
  
  		sessInfo.cipherSuite = cipherIDtoString( sessInfo.version,
@@ -2008,11 +1605,7 @@ index f0b9431..3bbbfdc 100644
  
  		sessInfo.cipherMaxBits = SSL_get_cipher_bits(ssl, &(sessInfo.cipherBits));
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6393,7 +6647,7 @@ class MyMessageContext : public MessageContext (public
-=======
 @@ -6393,7 +6563,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			for(int n = 0; n < nonroots.count(); ++n)
  			{
  				X509 *x = static_cast<MyCertContext *>(nonroots[n].context())->item.cert;
@@ -2021,11 +1614,7 @@ index f0b9431..3bbbfdc 100644
  				sk_X509_push(other_certs, x);
  			}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6435,7 +6689,7 @@ class MyMessageContext : public MessageContext (public
-=======
 @@ -6435,7 +6605,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  			other_certs = sk_X509_new_null();
  			X509 *x = static_cast<MyCertContext *>(target.context())->item.cert;
@@ -2034,11 +1623,7 @@ index f0b9431..3bbbfdc 100644
  			sk_X509_push(other_certs, x);
  
  			bi = BIO_new(BIO_s_mem());
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6498,7 +6752,7 @@ class MyMessageContext : public MessageContext (public
-=======
 @@ -6498,7 +6668,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			for(int n = 0; n < untrusted_list.count(); ++n)
  			{
  				X509 *x = static_cast<MyCertContext *>(untrusted_list[n].context())->item.cert;
@@ -2047,11 +1632,7 @@ index f0b9431..3bbbfdc 100644
  				sk_X509_push(other_certs, x);
  			}
  
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6749,14 +7003,27 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6749,14 +6919,27 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  	opensslCipherContext(const EVP_CIPHER *algorithm, const int pad, Provider *p, const QString &type) : CipherContext(p, type)
  	{
  		m_cryptoAlgorithm = algorithm;
@@ -2081,11 +1662,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	void setup(Direction dir,
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6769,20 +7036,20 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6769,20 +6952,20 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  			m_cryptoAlgorithm = EVP_des_ede();
  		}
  		if (Encode == m_direction) {
@@ -2113,11 +1690,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	Provider::Context *clone() const
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6792,7 +7059,7 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6792,7 +6975,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  	int blockSize() const
  	{
@@ -2126,11 +1699,7 @@ index f0b9431..3bbbfdc 100644
  	}
  
  	bool update(const SecureArray &in, SecureArray *out)
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6805,7 +7072,7 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6805,7 +6988,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		out->resize(in.size()+blockSize());
  		int resultLength;
  		if (Encode == m_direction) {
@@ -2139,11 +1708,7 @@ index f0b9431..3bbbfdc 100644
  									   (unsigned char*)out->data(),
  									   &resultLength,
  									   (unsigned char*)in.data(),
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6813,7 +7080,7 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6813,7 +6996,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  				return false;
  			}
  		} else {
@@ -2152,11 +1717,7 @@ index f0b9431..3bbbfdc 100644
  									   (unsigned char*)out->data(),
  									   &resultLength,
  									   (unsigned char*)in.data(),
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6830,13 +7097,13 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6830,13 +7013,13 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  		out->resize(blockSize());
  		int resultLength;
  		if (Encode == m_direction) {
@@ -2172,11 +1733,7 @@ index f0b9431..3bbbfdc 100644
  										 (unsigned char*)out->data(),
  										 &resultLength)) {
  				return false;
-<<<<<<< HEAD:devel/qca/files/patch-plugins_qca-ossl_qca-ossl.cpp
-@@ -6871,7 +7138,7 @@ class opensslCipherContext : public CipherContext (pub
-=======
 @@ -6871,7 +7054,7 @@ public:
->>>>>>> freebsd/master:devel/qca/files/patch-openssl110_03
  
  
  protected:
