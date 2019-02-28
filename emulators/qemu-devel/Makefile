@@ -13,12 +13,8 @@ COMMENT=	QEMU CPU Emulator - development version
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-HAS_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig bison perl5 python:2.7,build ssl tar:bzip2
-=======
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 
 LIB_DEPENDS=	libnettle.so:security/nettle \
@@ -29,7 +25,6 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 
 USES=		cpe gl gmake gnome pkgconfig bison perl5 python:2.7,build tar:xz
 USE_GNOME=	cairo glib20 libxml2
->>>>>>> freebsd/master
 USE_PERL5=	build
 USE_XORG=	pixman
 
