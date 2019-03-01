@@ -12,6 +12,8 @@ COMMENT=	Modular IRC client with many features
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	safestack
+
 USES=		autoreconf cpe gettext-runtime gmake gnome libtool ncurses \
 		pkgconfig tar:xz
 USE_GNOME=	glib20
@@ -19,15 +21,8 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-OPTIONS_DEFINE=	PERL PROXY SOCKS BOT DOCS TRUECOLOR CAPSICUM
-OPTIONS_DEFAULT=	PERL CAPSICUM
-=======
 OPTIONS_DEFINE=	BOT CAPSICUM DOCS OTR PERL PROXY SOCKS TRUECOLOR UTF8PROC
 OPTIONS_DEFAULT=	CAPSICUM PERL
->>>>>>> freebsd/master
 
 OPTIONS_SUB=	yes
 BOT_DESC=	Bot support
