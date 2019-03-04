@@ -11,6 +11,8 @@ COMMENT=	Fast, scalable and extensible HTTP proxy server
 
 LICENSE=	APACHE20
 
+USE_HARDENING=	pie:off
+
 ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -30,14 +32,8 @@ USE_PERL5=	build run
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-ONLY_FOR_ARCHS=	amd64
-=======
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
->>>>>>> freebsd/master
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
