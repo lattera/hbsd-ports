@@ -24,14 +24,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-GNU_CONFIGURE=	yes
-USES=		alias cpe compiler:c++11-lang gettext-runtime gmake \
-=======
 USES=		alias cmake cpe compiler:c++11-lang gettext-runtime \
->>>>>>> freebsd/master
 		libtool localbase pathfix \
 		perl5 pkgconfig python:3.4+ ssl tar:xz
 USE_PERL5=	build
