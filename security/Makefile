@@ -1278,6 +1278,7 @@
     SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += ssllabs-scan
+    SUBDIR += sslproxy
     SUBDIR += sslscan
     SUBDIR += sslsniffer
     SUBDIR += sslsplit
