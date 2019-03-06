@@ -12,11 +12,9 @@ COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 USES=		compiler:c++11-lang
->>>>>>> upstream/master
+
+USE_HARDENING=	safestack
 
 GNU_CONFIGURE=	yes
 
