@@ -1,13 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	xrdb
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X server resource database utility
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
+=======
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+>>>>>>> upstream/master
 
 XORG_CAT=	app
 USE_XORG=	xmuu x11
