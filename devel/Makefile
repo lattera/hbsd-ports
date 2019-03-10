@@ -234,6 +234,7 @@
     SUBDIR += bouml-doc
     SUBDIR += bpython
     SUBDIR += breakpad
+    SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
@@ -4754,8 +4755,11 @@
     SUBDIR += py-knack
     SUBDIR += py-kqueue
     SUBDIR += py-lark-parser
+    SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
     SUBDIR += py-lazr.delegates
+    SUBDIR += py-lazr.restfulclient
+    SUBDIR += py-lazr.uri
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-libiocage
@@ -5280,6 +5284,7 @@
     SUBDIR += py-voluptuous
     SUBDIR += py-vsts-cd-manager
     SUBDIR += py-vulture
+    SUBDIR += py-wadllib
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
     SUBDIR += py-wcwidth
