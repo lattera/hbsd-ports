@@ -24,11 +24,9 @@ COMMENT=	Official AT&T release of KornShell 93
 
 LICENSE=	EPL
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
-=======
+
 BROKEN_aarch64=		Fails to compile: needs sbrk
->>>>>>> freebsd/master
 
 CONFLICTS=	ksh93-devel-*
 
