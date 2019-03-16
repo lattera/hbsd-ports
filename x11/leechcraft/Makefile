@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	41
+PORTREVISION=	44
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6@qt4 \
-		libpcre.so:devel/pcre \
+BROKEN=		Missing libqwt6.so:x11-toolkits/qwt6@qt4 
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libboost_program_options.so:devel/boost-libs
 
 #LC_REV=		1526-g7fdb92a
@@ -73,10 +73,10 @@ AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:multimedia/qt4-mobility \
 			libkqoauth.so:security/kqoauth \
 			libotr.so.5:security/libotr \
 			libpurple.so:net-im/libpurple \
-			libqca.so:devel/qca@qt4 \
 			libqxmpp.so:net-im/qxmpp \
 			libspeex.so:audio/speex
 AZOTH_USES=		desktop-file-utils
+AZOTH_BROKEN=		Missing libqca.so:devel/qca@qt4
 
 BITTORRENT_DESC=	Full-featured BitTorrent client plugin
 BITTORRENT_CMAKE_ON=	-DENABLE_TORRENT:BOOL=true
@@ -382,7 +382,7 @@ USE_QT+=	xmlpatterns
     ${PORT_OPTIONS:MNETSTOREMANAGER} || ${PORT_OPTIONS:MPOSHUKU} || \
     ${PORT_OPTIONS:MQROSP} || ${PORT_OPTIONS:MSB2} || \
     ${PORT_OPTIONS:MTOUCHSTREAMS}
-LIB_DEPENDS+=	libqjson.so:devel/qjson@qt4
+BROKEN=		Missing libqjson.so:devel/qjson@qt4
 .endif
 
 .if ${PORT_OPTIONS:MELEEMINATOR}
