@@ -27,14 +27,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr --enable-python-plugins --enable-c-plugins \
 		--enable-pgp --enable-icons=no --with-xscreensaver=no
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
-<<<<<<< HEAD
-USE_GNOME=	glib20
 
 USE_HARDENING=	safestack
 
-=======
 INSTALL_TARGET=	install-strip
->>>>>>> upstream/master
 OPTIONS_DEFINE=	NOTIFY
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
