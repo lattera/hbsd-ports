@@ -12,13 +12,9 @@ COMMENT=	Development snapshot of the world-renown nvi editor
 
 CONFLICTS_INSTALL=	nvi-m17n-[0-9]* xnview-[0-9]*
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-OPTIONS_DEFINE=	WIDECHAR
-=======
 OPTIONS_DEFINE=	EXPANDTAB WIDECHAR
->>>>>>> freebsd/master
 OPTIONS_DEFAULT=WIDECHAR
 WIDECHAR_DESC=	Enable wide-character support (UTF-8)
 EXPANDTAB_DESC=	Apply the expandtab option patch
