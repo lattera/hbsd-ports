@@ -16,18 +16,10 @@ OPTIONS_DEFAULT=	SERVER
 SERVER_RUN_DEPENDS=	vncserver:net/tigervnc-server
 VIEWER_RUN_DEPENDS=	vncviewer:net/tigervnc-viewer
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 CFI_OVERRIDE=	-fno-sanitize=cfi-icall
 
-USES=		autoreconf:build cmake:insource,noninja cpe gl iconv jpeg libtool \
-		pkgconfig python ssl
-USE_GL=		gl
-USE_LDCONFIG=	yes
-USE_GITHUB=	yes
-=======
 do-patch:	# noop
 do-install:	# noop
->>>>>>> upstream/master
 
 .include <bsd.port.mk>
