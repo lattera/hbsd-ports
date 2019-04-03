@@ -18,9 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtinyxml.so:textproc/tinyxml
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 USES=		tar:bzip2
+=======
+USES=		compiler:c++0x tar:bzip2
+>>>>>>> upstream/master
 USE_XORG=	x11
 USE_GL=		gl
 USE_SDL=	image mixer sdl
