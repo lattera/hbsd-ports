@@ -29,16 +29,14 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
-=======
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct ssl_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct ssl_st'
 .endif
->>>>>>> upstream/master
 
 pre-configure:
 	@${RM} ${WRKSRC}/src/config.cache
