@@ -14,9 +14,8 @@ COMMENT=	Small, easy to set up, fast, and secure FTP server
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
-=======
+
 USES=		cpe perl5 tar:bzip2
 USE_PERL5=	run
 
@@ -33,7 +32,6 @@ SUB_FILES=	pkg-message
 CPE_VENDOR=	pureftpd
 
 LANGUAGE?=	english
->>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	ANONDELETE ANONRENAME ANONRESUME DOCS EXAMPLES LARGEFILE LDAP \
 		MYSQL PAM PERUSERLIMITS PGSQL PRIVSEP SCRYPT SENDFILE \
