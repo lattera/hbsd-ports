@@ -16,18 +16,10 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		cpe libtool pathfix pkgconfig ssl
-CPE_VENDOR=	entrouvert
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-java --with-zlib
-USE_GNOME=	glib20 libxml2
-=======
 USES=		cpe gnome libtool pkgconfig python ssl
 USE_GNOME=	glib20 libxml2 libxslt
->>>>>>> freebsd/master
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	entrouvert
