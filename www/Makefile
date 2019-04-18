@@ -801,6 +801,7 @@
     SUBDIR += p5-Dancer-Plugin-REST
     SUBDIR += p5-Dancer-Plugin-RPC
     SUBDIR += p5-Dancer-Plugin-SiteMap
+    SUBDIR += p5-Dancer-Plugin-Swagger
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
     SUBDIR += p5-Dancer-Template-Xslate
@@ -2241,7 +2242,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid-devel
     SUBDIR += squid3
     SUBDIR += squid_radius_auth
     SUBDIR += squidanalyzer
