@@ -4600,6 +4600,7 @@
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs
     SUBDIR += py-functools32
+    SUBDIR += py-funcy
     SUBDIR += py-fusefs
     SUBDIR += py-fusepy
     SUBDIR += py-future
@@ -4630,6 +4631,7 @@
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
     SUBDIR += py-google-apputils
+    SUBDIR += py-google-i18n-address
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-grab
     SUBDIR += py-graphene
