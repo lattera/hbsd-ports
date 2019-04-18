@@ -825,7 +825,6 @@
     SUBDIR += go-bindata
     SUBDIR += go-git
     SUBDIR += go-glide
-    SUBDIR += go-gocode
     SUBDIR += go-godef
     SUBDIR += go-protobuf
     SUBDIR += go-tools
@@ -4790,6 +4789,7 @@
     SUBDIR += py-monotonic
     SUBDIR += py-monty
     SUBDIR += py-more-itertools
+    SUBDIR += py-more-itertools5
     SUBDIR += py-mox
     SUBDIR += py-mox3
     SUBDIR += py-msgpack
