@@ -18,6 +18,8 @@ BROKEN_aarch64=		fails to link: shapeFunctions.c:(function attach_new): relocati
 
 RUN_DEPENDS=	ccx:cad/calculix-ccx
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		gmake tar:bzip2 compiler:c++11-lib
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu # uses its own glut
@@ -30,15 +32,7 @@ DIST_EXAMPLES=	cgx_${PORTVERSION}.exa${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/CalculiX
 CGX_VER=	cgx_${PORTVERSION}
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-USES=		gmake tar:bzip2 compiler:c++11-lib
-USE_XORG=	ice sm x11 xext xi xmu xt
-USE_GL=		gl glu # uses its own glut
-=======
 CXXFLAGS+=	-std=c++98
->>>>>>> freebsd/master
 
 BROWSER?=	firefox
 PSVIEWER?=	gv
