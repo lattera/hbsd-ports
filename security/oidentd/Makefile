@@ -11,8 +11,12 @@ COMMENT=	Ident server that supports user-defined ident strings
 
 LICENSE=	GPLv2
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
+=======
+USES=		bison
+>>>>>>> freebsd/master
 USE_RC_SUBR=	oidentd
 GNU_CONFIGURE=	yes
 
