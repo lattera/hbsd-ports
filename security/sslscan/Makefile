@@ -12,17 +12,15 @@ COMMENT=	SSLScan is a fast SSL port scanner
 
 LICENSE=	GPLv3
 
+USE_HARDENING=	cfi safestack
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
 
-<<<<<<< HEAD
-USE_HARDENING=	cfi safestack
-=======
 OPTIONS_DEFINE=	UNSAFESSL
 OPTIONS_DEFAULT=	UNSAFESSL
 UNSAFESSL_DESC=	Use openssl-unsafe as libssl provider (SSLv2 etc.)
->>>>>>> freebsd/master
 
 UNSAFESSL_USES_OFF=	ssl
 UNSAFESSL_BUILD_DEPENDS=	${LOCALBASE}/openssl-unsafe/lib/libssl.so:security/openssl-unsafe
