@@ -21,14 +21,10 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libicuuc.so:devel/icu
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		compiler:c++14-lang cmake desktop-file-utils iconv localbase:ldflags pkgconfig shared-mime-info ssl
-=======
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 		localbase:ldflags pkgconfig sdl shared-mime-info ssl
->>>>>>> upstream/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2

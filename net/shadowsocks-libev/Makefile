@@ -22,13 +22,9 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libsodium.so:security/libsodium \
 		libcares.so:dns/c-ares
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		autoreconf gmake libtool:keepla pathfix
-=======
 USES=		autoreconf compiler:c11 gmake libtool:keepla pathfix
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
