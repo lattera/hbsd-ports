@@ -14,21 +14,10 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-#Please leave the below line in for the next clean up.
-FIXUP_RELEASE=	YES
-.if defined(FIXUP_RELEASE)
-DISTNAME_SUFFIX=.freebsd
-.else
-SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
-WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
-.endif
-=======
 USES=		shebangfix tar:bzip2
 
->>>>>>> freebsd/master
 HAS_CONFIGURE=	yes
 
 USE_GITHUB=	yes
