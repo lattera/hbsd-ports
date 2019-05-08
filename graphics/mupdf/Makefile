@@ -29,12 +29,8 @@ USE_LDCONFIG=	yes
 CPE_VENDOR=	artifex
 
 # pkg-config to avoid the conflict with openjpeg15
-<<<<<<< HEAD
 CFLAGS+=	`pkg-config --cflags libopenjp2` -fPIC
-=======
-CFLAGS+=	`pkg-config --cflags libopenjp2`
 LDFLAGS+=	`pkg-config --libs libjpeg libopenjp2` -ljbig2dec
->>>>>>> freebsd/master
 
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
 		XCFLAGS+="-I${WRKSRC}/include/mupdf -fPIC" \
