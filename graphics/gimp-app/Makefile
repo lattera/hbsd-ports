@@ -14,6 +14,8 @@ COMMENT=	GNU Image Manipulation Program
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+USE_HARDENING=	relro:off
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
 		mypaint-brushes>0:graphics/mypaint-brushes
@@ -34,12 +36,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
 		mypaint-brushes>0:graphics/mypaint-brushes
 
-<<<<<<< HEAD
-USE_HARDENING=	relro:off
-=======
 LIB_DEPENDS+=	libjson-glib-1.0.so:devel/json-glib \
 		libunwind.so:devel/libunwind
->>>>>>> freebsd/master
 
 GNU_CONFIGURE=	yes
 USES+=		compiler:c++14-lang cpe gettext gmake gnome jpeg libtool \
