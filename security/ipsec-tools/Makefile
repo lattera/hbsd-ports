@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -17,13 +17,15 @@ COMMENT=	KAME racoon IKE daemon, ipsec-tools version
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS=	racoon-[0-9]*
+USES=		libtool tar:bzip2 ssl
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
+=======
+CONFLICTS=	racoon-[0-9]*
+>>>>>>> freebsd/master
 INSTALL_TARGET=	install-strip
-
-USES=		libtool tar:bzip2 ssl
 USE_RC_SUBR=	racoon
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -32,7 +34,7 @@ CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
 		--with-pkgversion=freebsd-${PORTVERSION}
 
 STATEDIR=	/var/db/racoon
-SUB_LIST+=	STATEDIR=${STATEDIR}
+SUB_LIST+=	STATEDIR=${STATEDIR} REQUIREMOD=${REQUIREMOD}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 OPTIONS_DEFINE=	DEBUG IPV6 ADMINPORT STATS DPD NATT NATTF FRAG HYBRID PAM \
@@ -84,6 +86,10 @@ WCPSKEY_EXTRA_PATCHES=		${FILESDIR}/wildcard-psk.diff
 NATT_EXTRA_PATCHES=		${FILESDIR}/natt.diff
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100510
+REQUIREMOD?=	ipsec
+.endif
 
 # Need to be patched for openssl-1.1.1 (default after 1200080)
 .if ${OPSYS} == FreeBSD
