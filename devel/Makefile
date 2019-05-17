@@ -561,6 +561,7 @@
     SUBDIR += elixir-unsafe
     SUBDIR += embb
     SUBDIR += emscripten
+    SUBDIR += entt
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc
@@ -609,6 +610,7 @@
     SUBDIR += erlang-syslog
     SUBDIR += erlang-unicode_util_compat
     SUBDIR += es-eric6
+    SUBDIR += estd
     SUBDIR += etcd
     SUBDIR += etcd31
     SUBDIR += etcd32
