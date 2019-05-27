@@ -12,13 +12,9 @@ LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		uidfix ssl
-=======
 USES=		ssl uidfix
->>>>>>> freebsd/master
 USE_GITHUB=	yes
 USE_RC_SUBR=	relayd
 WRKSRC_SUBDIR=	src/usr.sbin
