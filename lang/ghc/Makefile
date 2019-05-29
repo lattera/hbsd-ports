@@ -21,6 +21,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # other supported arches are added based on GHC_VERSION below
 ONLY_FOR_ARCHS=	amd64 i386
 
+USE_HARDENING=		pie:off
+LLVM_AR_UNSAFE=		yes
+
 USES=			autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
