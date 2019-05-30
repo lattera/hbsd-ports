@@ -1010,6 +1010,7 @@
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
     SUBDIR += jetbrains-clion
+    SUBDIR += jetbrains-goland
     SUBDIR += jetbrains-phpstorm
     SUBDIR += jfrog-cli
     SUBDIR += jiic
@@ -5105,6 +5106,7 @@
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zeep
     SUBDIR += py-zipp
     SUBDIR += py-zkpython
     SUBDIR += py-zope.annotation
