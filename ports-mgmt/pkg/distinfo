@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 TIMESTAMP = 1518706599
 SHA256 (pkg-1.10.5.tar.xz) = 1f9e55edb9ba38b1d24d5710c58d7324015288d588b6ed4418adefeb3f75e24b
 SIZE (pkg-1.10.5.tar.xz) = 2195096
+=======
+TIMESTAMP = 1559314706
+SHA256 (freebsd-pkg-1.11.1_GH0.tar.gz) = 7fd2ccc2cdabccda8f1aacaf101db73027116e907feecec29ca64a67f1b075f5
+SIZE (freebsd-pkg-1.11.1_GH0.tar.gz) = 3560701
+>>>>>>> upstream/master

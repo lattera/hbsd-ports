@@ -1,27 +1,36 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.10.5
-PORTREVISION=	5
+DISTVERSION=	1.11.1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
+<<<<<<< HEAD
 MASTER_SITES=	http://distsets.hardenedbsd.org/
+=======
+#MASTER_SITES=	\
+#		http://files.etoilebsd.net/${PORTNAME}/ \
+#		LOCAL/portmgr \
+#		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+>>>>>>> upstream/master
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:configure retpoline:off
 SSP_CFLAGS=	-fstack-protector
+=======
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
+>>>>>>> upstream/master
 
 USE_LDCONFIG=	yes
-USES=		libtool tar:xz
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-maintainer-mode
-INSTALL_TARGET=	install-strip
+HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
@@ -79,10 +88,6 @@ PKG_DEPENDS=
 .if !defined(CROSS_TOOLCHAIN)
 PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
-
-post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
-		${STAGEDIR}${PREFIX}/lib/libpkg.a
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
