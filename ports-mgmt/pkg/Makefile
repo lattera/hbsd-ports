@@ -4,33 +4,26 @@ PORTNAME=	pkg
 DISTVERSION=	1.11.1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
-<<<<<<< HEAD
-MASTER_SITES=	http://distsets.hardenedbsd.org/
-=======
 #MASTER_SITES=	\
 #		http://files.etoilebsd.net/${PORTNAME}/ \
 #		LOCAL/portmgr \
 #		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
->>>>>>> upstream/master
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:configure retpoline:off
-SSP_CFLAGS=	-fstack-protector
-=======
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
->>>>>>> upstream/master
 
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+
+USE_HARDENING=	pie:off
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir

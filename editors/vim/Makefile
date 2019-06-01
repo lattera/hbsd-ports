@@ -14,13 +14,8 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-<<<<<<< HEAD
-CONFLICTS_INSTALL?=	vim-console vim-tiny
-
 USE_HARDENING=	safestack
 
-=======
->>>>>>> upstream/master
 USES=		cpe iconv ncurses pkgconfig shebangfix
 USE_GITHUB=	yes
 
