@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
 
 USE_HARDENING=	pie:off
 
