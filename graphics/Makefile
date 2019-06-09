@@ -179,6 +179,7 @@
     SUBDIR += figurine
     SUBDIR += flam3
     SUBDIR += flasm
+    SUBDIR += flif
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fortytwo
@@ -743,6 +744,7 @@
     SUBDIR += pho
     SUBDIR += photivo
     SUBDIR += photoflare
+    SUBDIR += photoflow
     SUBDIR += photopc
     SUBDIR += photoqt
     SUBDIR += phototonic
