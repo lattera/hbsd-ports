@@ -369,6 +369,7 @@
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
     SUBDIR += gogrepo
+    SUBDIR += gogui
     SUBDIR += golddig
     SUBDIR += golly
     SUBDIR += gomoku
@@ -711,6 +712,7 @@
     SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
+    SUBDIR += pachi-game-engine
     SUBDIR += pacmanarena
     SUBDIR += palapeli
     SUBDIR += palomino
