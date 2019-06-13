@@ -12,12 +12,9 @@ COMMENT=	Simple IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-=======
 USES=		cmake compiler:c++11-lang pkgconfig
->>>>>>> freebsd/master
 USE_XORG=	ice sm x11 xext
 INSTALLS_ICONS=	yes
 
