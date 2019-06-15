@@ -29,9 +29,13 @@ XYMONUSER?=	xymon
 XYMONHOSTNAME?=	xymon.example.com
 XYMONHOSTIP?=	127.0.0.1
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		cpe gmake shebangfix ssl
+=======
+USES=		compiler:c11 cpe gmake shebangfix ssl
+>>>>>>> upstream/master
 SHEBANG_FILES=	${WRKSRC}/xymond/xymonreports.sh.DIST ${WRKSRC}/build/upgrade430.sh
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=	MAKE=gmake
