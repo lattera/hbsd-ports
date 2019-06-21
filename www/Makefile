@@ -1486,11 +1486,13 @@
     SUBDIR += py-dj21-djangorestframework
     SUBDIR += py-dj21-drf-yasg
     SUBDIR += py-dj22-django-auth-ldap
+    SUBDIR += py-dj22-django-cacheops
     SUBDIR += py-dj22-django-cors-headers
     SUBDIR += py-dj22-django-debug-toolbar
     SUBDIR += py-dj22-django-filter
     SUBDIR += py-dj22-django-js-asset
     SUBDIR += py-dj22-django-mptt
+    SUBDIR += py-dj22-django-prometheus
     SUBDIR += py-dj22-django-tables2
     SUBDIR += py-dj22-django-taggit
     SUBDIR += py-dj22-django-taggit-serializer
