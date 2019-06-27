@@ -20,14 +20,9 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 USES=		cmake:noninja ncurses libtool tar:xz
 USE_LDCONFIG=	yes
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-CMAKE_ARGS+=	-DENABLE_GUILE=no \
-		-DLIBDATADIR=${LOCALBASE}/libdata
-=======
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
->>>>>>> upstream/master
 
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS HEADLESS ICON ICONV \
 			MANPAGES NLS
