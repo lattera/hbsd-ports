@@ -780,6 +780,7 @@
     SUBDIR += gettext-runtime
     SUBDIR += gettext-tools
     SUBDIR += gflags
+    SUBDIR += ghidra
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gindent
@@ -4327,6 +4328,7 @@
     SUBDIR += py-delfick_error
     SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
+    SUBDIR += py-deprecated
     SUBDIR += py-deprecation
     SUBDIR += py-dexml
     SUBDIR += py-dialog
@@ -6069,6 +6071,7 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
+    SUBDIR += snorenotify
     SUBDIR += soapui
     SUBDIR += socket_wrapper
     SUBDIR += sonar-ant-task
