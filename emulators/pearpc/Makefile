@@ -12,16 +12,14 @@ COMMENT=	PowerPC architecture emulator
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-=======
 DEPRECATED=	Abandonware
 EXPIRATION_DATE=	2019-08-01
->>>>>>> upstream/master
 
 USES=		tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+
+USE_HARDENING=	pie:off relro:off
 
 PORTEXAMPLES=	ppccfg.example
 PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
