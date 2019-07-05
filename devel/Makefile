@@ -92,6 +92,7 @@
     SUBDIR += aarch64-none-elf-gcc
     SUBDIR += aarch64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
+    SUBDIR += abseil
     SUBDIR += ace
     SUBDIR += ace+tao-doc
     SUBDIR += acsccid
@@ -1141,6 +1142,7 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
+    SUBDIR += libcircllhist
     SUBDIR += libcjson
     SUBDIR += libclc
     SUBDIR += libcli
