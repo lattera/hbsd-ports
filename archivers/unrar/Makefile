@@ -17,7 +17,11 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	UnRAR license
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off safestack
+=======
+USES=		compiler:c++11-lang
+>>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
@@ -35,10 +39,16 @@ PLIST_FILES=	bin/unrar
 SLAVEDIRS=	archivers/unrar-iconv
 
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
-OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
+OPENSSL_AES_LDFLAGS=	-lcrypto
 OPENSSL_AES_USES=	ssl
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL_AES} && ${OPENSSLLIB} != "/usr/lib"
+LDFLAGS+=	-L${OPENSSLLIB}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
