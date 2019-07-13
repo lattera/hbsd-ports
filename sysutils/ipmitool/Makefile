@@ -13,13 +13,8 @@ COMMENT=	CLI to manage IPMI systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-BROKEN_SSL=	openssl111
-
-=======
->>>>>>> freebsd/master
 USES=		cpe tar:bzip2 gmake readline ssl
 CPE_VENDOR=	sun
 GNU_CONFIGURE=	yes
