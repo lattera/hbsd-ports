@@ -15,19 +15,15 @@ COMMENT=	Virtual printer for CUPS to produce PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	safestack
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:print/cups
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		ghostscript:run
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-OPTIONS_DEFINE=		DOCS
-=======
 OPTIONS_DEFINE=	DOCS
->>>>>>> freebsd/master
 
 SUBST_CMD=	-e "s,\#GhostScript /usr/bin/gs,GhostScript ${LOCALBASE}/bin/gs," \
 		-e 's,\#GSTmp /var/tmp,GSTmp /tmp,' \
