@@ -13,18 +13,14 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		cpe gmake perl5 tar:bzip2
 USE_PERL5=	build
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-CFLAGS+=	-fno-builtin-mempcpy	# avoid -Wshadow warnings
-=======
 OPTIONS_DEFINE=	DOCS STATIC
 STATIC_LDFLAGS=	-static
 
->>>>>>> freebsd/master
 CONFLICTS_INSTALL=	busybox-unstable-*
 .include <bsd.port.options.mk>
 # fix ash crash on arm, see shell/ash.c
