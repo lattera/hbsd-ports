@@ -372,6 +372,7 @@
     SUBDIR += mkp224o
     SUBDIR += modsecurity3
     SUBDIR += modsecurity3-apache
+    SUBDIR += modsecurity3-nginx
     SUBDIR += monkeysphere
     SUBDIR += morphis
     SUBDIR += munge
