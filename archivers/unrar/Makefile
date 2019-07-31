@@ -18,13 +18,9 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	UnRAR license
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off safestack
-
-USES=		compiler:c++11-lang
-=======
 USES+=		compiler:c++11-lang
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off safestack
 
 OPTIONS_DEFINE=	OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
