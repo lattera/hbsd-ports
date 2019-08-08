@@ -11,11 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run interactive programs non-interactively
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 BROKEN=		unfetchable
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-9
 USES=		gmake

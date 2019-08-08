@@ -10,11 +10,9 @@ MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring daemon
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 BROKEN=		unfetchable
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 USES=		tar:tgz ssl
 USE_RC_SUBR=	nefu
