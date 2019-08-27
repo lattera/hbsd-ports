@@ -9,14 +9,10 @@ MASTER_SITES=	https://unix4lyfe.org/darkstat/
 MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-
-USE_RC_SUBR=	darkstat
-=======
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
->>>>>>> freebsd/master
+
+USE_HARDENING=	safestack
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
