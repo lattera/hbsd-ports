@@ -396,9 +396,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies NO_LICENSES_INSTALL=yes, NO_MTREE=yes, and causes
 #				  Linux ldconfig to be used when USE_LDCONFIG is defined.
 ##
-# USE_XORG			- Set to a list of X.org module dependencies.
-#				  Implies inclusion of bsd.xorg.mk.
-##
 # USE_TEX			- A list of the TeX dependencies the port has.
 #
 ##
@@ -1378,10 +1375,6 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONFULL}
 
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 
-.if defined(USE_XORG) || defined(XORG_CAT)
-.include "${PORTSDIR}/Mk/bsd.xorg.mk"
-.endif
-
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 KEYWORDS?=		${PORTSDIR}/Keywords
@@ -1397,6 +1390,18 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
+
+.if defined(USE_XORG) && (!defined(USES) || !${USES:Mxorg})
+DEV_WARNING+=		"Using USE_XORG alone is deprecated, please use USES=xorg"
+USES+=	xorg
+.endif
+
+.if defined(XORG_CAT)
+DEV_WARNING+=		"Using XORG_CAT is deprecated, please use USES=xorg-cat:category"
+.if !defined(USES) || !${USES:Mxorg-cat*}
+USES+=	xorg-cat:${XORG_CAT}
+.endif
 .endif
 
 .if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp*} ))
@@ -1985,8 +1990,9 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
 
-.if defined(USE_XORG) || defined(XORG_CAT)
-.include "${PORTSDIR}/Mk/bsd.xorg.mk"
+.if defined(USE_XORG) && (!defined(USES) || ( defined(USES) && !${USES:Mxorg} ))
+DEV_WARNING+=	"Using USE_XORG alone is deprecated, please use USES=xorg"
+_USES_POST+=	xorg
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER1)
@@ -2037,13 +2043,6 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .if defined(USE_LOCALE)
 CONFIGURE_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
 MAKE_ENV+=		LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
-.endif
-
-.if defined(USE_XORG)
-# Add explicit X options to avoid problems with false positives in configure
-.if defined(GNU_CONFIGURE)
-CONFIGURE_ARGS+=--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
-.endif
 .endif
 
 # Macro for doing in-place file editing using regexps
