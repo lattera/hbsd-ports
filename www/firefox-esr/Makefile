@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+USE_HARDENING=	pie:off
+
 BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 		nss>=3.44.1:security/nss \
 		icu>=63.1,1:devel/icu \
@@ -35,19 +37,15 @@ USE_MOZILLA=	-hunspell -vpx
 
 USES=		tar:xz
 
-USE_HARDENING=	pie:off
-
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
-<<<<<<< HEAD
 MOZ_OPTIONS+=	--enable-pie
-=======
+
 OPTIONS_EXCLUDE=	WAYLAND
->>>>>>> freebsd/master
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
