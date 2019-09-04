@@ -13,19 +13,14 @@ EXTRACT_ONLY=	${DISTFILE_shadow} ${DISTFILE_libdumb} \
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Rewritten engine for One Must Fall 2097
 
+USE_HARDENING=	pie:off
+
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 		libpng.so:graphics/png \
 		libargtable2.so:devel/argtable \
 		libenet.so:net/enet
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 
-<<<<<<< HEAD
-BROKEN_powerpc64=	fails to compile: gcc5: error: unrecognized command line option '-msse'
-
-USE_HARDENING=	pie:off
-
-=======
->>>>>>> freebsd/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	omf2097
 GH_TAGNAME=	c36c421
