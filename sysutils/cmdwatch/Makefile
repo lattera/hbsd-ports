@@ -10,11 +10,9 @@ MASTER_SITES=	http://www.chruetertee.ch/files/download/
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Watches the output from a command at specified intervals
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 LICENSE=	GPLv2+
->>>>>>> freebsd/master
+
+USE_HARDENING=	pie:off
 
 USES=		ncurses
 PLIST_FILES=	bin/cmdwatch man/man1/cmdwatch.1.gz
