@@ -1281,6 +1281,7 @@
     SUBDIR += tor
     SUBDIR += tor-capsicum
     SUBDIR += tor-devel
+    SUBDIR += totp-cli
     SUBDIR += tpm-tools
     SUBDIR += trezord
     SUBDIR += trinokiller
