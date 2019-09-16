@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	passivedns
-DISTVERSION=	1.1.3-60
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-ga6c7e26
+DISTVERSION=	1.2.1-10
+DISTVERSIONSUFFIX=	-ge126cbb
 CATEGORIES=	security
 
 MAINTAINER=	shadowbq@gmail.com
@@ -13,14 +12,19 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libldns.so:dns/ldns
 
+USES=		autoreconf gmake libtool
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gamelinux
 
 SUB_FILES=	pkg-message
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		autoreconf gmake libtool
+=======
+>>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldns-includes=${LOCALBASE}/include \
 		--with-ldns-libraries=${LOCALBASE}/lib
