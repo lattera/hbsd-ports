@@ -10,6 +10,8 @@ COMMENT=	Network sniffer that logs DNS replies for use in passive DNS setups
 
 LICENSE=	GPLv2
 
+USE_HARDENING=	pie:off
+
 LIB_DEPENDS=	libldns.so:dns/ldns
 
 USES=		autoreconf gmake libtool
@@ -19,12 +21,6 @@ GH_ACCOUNT=	gamelinux
 
 SUB_FILES=	pkg-message
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-USES=		autoreconf gmake libtool
-=======
->>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldns-includes=${LOCALBASE}/include \
 		--with-ldns-libraries=${LOCALBASE}/lib
