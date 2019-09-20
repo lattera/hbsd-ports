@@ -21,13 +21,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
-<<<<<<< HEAD
 USE_HARDENING=  safestack
 
-USES=	cpe libedit
-=======
 USES=	cpe libedit pkgconfig
->>>>>>> freebsd/master
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.11.11
