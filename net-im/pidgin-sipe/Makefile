@@ -25,17 +25,9 @@ LIB_DEPENDS=	libnss3.so:security/nss \
 		libfarstream-0.2.so:net-im/farstream
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
-<<<<<<< HEAD
-BROKEN_armv6=		fails to compile: cast from 'struct sipe_core_public *' to 'struct sipe_core_private *' increases required alignment from 4 to 8
-BROKEN_armv7=		fails to compile: cast from 'struct sipe_core_public *' to 'struct sipe_core_private *' increases required alignment from 4 to 8
-
 USE_HARDENING=	pie:off relro:off
 
-GNU_CONFIGURE=	yes
-USES=		gmake libtool localbase pkgconfig tar:bzip2 ssl
-=======
 USES=		gmake gnome libtool localbase pkgconfig tar:bzip2 ssl
->>>>>>> freebsd/master
 USE_GNOME=	gtk20 intltool libxml2
 USE_GSTREAMER1=	yes
 
