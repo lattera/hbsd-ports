@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	348
+PORTVERSION=	349
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -16,9 +16,13 @@ COMMENT=	Terminal emulator for the X Window System
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 USES=		cpe ncurses tar:tgz
+=======
+USES=		cpe ncurses tar:tgz xorg
+>>>>>>> freebsd/master
 USE_XORG=	xft xmu xt x11 xext xpm ice
 
 GNU_CONFIGURE=	yes
