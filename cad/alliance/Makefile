@@ -18,19 +18,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
 
-<<<<<<< HEAD
-CONFLICTS_INSTALL=	fspclient-*
-
-WRKSRC=		${WRKDIR}/alliance-5.0
-SUB_FILES=	pkg-message
-
-USE_HARDENING=	pie:off
-
-USES=		bison gmake libtool motif
-=======
 BUILD_DEPENDS=	convert:graphics/ImageMagick7 \
 		fig2dev:print/transfig
->>>>>>> freebsd/master
+
+USE_HARDENING=	pie:off
 
 USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
 USE_GCC=	any
