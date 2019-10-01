@@ -17,14 +17,10 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmetis.so:math/metis
 
-USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
-USE_LDCONFIG=	yes
-<<<<<<< HEAD
-
 USE_HARDENING=	retpoline:off
 
-=======
->>>>>>> freebsd/master
+USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SuiteSparse
 ALL_TARGET=	library # skip demos
 INSTALL_TARGET=	install # skip USES=cmake
