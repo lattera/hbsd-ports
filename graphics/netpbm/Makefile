@@ -18,6 +18,8 @@ LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	bash:shells/bash
 
+USE_HARDENING=	pie:off
+
 # The port follows the advanced release series.  Upstream does not
 # create tarballs for them, so we have to roll our own.  See
 # http://netpbm.sourceforge.net/getting_netpbm.php.  To checkout the
@@ -27,19 +29,10 @@ USES=		ghostscript:test gmake perl5 shebangfix
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-SHEBANG_FILES=	buildtools/makeman editor/pnmflip editor/pnmquant \
-		editor/ppmfade editor/ppmquant editor/ppmshadow \
-		generator/ppmrainbow converter/pbm/pbmtox10bm \
-		test/Execute-Tests test/*.test test/Available-Testprog
-=======
 SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
 		editor/pnmquant editor/ppmfade editor/ppmquant editor/ppmshadow \
 		generator/ppmrainbow test/*.test test/Available-Testprog \
 		test/Execute-Tests
->>>>>>> freebsd/master
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	BINMODE=${BINMODE} \
