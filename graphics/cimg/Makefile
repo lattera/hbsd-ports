@@ -19,6 +19,7 @@ LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
 LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+<<<<<<< HEAD
 BROKEN_aarch64=		invokes x86 assembler
 BROKEN_armv6=		invokes x86 assembler
 BROKEN_armv7=		invokes x86 assembler
@@ -29,11 +30,13 @@ BROKEN_powerpc64=	invokes x86 assembler
 
 USE_HARDENING=	pie:off
 
+=======
+>>>>>>> freebsd/master
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 
-USES=	xorg
+USES=	compiler:c11 xorg
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
