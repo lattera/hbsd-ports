@@ -2634,8 +2634,13 @@ check-categories:
 VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
 	deskutils devel docs dns editors elisp emulators enlightenment finance french ftp \
+<<<<<<< HEAD
 	games geography german gnome gnustep graphics hamradio hardenedbsd haskell hebrew hungarian \
 	ipv6 irc japanese java kde ${_KDE_CATEGORIES_SUPPORTED} kld korean lang linux lisp \
+=======
+	games geography german gnome gnustep graphics hamradio haskell hebrew hungarian \
+	irc japanese java kde ${_KDE_CATEGORIES_SUPPORTED} kld korean lang linux lisp \
+>>>>>>> freebsd/master
 	mail mate math mbone misc multimedia net net-im net-mgmt net-p2p net-vpn news \
 	palm parallel pear perl5 plan9 polish portuguese ports-mgmt \
 	print python ruby rubygems russian \
