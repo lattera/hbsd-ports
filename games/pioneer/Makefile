@@ -37,6 +37,8 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libsigc-2.0.so:devel/libsigc++20 \
 		libvorbisfile.so:audio/libvorbis
 
+USE_HARDENING=	pie:off relro:off
+
 USES=		cmake compiler:c++11-lib gl gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
@@ -44,19 +46,10 @@ GH_TAGNAME=	20191009
 USE_GL=		gl glu
 USE_SDL=	image2 sdl2
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
-CONFIGURE_ARGS=	--with-version="${GH_TAGNAME}"
-EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude .gitignore
-=======
 CMAKE_ARGS=	-DPIONEER_DATA_DIR:PATH="${DATADIR}/data"
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude \
 			.gitignore
 INSTALLS_ICONS=	yes
->>>>>>> freebsd/master
 
 PORTDATA=	data
 PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt \
