@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	kcontacts
-DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	net kde kde-applications
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
+PORTEPOCH=	1
+CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE api to manage contact information
@@ -21,5 +23,7 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
+
+CONFLICTS_INSTALL=	kcontacts-1*
 
 .include <bsd.port.mk>
