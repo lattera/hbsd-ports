@@ -27,13 +27,9 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libutp.so:net/libutp \
 		libminiupnpc.so:net/miniupnpc
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES+=		cmake cpe iconv libtool localbase pkgconfig
-=======
 USES+=		cmake cpe iconv libtool localbase pkgconfig ssl
->>>>>>> freebsd/master
 
 .  if ${SLAVEPORT:Mcli}
 NLS_USES=	gettext-runtime:run
