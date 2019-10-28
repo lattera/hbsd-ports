@@ -24,19 +24,12 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libqrencode.so:graphics/libqrencode \
 		libsodium.so:security/libsodium
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 \
-		shared-mime-info tar:xz
-USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
-		qmake_build svg testlib widgets
-=======
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 readline \
 		shared-mime-info tar:xz xorg
 USE_QT=		concurrent core dbus gui network svg widgets buildtools_build \
 		linguisttools_build qmake_build testlib_build
->>>>>>> freebsd/master
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
