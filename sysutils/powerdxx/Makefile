@@ -9,13 +9,9 @@ COMMENT=	CPU clock speed/frequency daemon
 
 LICENSE=	ISCL
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		compiler:c++14-lang
-=======
 USES=		compiler:c++17-lang
->>>>>>> freebsd/master
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lonkamikaze
