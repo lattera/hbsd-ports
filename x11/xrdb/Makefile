@@ -10,13 +10,9 @@ COMMENT=	X server resource database utility
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-XORG_CAT=	app
-=======
 USES=		xorg xorg-cat:app
->>>>>>> freebsd/master
 USE_XORG=	xmuu x11
 
 PLIST_FILES=	bin/xrdb man/man1/xrdb.1.gz
