@@ -38,11 +38,7 @@ CFI_OVERRIDE=	-fno-sanitize=cfi-icall
 
 .include <bsd.port.options.mk>
 
-<<<<<<< HEAD
-USES+=		gmake libtool perl5 ssl tar:bzip2
-=======
 USES=		gmake gl libtool perl5 ssl tar:bzip2 xorg xorg-cat:xserver
->>>>>>> freebsd/master
 USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont xkbfile xorgproto xshmfence xtrans
