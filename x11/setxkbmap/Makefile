@@ -10,13 +10,9 @@ COMMENT=	Set the keyboard using the X Keyboard Extension
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-XORG_CAT=	app
-=======
 USES=		xorg xorg-cat:app
->>>>>>> freebsd/master
 USE_XORG=	xkbfile x11
 
 CONFIGURE_ARGS=	--with-xkb-config-root=${LOCALBASE}/share/X11/xkb
