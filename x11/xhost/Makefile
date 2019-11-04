@@ -10,9 +10,13 @@ COMMENT=	Server access control program for X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 XORG_CAT=	app
+=======
+USES=		xorg xorg-cat:app
+>>>>>>> freebsd/master
 USE_XORG=	x11 xmuu xau
 
 PLIST_FILES=	bin/xhost man/man1/xhost.1.gz
