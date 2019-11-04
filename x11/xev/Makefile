@@ -10,13 +10,9 @@ COMMENT=	Print contents of X events
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-XORG_CAT=	app
-=======
 USES=		xorg xorg-cat:app
->>>>>>> freebsd/master
 USE_XORG=	x11 xrandr
 
 PLIST_FILES=	bin/xev man/man1/xev.1.gz
