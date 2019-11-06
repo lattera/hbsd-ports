@@ -9,7 +9,11 @@ MASTER_SITES=	ftp://freebsd4ever.xs4all.nl/ ftp://vps337.directvps.nl/
 MAINTAINER=	hansdehartog@xs4all.nl
 COMMENT=	Curses based file manager for system managers
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
+=======
+BROKEN=		unfetchable
+>>>>>>> upstream/master
 
 PLIST_FILES=	bin/cdls
 

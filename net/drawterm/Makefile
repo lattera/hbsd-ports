@@ -13,8 +13,12 @@ COMMENT=	Plan9 cpu client
 # Additionally the Lucent Public License
 LICENSE=	MIT
 
+<<<<<<< HEAD
 USES=	tar:tgz
 USE_HARDENING=	cfi safestack
+=======
+USES=		tar:tgz xorg
+>>>>>>> upstream/master
 USE_XORG=	x11 xt
 
 PLIST_FILES=	bin/drawterm
