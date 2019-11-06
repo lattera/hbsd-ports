@@ -18,13 +18,9 @@ LIB_DEPENDS=	libgiblib.so:graphics/giblib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 
-USES=		autoreconf
-=======
 USES=		autoreconf xorg
->>>>>>> freebsd/master
 USE_CSTD=	c99
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xfixes xcursor
