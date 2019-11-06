@@ -16,9 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		gmake
+=======
+USES=		gl gmake sdl
+>>>>>>> freebsd/master
 USE_GL=		gl
 USE_SDL=	sdl sound
 GNU_CONFIGURE=	yes
