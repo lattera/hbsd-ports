@@ -9,11 +9,9 @@ MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	UDP-based ping program
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-=======
 BROKEN=		unfetchable
->>>>>>> upstream/master
+
+USE_HARDENING=	pie:off
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
