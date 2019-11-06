@@ -15,13 +15,9 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	criticalmass-*
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		tar:bzip2
-=======
 USES=		gl sdl tar:bzip2
->>>>>>> freebsd/master
 USE_SDL=	mixer image sdl
 USE_GL=		gl
 USE_GCC=	any
