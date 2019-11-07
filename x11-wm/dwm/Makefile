@@ -13,16 +13,14 @@ COMMENT=	Dynamic, small, fast and simple window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_HARDENING=	cfi safestack
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 # Kyua is not used by the upstream to test. It's only used in the port's
 # do-test target.
 TEST_DEPENDS=	${LOCALBASE}/libexec/atf-check:devel/kyua
 
-<<<<<<< HEAD
-USE_HARDENING=	cfi safestack
-=======
 USES=		xorg
->>>>>>> freebsd/master
 USE_XORG=	x11 xft
 
 MAKE_ARGS=	CC="${CC}" \
