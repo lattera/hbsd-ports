@@ -16,13 +16,9 @@ COMMENT=	Terminal emulator for the X Window System
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-USES=		cpe ncurses tar:tgz xorg
-=======
 USES=		cpe localbase ncurses tar:tgz xorg
->>>>>>> freebsd/master
 USE_XORG=	xft xmu xt x11 xext xpm ice
 
 GNU_CONFIGURE=	yes
