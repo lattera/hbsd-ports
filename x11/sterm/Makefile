@@ -16,8 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+<<<<<<< HEAD
 USES=		pkgconfig
 USE_HARDENING=	cfi safestack
+=======
+USES=		pkgconfig xorg
+>>>>>>> freebsd/master
 USE_XORG=	x11 xext xft
 
 PLIST_FILES=	bin/st man/man1/st.1.gz

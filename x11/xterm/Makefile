@@ -16,9 +16,13 @@ COMMENT=	Terminal emulator for the X Window System
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
 
 USES=		cpe ncurses tar:tgz xorg
+=======
+USES=		cpe localbase ncurses tar:tgz xorg
+>>>>>>> freebsd/master
 USE_XORG=	xft xmu xt x11 xext xpm ice
 
 GNU_CONFIGURE=	yes
@@ -28,9 +32,6 @@ CPE_VENDOR=	invisible-island
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 
 CONFLICTS=	x11iraf-[0-9]*
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 ICONVERSION=	1
 
