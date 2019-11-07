@@ -10,15 +10,12 @@ COMMENT=	Interface to X selections ("the clipboard") from the command line
 
 LICENSE=	GPLv2
 
+USE_HARDENING=	cfi safestack
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	astrand
 
-<<<<<<< HEAD
-USES=		autoreconf gmake iconv
-USE_HARDENING=	cfi safestack
-=======
 USES=		autoreconf gmake iconv xorg
->>>>>>> freebsd/master
 USE_XORG=	x11 xmu
 
 GNU_CONFIGURE=	yes
