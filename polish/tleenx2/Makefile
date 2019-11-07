@@ -16,9 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtlen.so:polish/libtlen
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		localbase:ldflags pkgconfig
+=======
+USES=		gnome localbase:ldflags pkgconfig xorg
+>>>>>>> freebsd/master
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xscrnsaver
