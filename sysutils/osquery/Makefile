@@ -30,10 +30,15 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		cmake libtool python:2.7,build compiler:c++11-lib \
 		libarchive ssl
+=======
+USES=		cmake compiler:c++11-lib gnome libarchive libtool \
+		python:2.7,build ssl
+>>>>>>> freebsd/master
 USE_GNOME=	libxml2
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
 		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}" \

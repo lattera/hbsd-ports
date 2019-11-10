@@ -13,9 +13,13 @@ COMMENT=	Puzzle game similar to PipeMania
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		gmake
+=======
+USES=		gmake sdl
+>>>>>>> freebsd/master
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 

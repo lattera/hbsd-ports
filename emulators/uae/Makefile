@@ -15,9 +15,13 @@ LICENSE=	GPLv2
 CONFLICTS=	e-uae-[0-9]*
 MAKE_JOBS_UNSAFE=yes
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
 USES=		gmake pkgconfig tar:bzip2
+=======
+USES=		gmake gnome pkgconfig tar:bzip2
+>>>>>>> freebsd/master
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
