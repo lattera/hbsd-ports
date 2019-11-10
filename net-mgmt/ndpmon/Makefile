@@ -13,13 +13,9 @@ COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		perl5 shebangfix ssl tar:tgz
-=======
 USES=		gnome perl5 shebangfix ssl tar:tgz
->>>>>>> freebsd/master
 SHEBANG_FILES=	demopipeprogram.pl.sample
 USE_PERL5=	run
 USE_GNOME=	libxml2
