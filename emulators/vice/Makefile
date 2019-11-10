@@ -12,6 +12,8 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 LICENSE=	GPLv2
 
+USE_HARDENING=	pie:off relro:off
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale:x11-fonts/mkfontscale \
 		xa65:devel/xa65
@@ -30,16 +32,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgnutls.so:security/gnutls
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
-<<<<<<< HEAD
-
-USE_HARDENING=	pie:off relro:off
-
-USES=		compiler:c++11-lang pkgconfig makeinfo localbase:ldflags \
-		gmake iconv:wchar_t jpeg readline gettext xorg
-=======
 USES=		compiler:c++11-lang gettext gmake iconv:wchar_t jpeg \
 		localbase:ldflags makeinfo pkgconfig readline xorg
->>>>>>> freebsd/master
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
