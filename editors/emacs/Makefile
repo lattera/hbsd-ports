@@ -25,16 +25,11 @@ COMMENT+=	(Canna Japanese input flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-FLAVORS=		full canna nox
-full_CONFLICTS_INSTALL=	emacs-canna emacs-nox
-=======
 FLAVORS=			full canna nox
 canna_PKGNAMESUFFIX=		-canna
 canna_LIB_DEPENDS=		libcanna.so:japanese/canna-lib
->>>>>>> freebsd/master
 canna_CONFLICTS_INSTALL=	emacs emacs-nox
 canna_DESCR=			${.CURDIR}/pkg-descr-canna
 full_CONFLICTS_INSTALL=		emacs-canna emacs-nox
