@@ -2,7 +2,7 @@
 
 PORTNAME=	rav1e
 DISTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -165,6 +165,10 @@ FFMPEG_BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_VARS=		CARGO_FEATURES+=avformat-sys
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/env!("VERGEN_SEMVER_LIGHTWEIGHT")/"${DISTVERSIONFULL}"/' \
+		${WRKSRC}/src/capi.rs ${WRKSRC}/src/lib.rs
 
 .if !target(post-install)
 post-install:
