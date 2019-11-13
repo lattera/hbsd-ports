@@ -11,6 +11,8 @@ COMMENT=	Various OpenPGP related tools
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2 GPLv2+ GPLv3+ MIT
 LICENSE_COMB=	multi
 
+USE_HARDENING=	pie:off
+
 BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
@@ -23,13 +25,6 @@ RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Text-Template>=0:textproc/p5-Text-Template \
 		p5-GD>=0:graphics/p5-GD
 
-<<<<<<< HEAD
-CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
-
-USE_HARDENING=	pie:off
-
-=======
->>>>>>> freebsd/master
 USES=		perl5 python gmake shebangfix
 SHEBANG_FILES=	${SCRIPTS}
 BINARY_ALIAS=	sed=gsed
