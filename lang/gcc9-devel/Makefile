@@ -45,9 +45,13 @@ SSP_UNSAFE=	yes
 CFLAGS:=	${CFLAGS:N-mretpoline}
 CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off retpoline:off
 
 OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
+=======
+OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE PLUGINS
+>>>>>>> freebsd/master
 OPTIONS_DEFAULT=	BOOTSTRAP
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
@@ -62,6 +66,8 @@ MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
 CONFIGURE_ARGS+=	--disable-multilib
 .endif
+
+PLUGINS_CONFIGURE_ENABLE=	plugin
 
 .include <bsd.port.pre.mk>
 
