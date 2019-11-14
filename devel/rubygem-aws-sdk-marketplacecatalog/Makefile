@@ -1,13 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	aws-sdk-cloudsearch
-PORTVERSION=	1.17.0
+PORTNAME=	aws-sdk-marketplacecatalog
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Official AWS Ruby gem for Amazon CloudSearch
+COMMENT=	Official AWS Ruby gem for AWS Marketplace Catalog Service (AWS Marketplace Catalog)
 
 LICENSE=	APACHE20
 
