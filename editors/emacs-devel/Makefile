@@ -16,6 +16,8 @@ COMMENT+=	(No X flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_HARDENING=	pie:off relro:off
+
 BUILD_DEPENDS=	texinfo>=6.5,1:print/texinfo
 LIB_DEPENDS=	libgmp.so:math/gmp
 
@@ -34,18 +36,6 @@ USES+=		desktop-file-utils gnome xorg
 INSTALLS_ICONS=	yes
 USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 .endif
-<<<<<<< HEAD
-CPE_VENDOR=	gnu
-USE_GITHUB=	yes
-GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	3a1e762
-
-USE_HARDENING=	pie:off relro:off
-
-CONFIGURE_ARGS=	--disable-build-details \
-		--localstatedir=/var
-=======
->>>>>>> freebsd/master
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
