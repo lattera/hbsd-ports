@@ -23,14 +23,10 @@ BUILD_DEPENDS=	libassuan>=2.5.1:security/libassuan \
 		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 CPPFLAGS=	-fPIC
 
-USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
-=======
 USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
->>>>>>> freebsd/master
 
 CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
