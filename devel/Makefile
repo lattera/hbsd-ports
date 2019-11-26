@@ -393,6 +393,7 @@
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
     SUBDIR += cppunit
+    SUBDIR += cppurses
     SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpu_features
@@ -527,6 +528,7 @@
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += electron4
+    SUBDIR += electron6
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers
@@ -5392,6 +5394,7 @@
     SUBDIR += robin-map
     SUBDIR += roboctl
     SUBDIR += robodoc
+    SUBDIR += ros-catkin
     SUBDIR += ros-catkin_pkg
     SUBDIR += ros-console_bridge
     SUBDIR += ros-rosdep

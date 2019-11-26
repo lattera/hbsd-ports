@@ -13495,3 +13495,10 @@ devel/rubygem-default_value_for32|devel/rubygem-default_value_for|2019-11-23|Obs
 www/rubygem-responders2-rails52|www/rubygem-responders-rails52|2019-11-23|Obsolete, please use www/rubygem-responders-rails52 instead
 devel/rubygem-gitlab-default_value_for|devel/rubygem-default_value_for|2019-11-23|Obsolete, please use devel/rubygem-default_value_for instead
 www/httpdirfs|sysutils/fusefs-httpdirfs|2019-11-23|Rename for consistency with other FUSE ports
+math/tvm|misc/tvm|2019-11-24|Move to a more appropriate category
+math/onnx|misc/onnx|2019-11-24|Move to a more appropriate category
+math/py-onnx-tf|misc/py-onnx-tf|2019-11-24|Move to a more appropriate category
+misc/console-bridge|devel/ros-console_bridge|2019-11-24|Use devel/ros-console_bridge instead
+misc/urdfdom-headers|devel/ros-urdfdom_headers|2019-11-24|Use devel/ros-urdfdom_headers instead
+misc/urdfdom|devel/ros-urdfdom|2019-11-24|Use devel/ros-urdfdom instead
+sysutils/kdirstat|sysutils/k4dirstat|2019-11-25|Renamed to match the upstream name
