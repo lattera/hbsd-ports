@@ -14,11 +14,9 @@ COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
-USE_HARDENING=	safestack
-=======
 CONFLICTS_INSTALL=	dhcpcd-devel-[0-9]*
->>>>>>> freebsd/master
+
+USE_HARDENING=	safestack
 
 USES=		compiler:c11 cpe tar:xz
 
