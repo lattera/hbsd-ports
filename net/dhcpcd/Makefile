@@ -3,6 +3,7 @@
 
 PORTNAME=	dhcpcd
 PORTVERSION=	8.1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		https://cflags.cc/roy/dhcpcd/
@@ -13,7 +14,11 @@ COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+<<<<<<< HEAD
 USE_HARDENING=	safestack
+=======
+CONFLICTS_INSTALL=	dhcpcd-devel-[0-9]*
+>>>>>>> freebsd/master
 
 USES=		compiler:c11 cpe tar:xz
 
