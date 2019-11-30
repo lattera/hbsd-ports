@@ -79,13 +79,12 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 
 .include <bsd.port.options.mk>
 
-<<<<<<< HEAD
 .if empty(PORT_OPTIONS:MBUNDLED_SSL) && defined(LIBRESSL_IS_OPENSSL) && empty(SSL_DEFAULT:Mopenssl*)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
-=======
+.endif
+
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-common.gypi
->>>>>>> freebsd/master
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
