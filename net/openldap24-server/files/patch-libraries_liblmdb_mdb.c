@@ -1,5 +1,5 @@
---- mdb.c.orig	2019-07-19 16:41:12 UTC
-+++ mdb.c
+--- libraries/liblmdb/mdb.c.orig	2019-07-23 14:46:22 UTC
++++ libraries/liblmdb/mdb.c
 @@ -124,7 +124,10 @@ typedef SSIZE_T	ssize_t;
  #include <resolv.h>	/* defines BYTE_ORDER on HPUX and Solaris */
  #endif
