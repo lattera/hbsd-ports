@@ -20,9 +20,13 @@ BUILD_DEPENDS=	premake4:devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=		gl gmake openal:al sdl tar:bzip2 xorg
+=======
+USES=		compiler:c++11-lang gl gmake openal:al sdl tar:bzip2 xorg
+>>>>>>> freebsd/master
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
 USE_CSTD=	gnu89
@@ -35,7 +39,7 @@ DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
-MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC}
+MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC} CXX=${CXX}
 
 .include <bsd.port.pre.mk>
 
