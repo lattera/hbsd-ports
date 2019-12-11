@@ -19,25 +19,12 @@ LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
 LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USE_HARDENING=	pie:off
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off
-
-USES=	compiler:c11 xorg
-
-.if !defined(WITHOUT_LAPACK)
-. if defined(WITH_ATLAS)
-USES+=		blaslapack:atlas
-. else
-USES+=		blaslapack
-. endif
-.endif
-
-=======
->>>>>>> freebsd/master
 BUILD_WRKSRC=	${WRKSRC}/examples
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
