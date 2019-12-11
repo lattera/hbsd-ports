@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.7.5
+DISTVERSION=	2.8.0
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -23,6 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 USES=	compiler:c11 xorg
@@ -35,6 +36,8 @@ USES+=		blaslapack
 . endif
 .endif
 
+=======
+>>>>>>> freebsd/master
 BUILD_WRKSRC=	${WRKSRC}/examples
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -42,10 +45,19 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-USES+=		gmake pkgconfig:build
+USES+=		compiler:c11 gmake pkgconfig:build xorg
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
+
+.if !defined(WITHOUT_LAPACK)
+. if defined(WITH_ATLAS)
+USES+=		blaslapack:atlas
+. else
+USES+=		blaslapack
+. endif
+.endif
+
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:graphics/libboard
 
