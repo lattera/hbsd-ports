@@ -4913,6 +4913,7 @@
     SUBDIR += py-pytest-flakes
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-helpers-namespace
+    SUBDIR += py-pytest-isort
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
@@ -5546,6 +5547,7 @@
     SUBDIR += rubygem-aws-sdk-eks
     SUBDIR += rubygem-aws-sdk-elasticache
     SUBDIR += rubygem-aws-sdk-elasticbeanstalk
+    SUBDIR += rubygem-aws-sdk-elasticinference
     SUBDIR += rubygem-aws-sdk-elasticloadbalancing
     SUBDIR += rubygem-aws-sdk-elasticloadbalancingv2
     SUBDIR += rubygem-aws-sdk-elasticsearchservice
