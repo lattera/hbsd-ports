@@ -11,12 +11,10 @@ COMMENT=	Utility for real-time display of statistics for pf
 
 LICENSE=	BSD2CLAUSE
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
-=======
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	araujobsd
->>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	ALTQ
 
