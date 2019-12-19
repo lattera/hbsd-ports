@@ -708,6 +708,7 @@
     SUBDIR += fpp
     SUBDIR += frama-c
     SUBDIR += freebsd-gcc6
+    SUBDIR += freebsd-gcc9
     SUBDIR += frink
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
@@ -877,7 +878,6 @@
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
-    SUBDIR += googlemock
     SUBDIR += googletest
     SUBDIR += goprotobuf
     SUBDIR += gorm
