@@ -13,17 +13,15 @@ COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+USE_HARDENING=	pie:off relro:off
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
 
-<<<<<<< HEAD
-USE_HARDENING=	pie:off relro:off
-=======
 CONFLICTS=	${TARGETARCH}-gcc6
->>>>>>> freebsd/master
 
 USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
