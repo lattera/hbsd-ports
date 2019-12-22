@@ -12,44 +12,8 @@ MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Simple tool for doing everyday things with PDF documents
 
 LICENSE=	GPLv2
-<<<<<<< HEAD
-
-# Get GCC version suffix without the dot in USE_GCC
-CSUFF=		${_USE_GCC:S/.//}
-
-USE_GCC=	6	# Only GCC 6 provides Java (GCJ and libgcj).
-USES=		iconv gmake zip
 
 USE_HARDENING=	pie:off
-
-# gcj/libgcj don't exist on some platforms
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform
-
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-dist
-WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
-
-MAKEFILE=	Makefile.FreeBSD
-MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
-		OBJCOPY=${OBJCOPY}
-
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-
-pre-configure:
-	@if [ ! -e ${LOCALBASE}/bin/gcj${CSUFF} ]; then \
-		${ECHO_MSG} ""; \
-		${ECHO_MSG} "Cannot find gcj${CSUFF}"; \
-		${ECHO_MSG} "Please rebuild ${_GCC_PORT} with java support"; \
-		${ECHO_MSG} ""; \
-		exit 1; \
-	fi
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g; \
-		s|VERSUFF=|VERSUFF=${CSUFF}|g; s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib ${LDFLAGS} -w|g; \
-		s|LDLIBS= -lgcj|LDLIBS= -lgcj -pthread ${ICONV_LIB} -lz -L${LOCALBASE}/lib ${LDFLAGS} -w|g" \
-		${WRKSRC}/${MAKEFILE}
-=======
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3
@@ -78,7 +42,6 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/lib
 	@${LN} -sf ${JAVAJARDIR}/commons-lang3.jar ${WRKSRC}/lib
 	@${LN} -sf ${DISTDIR}/${_BCPROV_JAR} ${WRKSRC}/lib
->>>>>>> upstream/master
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pdftk \
