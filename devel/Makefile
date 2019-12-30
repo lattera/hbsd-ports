@@ -4225,7 +4225,7 @@
     SUBDIR += py-backcall
     SUBDIR += py-backports
     SUBDIR += py-backports.csv
-    SUBDIR += py-backports.functools_lru_cache
+    SUBDIR += py-backports.functools-lru-cache
     SUBDIR += py-backports.os
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports.tempfile
@@ -4500,6 +4500,7 @@
     SUBDIR += py-graphene-django
     SUBDIR += py-graphene-sqlalchemy
     SUBDIR += py-graphql-core
+    SUBDIR += py-graphql-core2
     SUBDIR += py-graphql-relay
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
@@ -5540,6 +5541,7 @@
     SUBDIR += rubygem-aws-sdk-docdb
     SUBDIR += rubygem-aws-sdk-dynamodb
     SUBDIR += rubygem-aws-sdk-dynamodbstreams
+    SUBDIR += rubygem-aws-sdk-ebs
     SUBDIR += rubygem-aws-sdk-ec2
     SUBDIR += rubygem-aws-sdk-ec2instanceconnect
     SUBDIR += rubygem-aws-sdk-ecr
@@ -6208,6 +6210,7 @@
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-progressbar
     SUBDIR += rubygem-ruby-sdl-ffi
+    SUBDIR += rubygem-ruby2_keywords
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_dep
     SUBDIR += rubygem-ruby_parser
