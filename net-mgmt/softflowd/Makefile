@@ -20,13 +20,9 @@ GH_PROJECT=	softflowd
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 
-PLIST_FILES=	sbin/softflowd sbin/softflowctl \
-=======
 PLIST_FILES=	bin/softflowd bin/softflowctl \
->>>>>>> upstream/master
 		man/man8/softflowd.8.gz \
 		man/man8/softflowctl.8.gz
 PORTDOCS=	README
