@@ -1,13 +1,13 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	aws-sdk-detective
-PORTVERSION=	1.1.0
+PORTNAME=	aws-sdk-codestarconnections
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Official AWS Ruby gem for Amazon Detective
+COMMENT=	Official AWS Ruby gem for AWS CodeStar connections
 
 LICENSE=	APACHE20
 
