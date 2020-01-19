@@ -12,13 +12,8 @@ COMMENT=	Automatically generating simple manual pages from program output
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-OPTIONS_DEFINE=	NLS
-
-=======
->>>>>>> upstream/master
 USES=		gmake localbase perl5 tar:xz
 
 GNU_CONFIGURE=	yes

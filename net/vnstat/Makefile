@@ -14,13 +14,9 @@ LICENSE=	GPLv2
 USES=		gmake sqlite
 
 GNU_CONFIGURE=	yes
-<<<<<<< HEAD
 
 USE_HARDENING=	cfi safestack
 
-USES=	gmake
-=======
->>>>>>> upstream/master
 USE_RC_SUBR=	vnstat
 
 USERS=		vnstat

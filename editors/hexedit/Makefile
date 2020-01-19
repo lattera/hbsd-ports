@@ -13,15 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf ncurses
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-PLIST_FILES=	bin/hexedit man/man1/hexedit.1.gz
-=======
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hexedit share/man/man1/hexedit.1.gz
->>>>>>> upstream/master
 
 GH_ACCOUNT=	pixel
 USE_GITHUB=	yes
