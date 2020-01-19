@@ -14,9 +14,14 @@ LICENSE_FILE=	${WRKSRC}/GPL-2
 
 USES=		gmake iconv localbase
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
 PLIST_FILES=	bin/odt2txt man/man1/odt2txt.1.gz
+=======
+PLIST_FILES=	bin/odt2txt \
+		share/man/man1/odt2txt.1.gz
+>>>>>>> upstream/master
 
 GH_ACCOUNT=	dstosberg
 USE_GITHUB=	yes
@@ -26,6 +31,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/odt2txt ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/odt2txt.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/odt2txt.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

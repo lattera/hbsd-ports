@@ -2354,6 +2354,7 @@
     SUBDIR += p5-File-FcntlLock
     SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
+    SUBDIR += p5-File-Find-Object-Rule
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
     SUBDIR += p5-File-Find-Rule-Perl
@@ -3428,6 +3429,7 @@
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
+    SUBDIR += p5-Test-TrailingSpace
     SUBDIR += p5-Test-Trap
     SUBDIR += p5-Test-UNIXSock
     SUBDIR += p5-Test-Unit
@@ -6035,6 +6037,7 @@
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-micromachine
     SUBDIR += rubygem-micromachine2
+    SUBDIR += rubygem-middleware
     SUBDIR += rubygem-mini_portile2
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-mixlib-archive
