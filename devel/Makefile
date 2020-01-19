@@ -3845,6 +3845,7 @@
     SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pear-phing
     SUBDIR += pecl-APCu
+    SUBDIR += pecl-ast
     SUBDIR += pecl-dio
     SUBDIR += pecl-ds
     SUBDIR += pecl-eio
@@ -4653,6 +4654,7 @@
     SUBDIR += py-molecule
     SUBDIR += py-mondrian
     SUBDIR += py-mongokit
+    SUBDIR += py-monkeytype
     SUBDIR += py-monotonic
     SUBDIR += py-monty
     SUBDIR += py-more-itertools
@@ -4994,6 +4996,7 @@
     SUBDIR += py-resourcepackage
     SUBDIR += py-responses
     SUBDIR += py-retrying
+    SUBDIR += py-retype
     SUBDIR += py-riak_pb
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
@@ -5070,6 +5073,7 @@
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
     SUBDIR += py-strict-rfc3339
+    SUBDIR += py-stringcase
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
