@@ -17,17 +17,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	cmake:devel/cmake
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		cmake compiler:c11 gl localbase pathfix pkgconfig tar:xz xorg
-=======
 USES=		compiler:c11 gl localbase meson pkgconfig python:3.5+,build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_COMMIT=	b71cfa674db5828a2be04a42ce9996d6677629ee
->>>>>>> upstream/master
 USE_GL=		egl gl
 USE_LDCONFIG=	yes
 
