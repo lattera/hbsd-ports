@@ -131,6 +131,7 @@
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += antic
+    SUBDIR += apache-commons-math
     SUBDIR += apc
     SUBDIR += apron
     SUBDIR += arb
@@ -300,7 +301,6 @@
     SUBDIR += ised
     SUBDIR += jacal
     SUBDIR += jags
-    SUBDIR += jakarta-commons-math3
     SUBDIR += jama
     SUBDIR += jeuclid
     SUBDIR += jlatexmath
