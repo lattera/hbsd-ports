@@ -13230,6 +13230,7 @@ mail/spamdb-curses||2019-10-16|Has expired: Unfetchable, unmaintained
 mail/xlbiff||2019-10-16|Has expired: Unfetchable, unmaintained
 math/algotutor||2019-10-16|Has expired: Unfetchable, unmaintained
 math/nyh-hoc||2019-10-16|Has expired: Unfetchable, unmaintained
+math/superlu_mt||2019-10-16|Has expired: Unfetchable, unmaintained
 math/testu01||2019-10-16|Has expired: Unfetchable, unmaintained
 misc/astrolog||2019-10-16|Has expired: Unfetchable, unmaintained
 misc/chord2html||2019-10-16|Has expired: Unfetchable, unmaintained
@@ -13751,3 +13752,5 @@ net/py-coherence||2020-01-18|fails with python-3.X, and python-2.7 is EOLed (GH 
 net/py-upnp-inspector||2020-01-18|Missing dependency: net/py-coherence is python-2.7-only
 security/py-pymacaroons-pynacl|security/py-pymacaroons|2020-01-20|Rename to match upstream naming
 math/jakarta-commons-math3|apache-commons-math|2020-01-24|Renamed upstream
+audio/py-mpd2|audio/py-python-mpd2|2020-01-25|Rename to match upstream naming
+devel/py-microversion-parse|devel/py-microversion_parse|2020-01-25|Rename to match upstream naming
