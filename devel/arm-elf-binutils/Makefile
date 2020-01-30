@@ -10,16 +10,12 @@ PKGNAMEPREFIX=	arm-elf-
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		gettext gmake tar:bzip2
-=======
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 USES=		gettext gmake localbase tar:bzip2
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror \
 		--disable-nls
