@@ -13778,7 +13778,6 @@ chinese/bg5pdf||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 comms/py-libimobiledevice||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 converters/py-bcode||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 converters/py-iconv||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-converters/py-zfec||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 databases/gadfly||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 databases/metakit||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 databases/openark-kit||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -13844,7 +13843,6 @@ finance/mybudget||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 finance/sabernetdcs-client||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/4stattack||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/barbie_seahorse_adventures||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-games/battletanks||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/bombz||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/bouncy||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/bubbros||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -14004,3 +14002,4 @@ x11-wm/obmenu||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 x11-wm/plwm||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/vegastrike-data||2020-01-27|Removed
 textproc/gnome-doc-utils||2020-01-27|Abandoned upstream, Python 2.7 only
+java/jakarta-commons-discovery|java/apache-commons-discovery|2020-01-29|Renamed upstream
