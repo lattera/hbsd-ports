@@ -1103,6 +1103,7 @@
     SUBDIR += p5-RT-Extension-LDAPImport
     SUBDIR += p5-RT-Extension-MandatoryOnTransition
     SUBDIR += p5-RT-Extension-QuickAssign
+    SUBDIR += p5-RT-Extension-RepeatTicket
     SUBDIR += p5-RT-Extension-SLA
     SUBDIR += p5-RTx-Calendar
     SUBDIR += p5-Reaction
@@ -1639,6 +1640,7 @@
     SUBDIR += py-flask-restful
     SUBDIR += py-flask-restplus
     SUBDIR += py-flask-script
+    SUBDIR += py-flask-security
     SUBDIR += py-flask-smorest
     SUBDIR += py-flask-socketio
     SUBDIR += py-flask-sockets
@@ -1817,6 +1819,7 @@
     SUBDIR += py-qt5-webengine
     SUBDIR += py-qt5-webkit
     SUBDIR += py-qt5-webkitwidgets
+    SUBDUR += py-qt5-websockets
     SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha
     SUBDIR += py-requestbuilder
