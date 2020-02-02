@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hashie
-PORTVERSION=	4.0.0
+PORTVERSION=	3.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hashie is a simple collection of useful Hash extensions
@@ -16,5 +17,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^3\.
 
 .include <bsd.port.mk>
