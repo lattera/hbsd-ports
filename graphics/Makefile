@@ -926,6 +926,7 @@
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
     SUBDIR += rubygem-gruff
+    SUBDIR += rubygem-image_processing
     SUBDIR += rubygem-image_science
     SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-invisible_captcha
@@ -938,6 +939,7 @@
     SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-ruby-graphviz
+    SUBDIR += rubygem-ruby-vips
     SUBDIR += rubygem-scruffy
     SUBDIR += rx
     SUBDIR += s10sh
