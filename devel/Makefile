@@ -4587,7 +4587,7 @@
     SUBDIR += py-mdv
     SUBDIR += py-medikit
     SUBDIR += py-meliae
-    SUBDIR += py-memory_profiler
+    SUBDIR += py-memory-profiler
     SUBDIR += py-microversion_parse
     SUBDIR += py-minimongo
     SUBDIR += py-minio
@@ -4664,9 +4664,12 @@
     SUBDIR += py-oslo.config
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.db
+    SUBDIR += py-oslo.db6
     SUBDIR += py-oslo.i18n
+    SUBDIR += py-oslo.limit
     SUBDIR += py-oslo.log
     SUBDIR += py-oslo.messaging
+    SUBDIR += py-oslo.messaging10
     SUBDIR += py-oslo.middleware
     SUBDIR += py-oslo.policy
     SUBDIR += py-oslo.privsep
@@ -4674,6 +4677,7 @@
     SUBDIR += py-oslo.rootwrap
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.service
+    SUBDIR += py-oslo.upgradecheck
     SUBDIR += py-oslo.utils
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.vmware
@@ -5020,6 +5024,7 @@
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-taskflow
+    SUBDIR += py-taskflow3
     SUBDIR += py-tblib
     SUBDIR += py-tconfpy
     SUBDIR += py-tempora
@@ -5043,6 +5048,7 @@
     SUBDIR += py-timelib
     SUBDIR += py-tinyarray
     SUBDIR += py-tinyrpc
+    SUBDIR += py-tinyrpc0
     SUBDIR += py-tipper
     SUBDIR += py-tokenize-rt
     SUBDIR += py-toolz
@@ -5972,6 +5978,7 @@
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gettext-setup
+    SUBDIR += rubygem-gettext32
     SUBDIR += rubygem-gettext_i18n_rails
     SUBDIR += rubygem-gettext_i18n_rails_js-rails5
     SUBDIR += rubygem-gettext_i18n_rails_js-rails50

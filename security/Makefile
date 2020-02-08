@@ -1195,6 +1195,7 @@
     SUBDIR += sops
     SUBDIR += spass
     SUBDIR += spass-qt5
+    SUBDIR += spm
     SUBDIR += spybye
     SUBDIR += sqlmap
     SUBDIR += sqlninja
