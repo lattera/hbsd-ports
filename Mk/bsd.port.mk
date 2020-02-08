@@ -2650,13 +2650,8 @@ check-categories:
 
 VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
-<<<<<<< HEAD
-	deskutils devel docs dns editors elisp emulators enlightenment finance french ftp \
-	games geography german gnome gnustep graphics hamradio hardenedbsd haskell hebrew hungarian \
-=======
 	deskutils devel dns docs editors elisp emulators enlightenment finance french ftp \
 	games geography german gnome gnustep graphics hamradio haskell hebrew hungarian \
->>>>>>> upstream/master
 	irc japanese java kde ${_KDE_CATEGORIES_SUPPORTED} kld korean lang linux lisp \
 	mail mate math mbone misc multimedia net net-im net-mgmt net-p2p net-vpn news \
 	parallel pear perl5 plan9 polish ports-mgmt portuguese \
@@ -2666,6 +2661,9 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	ukrainian vietnamese wayland windowmaker www \
 	x11 x11-clocks x11-drivers x11-fm x11-fonts x11-servers x11-themes \
 	x11-toolkits x11-wm xfce zope base
+
+# HardenedBSD-related categories
+VALID_CATEGORIES+=	hardenedbsd
 
 check-categories:
 .for cat in ${CATEGORIES}

@@ -11,15 +11,9 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontscale:x11-fonts/mkfontscale \
-		xa65:devel/xa65
-=======
 BUILD_DEPENDS=	xa65:devel/xa65
->>>>>>> upstream/master
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libportaudio.so:audio/portaudio \
