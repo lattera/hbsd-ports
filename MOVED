@@ -14256,3 +14256,9 @@ devel/go-godef||2020-02-14|Removed
 devel/racerd||2020-02-14|Has expired: Old, unmaintained, and fails to build with Rust 1.41.0 or newer; use rls from lang/rust instead
 www/plexwatchweb||2020-02-14|Removed
 multimedia/plexwatch||2020-02-14|Removed
+textproc/rubygem-elasticsearch-model019|textproc/rubygem-elasticsearch-model|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-model instead
+textproc/rubygem-elasticsearch-rails019|textproc/rubygem-elasticsearch-rails|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-rails instead
+textproc/rubygem-elasticsearch503|textproc/rubygem-elasticsearch|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-api503|textproc/rubygem-elasticsearch-api|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-api instead
+textproc/rubygem-elasticsearch-transport503|textproc/rubygem-elasticsearch-transport|2020-02-14|Obselete, use textproc/rubygem-elasticsearch-transport instead
+textproc/rubygem-asciidoctor-plantuml009|textproc/rubygem-asciidoctor-plantuml|2020-02-14|Obsolete, use textproc/rubygem-asciidoctor-plantuml instead
