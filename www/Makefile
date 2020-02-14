@@ -1454,7 +1454,6 @@
     SUBDIR += py-dj22-django-formset-js-improved
     SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
-    SUBDIR += py-dj22-django-jsonfield2
     SUBDIR += py-dj22-django-model-utils
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
@@ -1468,6 +1467,7 @@
     SUBDIR += py-dj22-djangoql
     SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-dj22-drf-yasg
+    SUBDIR += py-dj22-jsonfield2
     SUBDIR += py-dj22-swapper
     SUBDIR += py-django
     SUBDIR += py-django-allauth
@@ -1517,7 +1517,6 @@
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
-    SUBDIR += py-django-jsonfield2
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-libsass
     SUBDIR += py-django-markdownx
@@ -1674,6 +1673,7 @@
     SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
+    SUBDIR += py-jsonfield2
     SUBDIR += py-kallithea
     SUBDIR += py-lektor
     SUBDIR += py-lesscpy
@@ -1946,6 +1946,7 @@
     SUBDIR += rubygem-hamlit-rails-rails50
     SUBDIR += rubygem-hashicorp-checkpoint
     SUBDIR += rubygem-heroics
+    SUBDIR += rubygem-heroics00
     SUBDIR += rubygem-heroku-api
     SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
