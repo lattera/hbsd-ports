@@ -774,8 +774,8 @@
     SUBDIR += gettext-runtime
     SUBDIR += gettext-tools
     SUBDIR += gflags
-    SUBDIR += ghidra
     SUBDIR += gh
+    SUBDIR += ghidra
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gindent
@@ -4076,6 +4076,7 @@
     SUBDIR += py-aws-sam-translator
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-azure-batch
+    SUBDIR += py-azure-core
     SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-datalake-store
     SUBDIR += py-azure-functions-devops-build
@@ -4485,7 +4486,9 @@
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
+    SUBDIR += py-jaraco.context2
     SUBDIR += py-jaraco.functools
+    SUBDIR += py-jaraco.functools2
     SUBDIR += py-jaraco.itertools
     SUBDIR += py-jaraco.logging
     SUBDIR += py-jaraco.timing
@@ -4673,6 +4676,7 @@
     SUBDIR += py-oslo.messaging10
     SUBDIR += py-oslo.middleware
     SUBDIR += py-oslo.policy
+    SUBDIR += py-oslo.policy2
     SUBDIR += py-oslo.privsep
     SUBDIR += py-oslo.reports
     SUBDIR += py-oslo.rootwrap
