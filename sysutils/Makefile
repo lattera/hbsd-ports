@@ -491,7 +491,11 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+<<<<<<< HEAD
     SUBDIR += iichid-kmod
+=======
+    SUBDIR += iichid
+>>>>>>> upstream/master
     SUBDIR += immortal
     SUBDIR += incron
     SUBDIR += inotify-tools
