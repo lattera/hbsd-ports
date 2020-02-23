@@ -26,15 +26,11 @@ COMMENT=	AT&T KornShell 93
 
 LICENSE=	EPL
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
 
-USES=		compiler:c11 meson ninja python:build
-=======
 BROKEN_aarch64=	Fails to compile: needs sbrk
 
 USES=		compiler:c11
->>>>>>> upstream/master
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
