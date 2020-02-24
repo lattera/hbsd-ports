@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim
 DIST_SUBDIR=	exim
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
 LICENSE=	GPLv2
@@ -48,7 +48,7 @@ BDB_USES=	bdb
 DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
 EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USES=	xorg
-EXIMON_USE=	xorg=x11,xaw,xt
+EXIMON_USE=	xorg=x11,xaw,xext,xmu,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
 INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
@@ -381,15 +381,16 @@ SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_RADIUS}
+PORTREVISION?=	1
 WITH_RADIUS_TYPE?=	RADLIB
 .if ${WITH_RADIUS_TYPE:tl} == radlib
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1/etc/radius.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADLIB,'
 .elif ${WITH_RADIUS_TYPE:tl} == radiusclient
-LIB_DEPENDS+=	libradiusclient-ng.so:net/radiusclient
-SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lradiusclient-ng,' \
-		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE:S/,/\\,/g}/etc/radiusclient-ng/radiusclient.conf,' \
+LIB_DEPENDS+=	libfreeradius-client.so:net/freeradius-client
+SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lfreeradius-client,' \
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE:S/,/\\,/g}/etc/radiusclient/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENTNEW,'
 .else
 IGNORE=		the variable WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
