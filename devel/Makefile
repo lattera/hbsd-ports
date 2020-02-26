@@ -4301,7 +4301,6 @@
     SUBDIR += py-deprecation
     SUBDIR += py-dexml
     SUBDIR += py-dialog
-    SUBDIR += py-dialog3
     SUBDIR += py-diazo
     SUBDIR += py-dill
     SUBDIR += py-dirspec
@@ -4659,6 +4658,7 @@
     SUBDIR += py-os-win
     SUBDIR += py-os-win4
     SUBDIR += py-osc-lib
+    SUBDIR += py-osc-lib1
     SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.config
@@ -4885,6 +4885,7 @@
     SUBDIR += py-python-subunit
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
+    SUBDIR += py-pythondialog
     SUBDIR += py-pytimeparse
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
