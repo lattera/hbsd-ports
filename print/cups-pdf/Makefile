@@ -14,12 +14,9 @@ COMMENT=	Virtual printer for CUPS to produce PDF files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 USE_HARDENING=	safestack
 
-=======
 LIB_DEPENDS=	libcups.so:print/cups
->>>>>>> upstream/master
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:print/cups
 
 USES=		ghostscript:run localbase
