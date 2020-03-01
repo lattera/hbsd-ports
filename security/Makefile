@@ -216,7 +216,6 @@
     SUBDIR += honeytrap
     SUBDIR += honggfuzz
     SUBDIR += horcrux
-    SUBDIR += hotssh
     SUBDIR += hpenc
     SUBDIR += hs-cryptol
     SUBDIR += hydra
@@ -1296,7 +1295,6 @@
     SUBDIR += yubioath-desktop
     SUBDIR += zebedee
     SUBDIR += zeek
-    SUBDIR += zenmap
     SUBDIR += zeronet
     SUBDIR += zxid
     SUBDIR += zzuf
