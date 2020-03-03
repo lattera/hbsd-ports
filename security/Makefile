@@ -170,11 +170,8 @@
     SUBDIR += fwlogwatch
     SUBDIR += gag
     SUBDIR += gcr
-<<<<<<< HEAD
-    SUBDIR += gibson
-=======
     SUBDIR += gef
->>>>>>> upstream/master
+    SUBDIR += gibson
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt
     SUBDIR += git-secret

@@ -12,18 +12,10 @@ COMMENT=	S.M.A.R.T. disk monitoring tools
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
-USES=		alias compiler:c++11-lib gmake shebangfix
-
-CONFLICTS=	smartmontools-devel-[0-9]*
-
 USE_HARDENING=	safestack
 
-OPTIONS_DEFINE=	DOCS
-=======
 USES=		alias compiler:c++11-lib shebangfix
 USE_RC_SUBR=	smartd
->>>>>>> upstream/master
 
 SHEBANG_FILES=	examplescripts/Example5
 GNU_CONFIGURE=	yes
