@@ -20,12 +20,8 @@ RUN_DEPENDS=	git:devel/git \
 USES=		gmake go:no_targets
 USE_RC_SUBR=	gitea
 
-<<<<<<< HEAD
-GO_BUILDFLAGS=	-tags "${GO_TAGS}" -ldflags '-X "main.Version=${PORTVERSION}"' -buildmode=pie
-GO_TARGET=	:${PREFIX}/sbin/${PORTNAME}
+GO_BUILDFLAGS=	-buildmode=pie
 
-=======
->>>>>>> upstream/master
 SUB_FILES+=	app.ini.sample
 SUB_LIST+=	GITUSER=${USERS}
 
