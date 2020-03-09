@@ -16,12 +16,10 @@ LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${PATCH_WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
-=======
+
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
->>>>>>> upstream/master
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
