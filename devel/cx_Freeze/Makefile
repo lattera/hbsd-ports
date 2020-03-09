@@ -9,7 +9,12 @@ MASTER_SITES=	SF/cx-freeze/${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	The cx_Freeze is a set of utilities for freezing Python scripts
 
+<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
+=======
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+>>>>>>> upstream/master
 
 USE_GCC=	yes
 USES=		python:2.7
