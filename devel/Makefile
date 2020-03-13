@@ -4068,6 +4068,7 @@
     SUBDIR += py-atomicwrites
     SUBDIR += py-atpublic
     SUBDIR += py-attrs
+    SUBDIR += py-autoflake
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-aws-sam-translator
@@ -4884,6 +4885,7 @@
     SUBDIR += py-python-gist
     SUBDIR += py-python-gitlab
     SUBDIR += py-python-jenkins
+    SUBDIR += py-python-jsonrpc-server
     SUBDIR += py-python-magic
     SUBDIR += py-python-mimeparse
     SUBDIR += py-python-pcre
