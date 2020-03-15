@@ -1,23 +1,25 @@
 # $FreeBSD$
 
-PORTNAME=	dune-typetree
+PORTNAME=	dune-functions
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0rc2
-PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	DUNE framework: The TypeTree library
+COMMENT=	DUNE framework: Abstraction layer for global finite element functions
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	dune-common>0:math/dune-common \
-		openmpi>0:net/openmpi \
+DUNE_DEPENDS=	dune-common>0:math/dune-common \
+		dune-geometry>0:math/dune-geometry \
+		dune-grid>0:math/dune-grid \
+		dune-istl>0:math/dune-istl \
+		dune-localfunctions>0:math/dune-localfunctions \
+		dune-typetree>0:math/dune-typetree
+BUILD_DEPENDS=	${DUNE_DEPENDS} \
 		vc>0:devel/vc
-RUN_DEPENDS=	dune-common>0:math/dune-common \
-		openmpi>0:net/openmpi \
-		vc>0:devel/vc
+RUN_DEPENDS=	${DUNE_DEPENDS}
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
@@ -25,7 +27,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	core
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	staging
-GL_COMMIT=	b6427163a5ef45996471edad672ecab584aa490c
+GL_COMMIT=	715a380912eb6d14f06a4d758f4d1255bda25c95
 
 NO_ARCH=	yes
 
