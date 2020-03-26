@@ -1242,6 +1242,7 @@
     SUBDIR += liblxqt
     SUBDIR += libmaa
     SUBDIR += libmatheval
+    SUBDIR += libmatthew
     SUBDIR += libmba
     SUBDIR += libmill
     SUBDIR += libmimedir
@@ -1310,6 +1311,7 @@
     SUBDIR += librolegen
     SUBDIR += libruin
     SUBDIR += libs11n
+    SUBDIR += libsavitar
     SUBDIR += libscca
     SUBDIR += libsearpc
     SUBDIR += libserialport
