@@ -24,13 +24,9 @@ PORTSCOUT=	ignore:1
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-# Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
-=======
 # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
->>>>>>> upstream/master
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
