@@ -3437,6 +3437,7 @@
     SUBDIR += p5-Test-utf8
     SUBDIR += p5-Test2-Harness
     SUBDIR += p5-Test2-Plugin-DBIProfile
+    SUBDIR += p5-Test2-Plugin-IOEvents
     SUBDIR += p5-Test2-Plugin-MemUsage
     SUBDIR += p5-Test2-Plugin-NoWarnings
     SUBDIR += p5-Test2-Plugin-UUID
@@ -6467,6 +6468,7 @@
     SUBDIR += rubygem-webpacker-rails5
     SUBDIR += rubygem-webpacker-rails50
     SUBDIR += rubygem-webpacker-rails60
+    SUBDIR += rubygem-webpacker4-rails60
     SUBDIR += rubygem-will_paginate
     SUBDIR += rubygem-windows_error
     SUBDIR += rubygem-wisper
@@ -6683,6 +6685,7 @@
     SUBDIR += violet
     SUBDIR += visualparadigm
     SUBDIR += vitables
+    SUBDIR += volk
     SUBDIR += vstr
     SUBDIR += vulkan-headers
     SUBDIR += vulkan-tools
