@@ -1025,6 +1025,7 @@
     SUBDIR += jsoncpp
     SUBDIR += jsonnet
     SUBDIR += jsonrpc-glib
+    SUBDIR += jucipp
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += k8048
@@ -2440,8 +2441,8 @@
     SUBDIR += p5-Git-Sub
     SUBDIR += p5-Git-Version-Compare
     SUBDIR += p5-Git-Wrapper
+    SUBDIR += p5-Glib
     SUBDIR += p5-Glib-Object-Introspection
-    SUBDIR += p5-Glib2
     SUBDIR += p5-Gnome2-GConf
     SUBDIR += p5-Goo-Canvas
     SUBDIR += p5-Goo-Canvas2
