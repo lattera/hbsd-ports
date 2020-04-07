@@ -5851,7 +5851,6 @@ editors/axe||2014-04-11|Has expired: Unmaintained since 2000
 www/cgic||2014-04-11|Has expired: Unmaintained since 2000
 devel/orbitcpp||2014-04-11|Unused anymore, not libc++ friendly
 graphics/sodipodi|graphics/inkscape|2014-04-11|Sodipodi did not survive the Inkscape fork
-devel/g-wrap||2014-04-11|Unused, not stage friendly
 net/pvm++||2014-04-13|Has expired: Unmaintained since 2001
 devel/ixlib||2014-04-13|Has expired: Unmaintained since 2001
 mail/althea||2014-04-13|Has expired: Unmaintained since 2001
@@ -14500,7 +14499,7 @@ x11/rxvt|x11/rxvt-unicode|2020-03-20|Has expired: Abandonware: stable release 2.
 x11-wm/clementine-wm||2020-03-20|Removed, unmaintained and depends on expired x11/rxvt
 net/kdsoap|www/kdsoap|2020-03-21|Already existed in the tree
 security/openssh-portable@x509||2020-03-23|Has expired: X509 long broken without known users
-devel/py-antlr4-python2-runtime|devel/antlr4-python3-runtime|2020-03-25|Has expired: Uses EoL python27, please use devel/antlr4-python3-runtime instead
+devel/py-antlr4-python2-runtime|devel/py-antlr4-python3-runtime|2020-03-25|Has expired: Uses EoL python27, please use devel/antlr4-python3-runtime instead
 devel/sonarqube|devel/sonarqube-community|2020-03-26|Moved to make it clear that this is the community-edition
 devel/sonar-ant-task|devel/sonarqube-ant-task|2020-03-26|Moved due to name change upstream
 devel/rubygem-slack-notifier1|devel/rubygem-slack-notifier|2020-03-30|Obsolete, please use devel/rubygem-slack-notifier instead
