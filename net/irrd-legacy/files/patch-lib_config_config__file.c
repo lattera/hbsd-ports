@@ -1,6 +1,6 @@
---- lib/config/config_file.c.orig	2009-03-25 00:38:11.000000000 +0300
-+++ lib/config/config_file.c	2011-06-24 17:09:08.000000000 +0400
-@@ -772,7 +772,7 @@
+--- lib/config/config_file.c.orig	2015-04-03 11:26:26 UTC
++++ lib/config/config_file.c
+@@ -772,7 +772,7 @@ config_line_address (uii_connection_t * uii, prefix_t 
  	Deref_Prefix (prefix);
          return (1);
      }

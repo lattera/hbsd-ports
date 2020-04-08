@@ -1,17 +1,16 @@
 Index: lib/mrt/prefix.c
-diff -u -p lib/mrt/prefix.c.orig lib/mrt/prefix.c
---- lib/mrt/prefix.c.orig	Fri Aug 31 03:10:31 2001
-+++ lib/mrt/prefix.c	Mon May  1 12:05:11 2006
-@@ -15,7 +15,7 @@
- #include <ws2tcpip.h>
- #endif /* NT */
+--- lib/mrt/prefix.c.orig	2015-04-03 11:26:26 UTC
++++ lib/mrt/prefix.c
+@@ -5,7 +5,7 @@
+ #include <mrt.h>
+ #include <netdb.h>
  
 -#ifndef __GLIBC__
 +#if !defined(__GLIBC__) && !defined(__FreeBSD__)
  #ifdef __osf__
  
  /* apparently, OSF's gethostby{name,addr}_r's are different, broken, and
-@@ -50,7 +50,7 @@ struct hostent  *gethostbyaddr_r
+@@ -29,7 +29,7 @@ struct hostent  *gethostbyaddr_r
        For the time being, this part tries to convert Linux glibc 2.X
        gethostXX_r into Solaris's that we use to code MRT. -- masaki
      */
