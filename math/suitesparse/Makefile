@@ -14,13 +14,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmetis.so:math/metis
 
-<<<<<<< HEAD
-USE_HARDENING=	retpoline:off
-=======
 USE_GITHUB=	yes
 GH_ACCOUNT=	DrTimothyAldenDavis
 GH_PROJECT=	SuiteSparse
->>>>>>> upstream/master
 
 USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
 USE_LDCONFIG=	yes
@@ -36,6 +32,8 @@ MAKE_ENV=	BLAS="${BLASLIB}" LAPACK="${LAPACKLIB}" \
 CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${PORTNAME}"	\
 		-DBUILD_GRB_STATIC_LIBRARY:BOOL=ON
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
+
+USE_HARDENING=	retpoline:off
 
 CONFLICTS_INSTALL=	mongoose plinkseq # bin/mongoose
 
