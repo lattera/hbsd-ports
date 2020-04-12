@@ -18,12 +18,9 @@ LICENSE=	GPLv2
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
 
-<<<<<<< HEAD
 USE_HARDENING=	cfi safestack
 CFI_OVERRIDE=	-fno-sanitize=cfi-icall
 
-PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
-=======
 SHEBANG_FILES=	contrib/dnslist/dnslist.pl \
 		contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl
 
@@ -38,7 +35,6 @@ CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-devel-*
->>>>>>> upstream/master
 
 SUB_FILES=	pkg-message
 
