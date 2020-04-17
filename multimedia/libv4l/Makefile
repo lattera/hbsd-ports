@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	\
 	--disable-qv4l2 \
 	--disable-qvidcap \
 	--disable-nls
+BINARY_ALIAS=	sed=gsed
 INSTALL_TARGET=	install-strip
 .endif
 
@@ -55,6 +56,8 @@ CONFIGURE_ARGS+= \
 .endif
 
 .if ${PORTNAME} == libv4l
+CONFIGURE_ENV+= \
+	libudev_CFLAGS=" "
 CONFIGURE_ARGS+= \
 	--disable-v4l-utils \
 	--enable-dyn-libv4l \
@@ -66,10 +69,6 @@ post-patch:
 	@${RM} -r ${WRKDIR}/v4l-utils-${PORTVERSION}/contrib/freebsd/include/*
 # Apply webcamd patches first
 	@(cd ${WRKDIR}/webcamd-${WEBCAMDVERSION}/patches && ${SH} ./do_patch.sh)
-# Patch Makefiles to use GNU-sed
-	@${FIND} ${WRKDIR}/v4l-utils-${PORTVERSION} -type f \( -iname "Makefile*" \) | \
-		${XARGS} -n 10 ${REINPLACE_CMD} \
-			-e 's|^\([[:space:]]*\)sed |\1${LOCALBASE}/bin/gsed |'
 # Patch all source files
 	@${FIND} ${WRKDIR} -type f \( -iname "*.[ch]" -or -iname "*.cpp" -or -iname "msg2ctl.pl" \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} \
@@ -103,7 +102,7 @@ post-patch:
 			-e 's|<linux/compiler.h>|<sys/cdefs.h>|g' \
 			-e 's|<linux/errno.h>|<errno.h>|g' \
 			-e 's|<linux/ioctl.h>|<sys/ioctl.h>|g' \
-			-e 's|<linux/kernel.h>|<sys/sysinfo.h>|g' \
+			-e '/^.*\<linux\/kernel.h\>.*/d' \
 			-e 's|<linux/string.h>|<string.h>|g' \
 			-e 's|<linux/sysmacros.h>|<sys/types.h>|g' \
 			-e 's|<malloc.h>|<stdlib.h>|g' \
