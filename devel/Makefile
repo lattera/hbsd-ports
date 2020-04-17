@@ -1174,6 +1174,7 @@
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevdev
+    SUBDIR += libevdevPlus
     SUBDIR += libevent
     SUBDIR += libevt
     SUBDIR += libevtx
@@ -1362,6 +1363,7 @@
     SUBDIR += libublio
     SUBDIR += libubox
     SUBDIR += libudev-devd
+    SUBDIR += libuInputPlus
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum
