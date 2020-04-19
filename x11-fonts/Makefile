@@ -101,6 +101,7 @@
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
     SUBDIR += fontmatrix
+    SUBDIR += fontpreview
     SUBDIR += fonts-indic
     SUBDIR += fonttosfnt
     SUBDIR += freefont-ttf
@@ -160,6 +161,7 @@
     SUBDIR += monoid
     SUBDIR += montecarlo_fonts
     SUBDIR += montserrat
+    SUBDIR += mourier
     SUBDIR += moveable-type-fonts
     SUBDIR += nerd-fonts
     SUBDIR += nexfontsel
