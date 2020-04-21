@@ -4102,6 +4102,7 @@
     SUBDIR += py-azure-mgmt-containerinstance
     SUBDIR += py-azure-mgmt-containerregistry
     SUBDIR += py-azure-mgmt-containerservice
+    SUBDIR += py-azure-mgmt-core
     SUBDIR += py-azure-mgmt-cosmosdb
     SUBDIR += py-azure-mgmt-datalake-analytics
     SUBDIR += py-azure-mgmt-datalake-store
@@ -4133,6 +4134,7 @@
     SUBDIR += py-azure-mgmt-rdbms
     SUBDIR += py-azure-mgmt-recoveryservices
     SUBDIR += py-azure-mgmt-recoveryservicesbackup
+    SUBDIR += py-azure-mgmt-redhatopenshift
     SUBDIR += py-azure-mgmt-redis
     SUBDIR += py-azure-mgmt-relay
     SUBDIR += py-azure-mgmt-reservations
@@ -4270,6 +4272,7 @@
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
     SUBDIR += py-crank
+    SUBDIR += py-crashtest
     SUBDIR += py-crc32c
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
