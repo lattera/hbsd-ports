@@ -4690,6 +4690,7 @@
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.concurrency3
     SUBDIR += py-oslo.config
+    SUBDIR += py-oslo.config7
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.db
     SUBDIR += py-oslo.db6
@@ -5621,6 +5622,7 @@
     SUBDIR += rubygem-aws-sdk-storagegateway
     SUBDIR += rubygem-aws-sdk-support
     SUBDIR += rubygem-aws-sdk-swf
+    SUBDIR += rubygem-aws-sdk-synthetics
     SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-transcribeservice
     SUBDIR += rubygem-aws-sdk-transcribestreamingservice
@@ -5785,6 +5787,7 @@
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
     SUBDIR += rubygem-batch-loader
+    SUBDIR += rubygem-batch-loader14
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
@@ -6552,6 +6555,7 @@
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
     SUBDIR += simavr
+    SUBDIR += simdjson
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simple_components
