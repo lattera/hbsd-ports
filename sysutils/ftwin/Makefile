@@ -17,11 +17,8 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre \
 		libpuzzle.so:graphics/libpuzzle
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		autoreconf libarchive tar:bzip2
-=======
 USES=		autoreconf bdb libarchive pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
@@ -29,7 +26,6 @@ GH_ACCOUNT=	fpesce
 GH_PROJECT=	ftwin
 GH_TAGNAME=	3355fd9
 
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-archive=${LOCALBASE}
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
