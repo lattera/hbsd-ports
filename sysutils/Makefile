@@ -261,6 +261,7 @@
     SUBDIR += docker-compose
     SUBDIR += docker-credential-pass
     SUBDIR += docker-machine
+    SUBDIR += docker-registry
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += dolly
@@ -684,6 +685,7 @@
     SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mixer
+    SUBDIR += mkdesktop
     SUBDIR += mkfile
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd

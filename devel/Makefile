@@ -2386,6 +2386,7 @@
     SUBDIR += p5-File-HStore
     SUBDIR += p5-File-HomeDir
     SUBDIR += p5-File-HomeDir-PathClass
+    SUBDIR += p5-File-HomeDir-Tiny
     SUBDIR += p5-File-Iterator
     SUBDIR += p5-File-LibMagic
     SUBDIR += p5-File-MMagic
@@ -4199,6 +4200,7 @@
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.os
     SUBDIR += py-backports.shutil_get_terminal_size
+    SUBDIR += py-backports.shutil_which
     SUBDIR += py-backports.tempfile
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
@@ -4422,6 +4424,7 @@
     SUBDIR += py-flexmock
     SUBDIR += py-flit
     SUBDIR += py-flit-core
+    SUBDIR += py-fluent
     SUBDIR += py-fluent-logger
     SUBDIR += py-flufl.i18n
     SUBDIR += py-flufl.lock
@@ -4548,6 +4551,7 @@
     SUBDIR += py-jaraco.logging
     SUBDIR += py-jaraco.timing
     SUBDIR += py-jaraco.util
+    SUBDIR += py-jaraco.util13
     SUBDIR += py-javaproperties
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
@@ -4748,6 +4752,7 @@
     SUBDIR += py-oslo.upgradecheck
     SUBDIR += py-oslo.utils
     SUBDIR += py-oslo.versionedobjects
+    SUBDIR += py-oslo.versionedobjects1
     SUBDIR += py-oslo.vmware
     SUBDIR += py-oslotest
     SUBDIR += py-osprofiler
@@ -4907,6 +4912,7 @@
     SUBDIR += py-pytest-aiohttp
     SUBDIR += py-pytest-asyncio
     SUBDIR += py-pytest-azurepipelines
+    SUBDIR += py-pytest-black
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-capturelog
     SUBDIR += py-pytest-cov
@@ -4919,6 +4925,7 @@
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-helpers-namespace
     SUBDIR += py-pytest-isort
+    SUBDIR += py-pytest-lazy-fixture
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pep8
