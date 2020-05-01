@@ -4668,6 +4668,8 @@
     SUBDIR += py-more-itertools5
     SUBDIR += py-mox
     SUBDIR += py-mox3
+    SUBDIR += py-msal
+    SUBDIR += py-msal-extensions
     SUBDIR += py-msgpack
     SUBDIR += py-mulpyplexer
     SUBDIR += py-multi_key_dict
