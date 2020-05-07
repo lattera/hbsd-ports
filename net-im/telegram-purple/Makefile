@@ -25,11 +25,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 USES=		gmake gnome pkgconfig localbase:ldflags
 USE_GNOME=	glib20
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off relro:off
-=======
+
 GNU_CONFIGURE=	yes
->>>>>>> freebsd/master
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

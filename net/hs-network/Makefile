@@ -9,11 +9,9 @@ COMMENT=	Low-level networking interface
 
 LICENSE=	BSD3CLAUSE
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
-=======
+
 IGNORE=		Haskell libraries are getting pushed out of the ports tree.
->>>>>>> freebsd/master
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
