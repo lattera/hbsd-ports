@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer (libaom) plugin
