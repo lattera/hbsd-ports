@@ -4278,6 +4278,7 @@
     SUBDIR += py-contextlib2
     SUBDIR += py-convertdate
     SUBDIR += py-cookiecutter
+    SUBDIR += py-copier
     SUBDIR += py-coreapi
     SUBDIR += py-coreschema
     SUBDIR += py-country
@@ -4793,6 +4794,7 @@
     SUBDIR += py-pluggy
     SUBDIR += py-pluginbase
     SUBDIR += py-ply
+    SUBDIR += py-pockets
     SUBDIR += py-podcastparser
     SUBDIR += py-polib
     SUBDIR += py-pooch
