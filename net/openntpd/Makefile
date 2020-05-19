@@ -12,15 +12,10 @@ COMMENT=	Network Time Protocol (NTP) daemon
 
 LICENSE=	ISCL
 
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
-
-<<<<<<< HEAD
-CONFLICTS=	ntp-[0-9].* ntp-devel-*
-
 USE_HARDENING=	safestack
 
-=======
->>>>>>> freebsd/master
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+
 USES=		ssl
 
 CONFLICTS=	ntp ntp-devel ntpsec
