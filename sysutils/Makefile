@@ -470,6 +470,7 @@
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += host-setup
+    SUBDIR += hostctl
     SUBDIR += hourglass
     SUBDIR += hpacucli
     SUBDIR += hploscripts
@@ -1461,6 +1462,7 @@
     SUBDIR += xmbmon
     SUBDIR += xorriso
     SUBDIR += xosview
+    SUBDIR += xpipe
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap
