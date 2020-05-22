@@ -4472,6 +4472,7 @@
     SUBDIR += py-grpcio
     SUBDIR += py-grpcio-gcp
     SUBDIR += py-grpcio-tools
+    SUBDIR += py-gs_api_client
     SUBDIR += py-gtfslib
     SUBDIR += py-gyp
     SUBDIR += py-hash_ring
@@ -6720,6 +6721,7 @@
     SUBDIR += tkp4
     SUBDIR += tl-expected
     SUBDIR += tla
+    SUBDIR += tllist
     SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += tokamak
