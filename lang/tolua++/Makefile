@@ -11,13 +11,9 @@ MASTER_SITES=	http://www.codenix.com/~tolua/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extended version of tolua, a tool to integrate C/C++ code with Lua
 
-<<<<<<< HEAD
 USE_HARDENING=	pie:off
 
-USES=		scons lua:51 tar:bzip2
-=======
 USES=		scons:python2 lua:51 tar:bzip2
->>>>>>> freebsd/master
 MAKE_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 
 CCFLAGS+=	-I${LUA_INCDIR}
